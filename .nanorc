@@ -1,0 +1,19 @@
+# ~/.nanorc
+
+# Ctrl G - help
+# Ctrl X - exit
+
+# set tabstospaces
+
+set autoindent
+set casesensitive
+set constantshow
+set matchbrackets "(<[{)>]}"
+set nohelp
+set nowrap
+set quickblank
+set tabsize 2
+
+unset backup
+unset historylog
+

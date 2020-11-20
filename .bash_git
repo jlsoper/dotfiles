@@ -1,0 +1,18 @@
+#  $HOME/.bash_git
+
+#  git fetch -p 
+#  git reset --soft HEAD~1 (better)
+#  git reset --hard HEAD~1
+
+      gclean() { git clean -d -f "$1" ; }
+alias gclean-show='git clean -d -n'
+alias gconfig='git config --list --show-origin'
+alias gconfig-helper='git config --global credential.helper store'
+alias gdiff='meld . &'
+      gdiffB() { git diff "$1".."$2" ; }
+alias glog='git --no-pager log --oneline'
+alias glogs='git --no-pager log'
+      greset() { git reset "$1" ; }
+alias gstatus='git status -s'
+
+

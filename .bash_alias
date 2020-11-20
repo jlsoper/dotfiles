@@ -1,0 +1,93 @@
+#  $HOME/.bash_alias  ( alias / unalias )
+
+#  scp <source-file> user@host:<path>
+#  scp user@host:<path of source file> <local target for file>
+
+#  grep parameters [-c count|-i ignorecase|-r recursive|-w whole word]
+
+#  touch -d 'Aug 28 11:07:53 EDT 2008' file1.txt
+#  touch -t 200808281107.53            file1.txt
+#  touch -r                            file1.txt file2.txt
+
+#  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
+
+#  ln -s source_file link_name
+
+#  unzip file.zip -d directory
+
+alias aterm='urxvt -g 148x42'
+alias bash_options='shopt'
+alias battery-info='acpi -b -i'
+alias bzip2info='tar -tvjf'
+alias bzip2test='bzip2 -tv'
+alias chdir='pwd'
+alias cpu-info='cat /proc/cpuinfo'
+alias del='rm -f'
+alias deltree='rm -rf'
+alias df='df -kTh'
+alias dir-b='ls --group-directories-first -1A --color'  # single column view
+alias dir-d='ls --group-directories-first -dhl --color'  # directory listing with *
+alias dir-f='ls -ALhlp --color | grep "/"'  # folder only view
+alias dir-h='ls --group-directories-first -adhl --color .*'  # hidden files view
+alias dir-p='ls --group-directories-first -Ahl --color | more'  # single page view
+alias dir-s='ls -AhlrS --color'  # size view
+alias dir-t='ls -Ahlrt --color'  # timestamp view
+alias dir-w='ls --group-directories-first -Alx --color'  # wide view
+alias dir='ls --group-directories-first -hl --color'
+alias dircmp='diff -r'
+alias du='du -kh'
+alias eterm='xterm -g 132x31'
+alias fc='vimdiff -i NONE'
+alias fc-b='diff'
+alias fgrep='grep -In --color=auto'  # show line numbers with results
+alias gzipinfo='tar -tvzf'
+alias gziptest='gzip -tv'
+alias ifconfig='ip -c a'
+alias ipconfig='ip -c -br a'  # ifconfig |grep --color=never "cast"'
+alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
+alias md5='md5sum -c'  # md5 mini.iso.md5
+alias md='mkdir'
+alias mem-c='free -ht'
+alias mem='vmstat -s -S M |grep --color=never "mem"'
+alias mount_iso='mount -t iso9660 /tmp/Temp.iso /mnt/iso -o loop'
+alias mount_usb='mount -t vfat /dev/sdb1 /mnt/usb/'
+alias nbrfiles='echo $(ls -A1 | wc -l)'
+alias netsend='smbclient -M'  # 'net send' in NT
+alias nm-networks='nmcli connection show'
+alias nm-status='nmcli device'
+alias open_display='export DISPLAY=:0.0'
+alias path='echo -e ${PATH//:/\\n}'
+alias pdir='ls -Ahl'
+alias pjobs='lpq'
+alias pjobs_cancel='lprm'
+alias print='lpr -o cpi=14 -o prettyprint'
+alias printenv='env|sort'
+alias ps='ps -fu $USER'
+alias pscan='netstat -natup'
+alias pserver='lpstat -r'  # CUPS server status
+alias rd='rmdir'
+alias scanpci='lspci -vvnn'
+alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
+alias sql-admin='mysql --tee=/tmp/sql-admin.log -u root -p'  # notee
+alias sysD-svcs='systemctl list-unit-files --state=enabled --no-pager'
+alias tail='tail -n 35'
+alias tar-c='tar -cvvf'
+alias tarinfo='tar -tvf'
+alias tbzip2='tar -cvvjf'  # *.tbz2
+alias tgzip='tar -cvvzf'  # *.tgz
+alias tpad-0='synclient TouchPadOff=1'
+alias tpad-1='synclient TouchPadOff=0'
+alias tracert='traceroute'
+alias type='cat -e'  # ^M$ -> \r\n
+alias ver='lsb_release -a;echo "";uname -a'
+alias view='vim -MR -i NONE'  # 'nano -v'
+alias wdisconnect='nmcli device disconnect wlp7s0'
+alias wifi-pwd='sudo grep psk= /etc/NetworkManager/system-connections/*'
+alias wscan='nmcli dev wifi'
+alias wshutdown='nmcli radio wifi off'
+alias wstartup='nmcli radio wifi on'
+alias wstatus='nmcli general'
+alias zip='zip -r'
+alias zipinfo='unzip -Z'
+alias ziptest='unzip -tq'
+
