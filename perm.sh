@@ -1,7 +1,7 @@
 #!/bin/bash
 
-chmod 601 .dblogin
+chmod 600 .dblogin
 
-chmod 645 .X* .b* .dir* .n* .vi* .x*
+chmod 644 .X* .b* .dir* .n* .vi* .x*
 
 

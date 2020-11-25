@@ -291,3 +291,23 @@ EXEC 01;32
 #.txt   00;33
 #.xml   00;33
 
+
+
+
+
+
+# colorize (my dotfiles) [ brown ]
+
+.Xresources     00;33
+.bash_alias     00;33
+.bash_fcn       00;33
+.bash_git       00;33
+.bash_logout    00;33
+.bash_profile   00;33
+.bashrc         00;33
+.dblogin        00;33
+.dir_colors     00;33
+.nanorc         00;33
+.vimrc          00;33
+.xprofile       00;33
+
