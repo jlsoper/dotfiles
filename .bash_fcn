@@ -4,7 +4,7 @@
 
 # functions - end with semicolon or newline
  copy() { cp "$1" "$1".bak.txt ; }
-#dos2unix() { perl -pi -e 's/\r\n/\n/' "$1" ; }
+ dos2u() { perl -pi -e 's/\r\n/\n/' "$1" ; }
  dvd-split() { split -d -b 4G --verbose "$1" "$1". ; }
  dvd-unsplit() { cat "$1".* > "$1" ; }
  fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
@@ -27,9 +27,8 @@
  tar-x() { tar -xvvf "$1" -C "$2" ; }
  tbunzip2() { tar -xvvjf "$1" -C "$2" ; }
  tgunzip() { tar -xvvzf "$1" -C "$2" ; }
-#unix2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
+ u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
-#unZip() { if [ -n "$2" ]; then unzip "$1" -d "$2" ; fi }
  wconnect() { nmcli dev wifi connect "$1" password "$2" ; } # ESSID_NAME ESSID_PASSWORD
  xlogin() { ssh -X "$1"@"$2" ; }
 

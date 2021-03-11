@@ -31,11 +31,11 @@ map <silent> <C-PageDown> G
 
 "  <F5>  - Show non-printing chars
 "  <F6>  - Show all options
-"  <F7>  - Set File format (unix,dos)
+"  <F7>  - Toggle case
 "  <F8>  - Join current line with line below
 
 "  <F9>  - Search / Replace (disable magic mode)
-"  <F10> - Toggle case
+"  <F10> - Clean up bookmarks.html file
 "  <F11> - Replace tabs with spaces
 "  <F12> - Remove trailing whitespace
 
@@ -46,11 +46,11 @@ map <F4> :q!<CR>
 
 map <silent> <F5> :set invlist<CR>
 map <silent> <F6> :se<CR>
-map <F7> :set fileformat=
+map <silent> <F7> <S-~>
 map <silent> <F8> gJ
 
 map <F9> :.,$sno/
-map <silent> <F10> <S-~>
+map <silent> <F10> :%s/.ADD_DATE[^>]*//g<CR>
 map <silent> <F11> :%s/\t/  /g<CR>
 map <silent> <F12> :%s/\s\+$//g<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -79,7 +79,7 @@ alias tpad-0='synclient TouchPadOff=1'
 alias tpad-1='synclient TouchPadOff=0'
 alias tracert='traceroute'
 alias type='cat -e'  # ^M$ -> \r\n
-alias ver='lsb_release -a;echo "";uname -a'
+alias ver='lsb_release -a;echo "";uname -mrs'
 alias view='vim -MR -i NONE'  # 'nano -v'
 alias wdisconnect='nmcli device disconnect wlp7s0'
 alias wifi-pwd='sudo grep psk= /etc/NetworkManager/system-connections/*'
