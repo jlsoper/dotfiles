@@ -303,6 +303,7 @@ EXEC 01;32
 .bash_alias     00;33
 .bash_fcn       00;33
 .bash_git       00;33
+.bash_java      00;33
 .bash_logout    00;33
 .bash_profile   00;33
 .bashrc         00;33

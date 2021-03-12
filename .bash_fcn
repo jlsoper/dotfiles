@@ -30,5 +30,9 @@
  u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  wconnect() { nmcli dev wifi connect "$1" password "$2" ; } # ESSID_NAME ESSID_PASSWORD
+
+#  Github download single file
+ wget-gh() { if [ -n "$1" ]; then wget "https://raw.githubusercontent.com/"$1 ; else echo "usage: $FUNCNAME userID/repo/branch/fileName" ; fi }
+
  xlogin() { ssh -X "$1"@"$2" ; }
 

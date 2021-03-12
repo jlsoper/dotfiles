@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-/usr/bin/cp  --preserve=mode .X* $HOME
-/usr/bin/cp  --preserve=mode .b* $HOME
-/usr/bin/cp  --preserve=mode .d* $HOME
-/usr/bin/cp  --preserve=mode .n* $HOME
-/usr/bin/cp  --preserve=mode .v* $HOME
-/usr/bin/cp  --preserve=mode .x* $HOME
+cp  --preserve=mode .X* $HOME
+cp  --preserve=mode .b* $HOME
+cp  --preserve=mode .d* $HOME
+cp  --preserve=mode .n* $HOME
+cp  --preserve=mode .v* $HOME
+cp  --preserve=mode .x* $HOME
 

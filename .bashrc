@@ -20,8 +20,11 @@ else
   fi
 
   umask 022
+
   . ~/.bash_alias
   . ~/.bash_git
+  . ~/.bash_java
+
 fi
 
 #  Get the defined functions

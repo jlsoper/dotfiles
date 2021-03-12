@@ -4,16 +4,7 @@
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 
-#  Java settings (sudo ln -s java-8-openjdk-amd64 java-openjdk)
-export CLASSPATH=.:$HOME/scripts/jar/*:$HOME/scripts/class
-export JAVA_HOME=/usr/lib/jvm/java-openjdk
-
-PATH=$JAVA_HOME/bin:$PATH:~/scripts
-
-#  java $JVM_DEBUG
-export JVM_DEBUG_PORT=8000
-export JVM_DEBUG=-agentlib:jdwp=transport=dt_socket,address=$JVM_DEBUG_PORT,server=y,suspend=y
-#  export JVM_DEBUG='-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y'
+PATH=$PATH:~/scripts
 
 #  Database settings
 #  export DB_HOME=/opt/hsqldb
