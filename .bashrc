@@ -21,9 +21,9 @@ else
 
   umask 022
 
-  . ~/.bash_alias
-  . ~/.bash_git
-  . ~/.bash_java
+  if [ -f ~/.bash_alias ]; then . ~/.bash_alias ; fi
+  if [ -f ~/.bash_git   ]; then . ~/.bash_git   ; fi
+  if [ -f ~/.bash_java  ]; then . ~/.bash_java  ; fi
 
 fi
 
