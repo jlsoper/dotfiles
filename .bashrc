@@ -33,6 +33,15 @@ then
   . ~/.bash_fcn
 fi
 
+#  VSCode or VSCodium
+if [ -f /usr/bin/code ]
+then
+  alias vsc='code'
+else
+  alias vsc='codium'
+fi
+
+
 # aliases (all users)
 alias cd..='cd ..'
 alias cls='clear'
