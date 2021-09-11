@@ -16,7 +16,7 @@
  pkg-list-installed() { dpkg -l ; }
  pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ ; }
 
-#  python function
+#  python
  py-path() { python3 -c "import sys; print ('\n'.join(sys.path))" ; } # sys.path
 
  recursiveTouch() { find . -exec touch {} \; ; }

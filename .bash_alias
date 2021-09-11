@@ -25,6 +25,8 @@ alias cpu-info='cat /proc/cpuinfo'
 alias del='rm -f'
 alias deltree='rm -rf'
 alias df='df -kTh'
+
+alias dir='ls --group-directories-first -hl --color'
 alias dir-b='ls --group-directories-first -1A --color'  # single column view
 alias dir-d='ls --group-directories-first -dhl --color'  # directory listing with *
 alias dir-f='ls -ALhlp --color | grep "/"'  # folder only view
@@ -33,7 +35,8 @@ alias dir-p='ls --group-directories-first -Ahl --color | more'  # single page vi
 alias dir-s='ls -AhlrS --color'  # size view
 alias dir-t='ls -Ahlrt --color'  # timestamp view
 alias dir-w='ls --group-directories-first -Alx --color'  # wide view
-alias dir='ls --group-directories-first -hl --color'
+alias pdir='ls --group-directories-first -Ahl | col -b | expand -t 2'
+
 alias dircmp='diff -r'
 alias du='du -kh'
 alias eterm='xterm -g 132x31'
@@ -57,7 +60,6 @@ alias nm-networks='nmcli connection show'
 alias nm-status='nmcli device'
 alias open_display='export DISPLAY=:0.0'
 alias path='echo -e ${PATH//:/\\n}'
-alias pdir='ls --group-directories-first -Ahl'
 alias pjobs='lpq'
 alias pjobs_cancel='lprm'
 alias print='lpr -o cpi=14 -o prettyprint'
@@ -65,6 +67,11 @@ alias printenv='env|sort'
 alias ps='ps -fu $USER'
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
+
+alias py-install='pip3 install --user'
+alias py-list='pip3 list'
+alias py-uninstall='pip3 uninstall'
+
 alias rd='rmdir'
 alias scanpci='lspci -vvnn'
 alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
