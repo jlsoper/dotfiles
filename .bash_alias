@@ -35,7 +35,7 @@ alias dir-p='ls --group-directories-first -Ahl --color | more'  # single page vi
 alias dir-s='ls -AhlrS --color'  # size view
 alias dir-t='ls -Ahlrt --color'  # timestamp view
 alias dir-w='ls --group-directories-first -Alx --color'  # wide view
-alias pdir='ls --group-directories-first -Ahl | col -b | expand -t 2'
+alias pdir='ls --group-directories-first -Ahl'
 
 alias dircmp='diff -r'
 alias du='du -kh'
