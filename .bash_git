@@ -6,7 +6,7 @@
 
       gclean() { git clean -d -f "$1" ; }
 alias gclean-show='git clean -d -n'
-alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R)"'
+alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) - $(hostname)"'
 alias gconfig='git config --list --show-origin'
 alias gconfig-helper='git config --global credential.helper store'
 alias gdiff='meld . &'
