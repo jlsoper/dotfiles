@@ -34,8 +34,9 @@
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  wconnect() { nmcli dev wifi connect "$1" password "$2" ; } # ESSID_NAME ESSID_PASSWORD
 
-#  Github download single file
- wget-gh() { if [ -n "$1" ]; then wget "https://raw.githubusercontent.com/"$1 ; else echo "usage: $FUNCNAME userID/repo/branch/fileName" ; fi }
+#  Github
+ wget-gha() { if [ -n "$2" ]; then wget "https://github.com/$1/$2/archive/main.zip" ; else echo "usage: $FUNCNAME <userID> <repo>" ; fi }
+ wget-ghf() { if [ -n "$1" ]; then wget "https://raw.githubusercontent.com/"$1 ; else echo "usage: $FUNCNAME userID/repo/branch/fileName" ; fi }
 
  xlogin() { ssh -X "$1"@"$2" ; }
 
