@@ -16,9 +16,6 @@
  pkg-list-installed() { dpkg -l ; }
  pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ ; }
 
-#  python
- py-path() { python3 -c "import sys; print ('\n'.join(sys.path))" ; } # sys.path
-
  recursiveTouch() { find . -exec touch {} \; ; }
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  removeNPchar() { tr -cd '\11\12\15\40-\176' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }

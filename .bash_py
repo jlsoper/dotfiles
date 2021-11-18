@@ -1,0 +1,9 @@
+#  $HOME/.bash_py
+
+alias py-install='pip3 install --user'
+alias py-list='pip3 list'
+alias py-uninstall='pip3 uninstall'
+
+
+ py-path() { python3 -c "import sys; print ('\n'.join(sys.path))" ; } # sys.path
+

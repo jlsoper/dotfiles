@@ -24,6 +24,7 @@ else
   if [ -f ~/.bash_alias ]; then . ~/.bash_alias ; fi
   if [ -f ~/.bash_git   ]; then . ~/.bash_git   ; fi
   if [ -f ~/.bash_java  ]; then . ~/.bash_java  ; fi
+  if [ -f ~/.bash_py    ]; then . ~/.bash_py    ; fi
 
 fi
 
@@ -49,8 +50,10 @@ alias cp='cp -ir'
 alias edit='vim -i NONE'
 alias mv='mv -i'
 alias rm='rm -i'
+
 alias samba-adduser='smbpasswd -a'
 alias samba-listuser='pdbedit -L'
 alias samba-test='testparm'
+
 alias vi='vim -i NONE -u NONE'  # \r  -->  ^M
 
