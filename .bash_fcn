@@ -12,7 +12,7 @@
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
- pkg-history() { zgrep -h --color=never "$1 " /var/log/dpkg.log* ; } # install, upgrade, remove
+ pkg-history() { zgrep -h --color=never "$1 " /var/log/dpkg.log* ; }  # install, upgrade, remove
  pkg-list-installed() { dpkg -l ; }
  pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ ; }
 
@@ -29,7 +29,7 @@
  tgunzip() { tar -xvvzf "$1" -C "$2" ; }
  u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
- wconnect() { nmcli dev wifi connect "$1" password "$2" ; } # ESSID_NAME ESSID_PASSWORD
+ wconnect() { nmcli dev wifi connect "$1" password "$2" ; }  # ESSID_NAME ESSID_PASSWORD
 
 #  Github
  wget-gha() { if [ -n "$2" ]; then wget "https://github.com/$1/$2/archive/main.zip" ; else echo "usage: $FUNCNAME <userID> <repo>" ; fi }
