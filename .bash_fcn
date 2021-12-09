@@ -14,7 +14,7 @@
 
  pkg-history() { zgrep -h --color=never "$1 " /var/log/dpkg.log* ; }  # install, upgrade, remove
  pkg-list-installed() { dpkg -l ; }
- pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ ; }
+ pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ |sort ; }
 
  recursiveTouch() { find . -exec touch {} \; ; }
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
