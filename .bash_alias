@@ -127,7 +127,6 @@ alias zipinfo='unzip -Z'
 alias ziptest='unzip -tq'
 
 
-alias 7unzip='7z x -t7Z'
 alias 7zip='7z a -t7Z'
 alias 7zipinfo='7z l'
 alias 7ziptest='7z t'

@@ -37,3 +37,5 @@
 
  xlogin() { ssh -X "$1"@"$2" ; }
 
+ 7unzip() { if [ -n "$2" ]; then 7z x -t7Z $1 -o$2 ; else echo "usage: $FUNCNAME <archive> <path>" ; fi }
+
