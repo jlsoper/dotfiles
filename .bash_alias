@@ -13,6 +13,8 @@
 
 #  ln -s source_file link_name
 
+#  usermod -aG sudo user_name
+
 #  unzip file.zip -d directory
 
 alias aterm='urxvt -g 148x42'
@@ -50,6 +52,8 @@ alias fc='vimdiff -i NONE'
 alias fc-b='diff'
 
 alias fgrep='grep -In --color=auto'  # show line numbers with results
+
+alias grupos='groups |tr " " "\n"'
 
 alias gzipinfo='tar -tvzf'
 alias gziptest='gzip -tv'
