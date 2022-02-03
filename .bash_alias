@@ -17,7 +17,7 @@
 
 #  unzip file.zip -d directory
 
-alias aterm='urxvt -g 148x42'
+alias aterm='urxvt -g 208x62'
 alias bash_options='shopt'
 alias battery-info='acpi -b -i'
 

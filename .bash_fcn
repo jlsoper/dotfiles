@@ -12,9 +12,8 @@
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
- pkg-history() { zgrep -h --color=never "$1 " /var/log/dpkg.log* ; }  # install, upgrade, remove
- pkg-list-installed() { dpkg -l ; }
- pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ |sort ; }
+ pkg-list-installed() { pacman -Q ; }
+ pkg-repolist() { cat /etc/pacman.conf |grep "^\[" |tail -n+2 ; }
 
  recursiveTouch() { find . -exec touch {} \; ; }
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
