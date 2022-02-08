@@ -12,7 +12,9 @@
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
- pkg-list-installed() { pacman -Q ; }  # pacman -Q |awk '{print $1}'
+ pkg-list-installed() { pacman -Q ; }
+ pkg-names() { pacman -Qq ; }
+ pkg-orphans() { pacman -Qdt ; }
  pkg-repolist() { cat /etc/pacman.conf |grep "^\[" |tail -n+2 ; }
  pkg-search() { if [ -n "$1" ]; then pacman -Ss "$1" ; else echo "usage: $FUNCNAME <query>" ; fi }
  pkg-show() { if [ -n "$1" ]; then pacman -Qi "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }

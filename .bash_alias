@@ -46,7 +46,6 @@ alias  pdir='ls --group-directories-first -Ahl'  # printable view
 
 alias dircmp='diff -r'
 alias du='du -kh'
-alias eterm='xterm -g 132x31'
 
 alias fc='vimdiff -i NONE'
 alias fc-b='diff'

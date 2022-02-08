@@ -39,9 +39,11 @@ else
 
   alias dir='ls --group-directories-first -ahl --color'
 
+  alias pkg-fmirrors='pacman-mirrors -f 8'  # upgrade afterwards
+
   alias pkg-update='pacman -Syy'
   alias pkg-install='pacman -S'
-  alias pkg-remove='pacman -R'
+  alias pkg-remove='pacman -Rns'
   alias pkg-upgrade='pacman -Syyu'
 
 fi
