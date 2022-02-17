@@ -52,6 +52,7 @@ alias fc-b='diff'
 
 alias fgrep='grep -In --color=auto'  # show line numbers with results
 
+alias finger='pinky -l'
 alias grupos='groups |tr " " "\n"'
 
 alias gzipinfo='tar -tvzf'
@@ -78,6 +79,9 @@ alias nm-status='nmcli device'
 alias open_display='export DISPLAY=:0.0'
 
 alias path='echo -e ${PATH//:/\\n}'
+
+alias permiso-d='find . -type d -exec chmod 0755 {} \;'
+alias permiso-f='find . -type f -exec chmod 0644 {} \;'
 
 alias pjobs='lpq'
 alias pjobs_cancel='lprm'
@@ -108,7 +112,7 @@ alias tgzip='tar -cvvzf'  # *.tgz
 alias tpad-0='synclient TouchPadOff=1'
 alias tpad-1='synclient TouchPadOff=0'
 
-alias tracert='traceroute'
+alias tracert='tracepath'  # traceroute
 
 alias type='cat -e'  # ^M$ -> \r\n
 
