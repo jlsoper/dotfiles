@@ -7,6 +7,7 @@
  dos2u() { perl -pi -e 's/\r\n/\n/' "$1" ; }
  dvd-split() { split -d -b 4G --verbose "$1" "$1". ; }
  dvd-unsplit() { cat "$1".* > "$1" ; }
+ fbookmarks-clean() { if [ -n "$1" ]; then perl -pi -e 's/.ADD_DATE[^>]*//' "$1" ; else echo "usage: $FUNCNAME <bookmarks.html>" ; fi }
  fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
  ftype() { grep -c $'\r' "$1" ; }
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
@@ -20,12 +21,10 @@
  pkg-show() { if [ -n "$1" ]; then pacman -Qi "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-servers() { cat /etc/pacman.d/mirrorlist |grep "^Server" ; }
 
- recursiveTouch() { find . -exec touch {} \; ; }
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  removeNPchar() { tr -cd '\11\12\15\40-\176' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  rlogin() { ssh "$1"@"$2" ; }
  rtext() { cat "$1" | fold -95 -s > "$1".text ; }
- rtouch() { find . 2>/dev/null -iname "$2" -exec touch -t "$1" {} \; ; }
  setNcard() { sudo ifconfig enp6s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
  setWcard() { sudo ifconfig wlp7s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
  tar-x() { tar -xvvf "$1" -C "$2" ; }
