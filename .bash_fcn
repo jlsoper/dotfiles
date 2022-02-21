@@ -13,6 +13,9 @@
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
+ pkg-history_install() { grep -I "installed" /var/log/pacman.log |tr -d "[ALPM]" ; }
+ pkg-history_upgrade() { grep -I "upgraded"  /var/log/pacman.log |tr -d "[ALPM]" ; }
+ pkg-history_remove()  { grep -I "removed"   /var/log/pacman.log |tr -d "[ALPM]" ; }
  pkg-list-installed() { pacman -Q ; }
  pkg-names() { pacman -Qq ; }
  pkg-orphans() { pacman -Qdt ; }
