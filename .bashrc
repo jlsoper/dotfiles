@@ -25,15 +25,6 @@ then
   if [ -f ~/.bash_java  ]; then . ~/.bash_java  ; fi
   if [ -f ~/.bash_py    ]; then . ~/.bash_py    ; fi
 
-
-  #  VSCode or VSCodium
-  if [ -f /usr/bin/code ]
-  then
-    alias vsc='code'
-  else
-    alias vsc='codium'
-  fi
-
 else
   PS1="(\[\033[1;31m\]\u\[\033[00m\]):\w>"
 
