@@ -63,7 +63,6 @@ alias ipconfig='ip -c -br a'  # ifconfig |grep --color=never "cast"'
 
 alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
 
-alias md5='md5sum -c'  # md5 mini.iso.md5
 alias md='mkdir'
 
 alias mem-c='free -ht'
@@ -122,7 +121,7 @@ alias type='cat -e'  # ^M$ -> \r\n
 alias umount_iso='sudo umount /mnt/iso/'
 alias umount_usb='sudo umount /mnt/usb/'
 
-alias ver='lsb_release -a;cat 2>/dev/null /etc/debian_version;echo "";uname -mrs'
+alias ver='lsb_release -a;echo "";uname -mrs'
 alias view='vim -MR -i NONE'  # 'nano -v'
 
 alias wdisconnect='nmcli device disconnect wlp7s0'

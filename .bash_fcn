@@ -11,6 +11,7 @@
  fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
  ftype() { grep -c $'\r' "$1" ; }
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
+ md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
  pkg-history_install() { grep -I "installed" /var/log/pacman.log |tr -d "[ALPM]" ; }
@@ -30,11 +31,13 @@
  rtext() { cat "$1" | fold -95 -s > "$1".text ; }
  setNcard() { sudo ifconfig enp6s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
  setWcard() { sudo ifconfig wlp7s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
+ sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
  tar-x() { tar -xvvf "$1" -C "$2" ; }
  tbunzip2() { tar -xvvjf "$1" -C "$2" ; }
  tgunzip() { tar -xvvzf "$1" -C "$2" ; }
  u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
+ vbox-ext-install() { if [ -n "$1" ]; then sudo VBoxManage extpack install "$1" ; else echo "usage: $FUNCNAME <file.vbox-extpack>" ; fi }
  wconnect() { nmcli dev wifi connect "$1" password "$2" ; }  # ESSID_NAME ESSID_PASSWORD
 
 #  Github
