@@ -33,7 +33,6 @@ unset historylog
  bind F5 whitespacedisplay main
 
 
-unbind F1  all
 unbind F2  all
 unbind F3  all
 unbind F4  all
@@ -48,20 +47,21 @@ unbind F11 all
 unbind F12 all
 
 
+## Ctrl key ##
 bind ^C copy     main
 bind ^F whereis  main
 bind ^G findnext main
-
-bind ^H help     all
 
 bind ^O insert   main
 
 bind ^Q exit     all
 
 bind ^R replace  main
-bind ^S savefile main
+bind ^S writeout main
 bind ^V paste    main
 bind ^X cut      main
 
+## Alt key ##
 bind M-/ comment main
+bind M-H help    all
 

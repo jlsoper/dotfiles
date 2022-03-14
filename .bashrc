@@ -30,6 +30,10 @@ else
 
   alias dir='ls --group-directories-first -ahl --color'
 
+  alias edit='nano'
+  alias view='nano -v'
+
+
   alias pkg-fmirrors='pacman-mirrors -f 8'  # upgrade afterwards
 
   alias pkg-update='pacman -Syy'
@@ -44,7 +48,6 @@ fi
 alias cd..='cd ..'
 alias cls='clear'
 alias cp='cp -ir'
-alias edit='vim -i NONE'
 alias mv='mv -i'
 alias rm='rm -i'
 
