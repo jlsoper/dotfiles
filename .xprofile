@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# synclient -> xf86-input-synaptics
 
 # Acer laptop
 if [ $HOSTNAME = Jaguar ]
