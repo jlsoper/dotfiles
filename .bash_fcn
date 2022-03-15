@@ -7,6 +7,11 @@
  dos2u() { perl -pi -e 's/\r\n/\n/' "$1" ; }
  dvd-split() { split -d -b 4G --verbose "$1" "$1". ; }
  dvd-unsplit() { cat "$1".* > "$1" ; }
+
+# exfat - /dev/sdb1
+ exfat_create() { if [ -n "$2" ]; then sudo mkfs.exfat -n "$1" "$2" ; else echo "usage: $FUNCNAME <label> <device ID>" ; fi }
+ exfat_verify() { if [ -n "$1" ]; then sudo fsck.exfat "$1" ; else echo "usage: $FUNCNAME <device ID>" ; fi }
+
  fbookmarks-clean() { if [ -n "$1" ]; then perl -pi -e 's/.ADD_DATE[^>]*//' "$1" ; else echo "usage: $FUNCNAME <bookmarks.html>" ; fi }
  fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
  ftype() { grep -c $'\r' "$1" ; }
