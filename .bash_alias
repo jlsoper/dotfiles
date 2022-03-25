@@ -72,6 +72,7 @@ alias mem='vmstat -s -S M |grep --color=never "mem"'
 
 alias mount_iso='sudo mount -t iso9660 /tmp/temp.iso /mnt/iso -o loop'
 alias mount_usb='sudo mount /dev/sdc1 /mnt/usb/'
+alias mount_vbox_iso='sudo mount -t iso9660 /usr/lib/virtualbox/additions/VBoxGuestAdditions.iso /opt/VBox/sharedF -o loop'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias netsend='smbclient -M'  # 'net send' in NT
@@ -122,6 +123,7 @@ alias type='cat -e'  # ^M$ -> \r\n
 
 alias umount_iso='sudo umount /mnt/iso/'
 alias umount_usb='sudo umount /mnt/usb/'
+alias umount_vbox_iso='sudo umount /opt/VBox/sharedF/'
 
 alias ver='lsb_release -a;echo "";uname -mrs'
 alias view='vim -MR -i NONE'
