@@ -90,8 +90,7 @@ alias pjobs_cancel='lprm'
 alias print='lpr -o cpi=14 -o prettyprint'
 
 alias printenv='env|sort'
-alias proceso1='/usr/sbin/ps -p 1'
-alias ps='ps -fu $USER'
+alias ps='ps x -o user,pid,ppid,tty,cmd'
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
 
@@ -110,6 +109,8 @@ alias tail='tail -n 35'
 
 alias tar-c='tar -cvvf'
 alias tarinfo='tar -tvf'
+
+alias tasklist='/usr/sbin/ps auxf'
 
 alias tbzip2='tar -cvvjf'  # *.tbz2
 alias tgzip='tar -cvvzf'  # *.tgz
