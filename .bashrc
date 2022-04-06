@@ -34,12 +34,10 @@ else
   alias view='nano -v'
 
 
-  alias pkg-fmirrors='pacman-mirrors -f 8'  # upgrade afterwards
-
-  alias pkg-update='pacman -Syy'
-  alias pkg-install='pacman -S'
-  alias pkg-remove='pacman -Rns'
-  alias pkg-upgrade='pacman -Syyu'
+  alias pkg-update='apt update'
+  alias pkg-install='apt install'
+  alias pkg-remove='apt remove'  # purge
+  alias pkg-upgrade='apt upgrade'
 
 fi
 
