@@ -2,6 +2,6 @@
 
 chmod 600 .dblogin
 
-chmod 644 .X* .b* .dir* .n* .vi* .x*
+chmod 644 .X* .b* .dir* .gitconfig .n* .vi* .x*
 
 
