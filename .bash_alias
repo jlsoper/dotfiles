@@ -15,7 +15,6 @@
 
 #  usermod -aG sudo user_name
 
-#  unzip file.zip -d directory
 
 alias aterm='urxvt -g 208x62'
 alias bash_options='shopt'
@@ -102,8 +101,6 @@ alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
 alias shrink_file='truncate -s 0'
 
 alias sql-admin='mysql --tee=/tmp/sql-admin.log -u root -p'  # notee
-
-alias sysD-svcs='systemctl list-unit-files --state=enabled --no-pager'
 
 alias tail='tail -n 35'
 
