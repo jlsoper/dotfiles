@@ -3,7 +3,7 @@
 #  scp <source-file> user@host:<path>
 #  scp user@host:<path of source file> <local target for file>
 
-#  grep parameters [-c count|-i ignorecase|-r recursive|-w whole word]
+#  grep parameters [ -c count | -i ignorecase | -r recursive | -w whole word ]
 
 #  touch -d 'Aug 28 11:07:53 EDT 2008' file1.txt
 #  touch -t 200808281107.53            file1.txt
@@ -54,20 +54,20 @@ alias fc-b='diff'
 alias fgrep='grep -In --color=auto'  # show line numbers with results
 
 alias finger='pinky -l'
-alias grupos='groups |tr " " "\n"'
+alias grupos='groups | tr " " "\n"'
 
 alias gzipinfo='tar -tvzf'
 alias gziptest='gzip -tv'
 
 alias ifconfig='ip -c a'
-alias ipconfig='ip -c -br a'  # ifconfig |grep --color=never "cast"'
+alias ipconfig='ip -c -br a'  # 'ifconfig | grep --color=never "cast"'
 
 alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
 
 alias md='mkdir'
 
 alias mem-c='free -ht'
-alias mem='vmstat -s -S M |grep --color=never "mem"'
+alias mem='vmstat -s -S M | grep --color=never "mem"'
 
 alias mount_iso='sudo mount -t iso9660 /tmp/temp.iso /mnt/iso -o loop'
 alias mount_usb='sudo mount /dev/sdc1 /mnt/usb/'
@@ -88,7 +88,7 @@ alias pjobs='lpq'
 alias pjobs_cancel='lprm'
 alias print='lpr -o cpi=14 -o prettyprint'
 
-alias printenv='env|sort'
+alias printenv='env | sort'
 alias ps='ps x -o user,pid,ppid,tty,cmd'
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
