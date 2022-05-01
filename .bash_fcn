@@ -39,7 +39,6 @@
 
  u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
- vbox-ext-install() { if [ -n "$1" ]; then sudo VBoxManage extpack install "$1" ; else echo "usage: $FUNCNAME <file.vbox-extpack>" ; fi }
  wconnect() { nmcli dev wifi connect "$1" password "$2" ; }  # ESSID_NAME ESSID_PASSWORD
 
 #  Github
