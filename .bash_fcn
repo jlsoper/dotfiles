@@ -1,7 +1,5 @@
 #  $HOME/.bash_fcn
 
-#  unzip file.zip -d directory
-
 
 # functions - end with semicolon or newline
  copy() { cp "$1" "$1".bak.txt ; }
@@ -35,9 +33,9 @@
  setWcard() { sudo ifconfig wlp7s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
  sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
 
- tar-x()    { if [ -n "$2" ]; then tar -xvvf  "$1" -C "$2" ; else echo "usage: $FUNCNAME <archive.tar> <path>" ; fi }
- tbunzip2() { if [ -n "$2" ]; then tar -xvvjf "$1" -C "$2" ; else echo "usage: $FUNCNAME <archive.tar.bz2> <path>" ; fi }
- tgunzip()  { if [ -n "$2" ]; then tar -xvvzf "$1" -C "$2" ; else echo "usage: $FUNCNAME <archive.tar.gz> <path>" ; fi }
+ tar-x()    { if [ -n "$1" ]; then tar -xvvf  "$1" ; else echo "usage: $FUNCNAME <archive.tar> ." ; fi }
+ tbunzip2() { if [ -n "$1" ]; then tar -xvvjf "$1" ; else echo "usage: $FUNCNAME <archive.tar.bz2> ." ; fi }
+ tgunzip()  { if [ -n "$1" ]; then tar -xvvzf "$1" ; else echo "usage: $FUNCNAME <archive.tar.gz> ." ; fi }
 
  u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
@@ -50,5 +48,5 @@
 
  xlogin() { ssh -X "$1"@"$2" ; }
 
- 7unzip() { if [ -n "$2" ]; then 7z x -t7Z $1 -o$2 ; else echo "usage: $FUNCNAME <archive.7Z> <path>" ; fi }
+ 7unzip() { if [ -n "$1" ]; then 7z x -t7Z $1 -o. ; else echo "usage: $FUNCNAME <archive.7Z> ." ; fi }
 

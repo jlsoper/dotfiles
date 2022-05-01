@@ -93,6 +93,9 @@ alias ps='ps x -o user,pid,ppid,tty,cmd'
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
 
+alias rar-x='unrar -x'
+alias rarinfo='unrar -t'
+
 alias rd='rmdir'
 alias scanpci='lspci -vvnn'
 
