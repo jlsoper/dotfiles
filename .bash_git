@@ -18,3 +18,9 @@ alias glogs='git --no-pager log'
 alias gstatus='git status -s'
 
 
+
+#  Github
+ wget-gha() { if [ -n "$2" ]; then wget "https://github.com/$1/$2/archive/main.zip" ; else echo "usage: $FUNCNAME <userID> <repo>" ; fi }
+ wget-ghf() { if [ -n "$1" ]; then wget "https://raw.githubusercontent.com/"$1 ; else echo "usage: $FUNCNAME userID/repo/branch/fileName" ; fi }
+
+
