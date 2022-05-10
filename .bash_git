@@ -1,15 +1,21 @@
 #  $HOME/.bash_git
 
+########################################
+#
 #  git fetch -p 
 #  git reset --soft HEAD~1 (better)
 #  git reset --hard HEAD~1
 
-      gclean() { git clean -d -f "$1" ; }
+#  alias gconfig-helper='git config --global credential.helper store'
+#
+########################################
+
+
+      gclean() { git clean -i ; }
 alias gclean-show='git clean -d -n'
       gclone-branch() { if [ -n "$2" ]; then git clone -b "$1" --single-branch "$2" ; else echo "usage: $FUNCNAME <branchName> <remoteRepoURL>" ; fi }
 alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) - $(hostname)"'
 alias gconfig='git config --list --show-origin'
-alias gconfig-helper='git config --global credential.helper store'
 alias gdiff='meld . &'
       gdiffB() { git diff "$1".."$2" ; }
 alias glog='git --no-pager log --oneline'
