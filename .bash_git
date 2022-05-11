@@ -18,8 +18,8 @@ alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) - $(hostname)"
 alias gconfig='git config --list --show-origin'
 
 alias gdiff='meld . &'
-      gdiffB() { if [ -n "$2" ]; then git diff "$1".."$2" ; else echo "usage: $FUNCNAME <branch1> <branch2>" ; fi }
-      gdiffC() { if [ -n "$2" ]; then git diff "$1".."$2" ; else echo "usage: $FUNCNAME <commitSHA_1> <commitSHA_2>" ; fi }
+      gdiffB() { if [ -n "$2" ]; then git diff "$1".."$2" ; else echo "usage: $FUNCNAME <branch1> <branch2>" ; fi }  # branches must be checked out prior to comparison
+      gdiffC() { if [ -n "$2" ]; then git diff "$1".."$2" ; else echo "usage: $FUNCNAME <parent-SHA> <child-SHA>" ; fi }
 alias gdiffSA='git diff --staged'
 
       gdiscard() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
