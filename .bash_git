@@ -2,7 +2,7 @@
 
 ########################################
 #
-#  git fetch -p 
+#  git fetch -p
 #  git reset --soft HEAD~1 (better)
 #  git reset --hard HEAD~1
 
@@ -11,17 +11,23 @@
 ########################################
 
 
-      gclean() { git clean -i ; }
+alias gclean='git clean -i'
 alias gclean-show='git clean -d -n'
-      gclone-branch() { if [ -n "$2" ]; then git clone -b "$1" --single-branch "$2" ; else echo "usage: $FUNCNAME <branchName> <remoteRepoURL>" ; fi }
+      gclone-branch() { if [ -n "$2" ]; then git clone -b "$1" --single-branch "$2" ; else echo "usage: $FUNCNAME <branch> <remoteRepoURL>" ; fi }
 alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) - $(hostname)"'
 alias gconfig='git config --list --show-origin'
+
 alias gdiff='meld . &'
-      gdiffB() { git diff "$1".."$2" ; }
+      gdiffB() { if [ -n "$2" ]; then git diff "$1".."$2" ; else echo "usage: $FUNCNAME <branch1> <branch2>" ; fi }
+      gdiffC() { if [ -n "$2" ]; then git diff "$1".."$2" ; else echo "usage: $FUNCNAME <commitSHA_1> <commitSHA_2>" ; fi }
+alias gdiffSA='git diff --staged'
+
+      gdiscard() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
 alias glog='git --no-pager log --oneline'
 alias glogs='git --no-pager log'
-      greset() { git reset "$1" ; }
+alias grollback='git reset --soft HEAD~1'
 alias gstatus='git status -s'
+      gunstage() { if [ -n "$1" ]; then git reset "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
 
 
 
