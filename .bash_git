@@ -17,7 +17,7 @@ alias gclean-show='git clean -d -n'
 alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) - $(hostname)"'
 alias gconfig='git config --list --show-origin'
 
-alias gdiff='meld . &'
+alias gdiff='git diff'
       gdiffB() { if [ -n "$2" ]; then git diff "$1".."$2" ; else echo "usage: $FUNCNAME <branch1> <branch2>" ; fi }  # branches must be checked out prior to comparison
       gdiffC() { if [ -n "$2" ]; then git diff "$1".."$2" ; else echo "usage: $FUNCNAME <parent-SHA> <child-SHA>" ; fi }
 alias gdiffSA='git diff --staged'
