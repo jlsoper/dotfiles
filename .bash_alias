@@ -46,9 +46,9 @@ alias  pdir='ls --group-directories-first -Ahl'  # printable view
 alias dircmp='diff -r'
 alias du='du -kh'
 
-alias edit='vim -i NONE'
+alias edit='vim'
 
-alias fc='vimdiff -i NONE'
+alias fc='vimdiff'
 alias fc-b='diff'
 
 alias fgrep='grep -In --color=auto'  # show line numbers with results
@@ -125,7 +125,7 @@ alias umount_iso='sudo umount /mnt/iso/'
 alias umount_usb='sudo umount /mnt/usb/'
 
 alias ver='lsb_release -a;echo "";uname -mrs'
-alias view='vim -MR -i NONE'
+alias view='vim -MR'
 
 alias wdisconnect='nmcli device disconnect wlp7s0'
 alias wifi-pwd='sudo grep psk= /etc/NetworkManager/system-connections/*'

@@ -75,10 +75,12 @@ set t_kD=^?
 set tabstop=2
 set tw=0
 set uc=0
+set viminfofile=NONE
 
 " :set diffopt+= iwhite icase
 if &diff
   syntax off
+  set noro
   hi statusline ctermfg=blue ctermbg=white
   nnoremap <Tab> <C-W><C-W>
   nnoremap <Leader><Down> ]czz
