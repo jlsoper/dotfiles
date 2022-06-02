@@ -8,6 +8,11 @@ then
   if [ -n "$SSH_CLIENT" ]
   then
     PS1="(\[\033[1;32m\]ssh\[\033[00m\]):\w>"
+  fi
+
+  if [ -n "$MINGW_PREFIX" ]
+  then
+    PS1="(\[\033[0;35m\]mintty\[\033[00m\]):\w>"
   else
     PS1="\w>"
   fi
