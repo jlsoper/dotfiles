@@ -2,6 +2,9 @@
   name = James
   email = soapman@zoho.com
 
+[pull]
+  ff = only
+
 [diff]
   tool = vimdiff
 
