@@ -1,6 +1,10 @@
 " /usr/share/vim/vim72/colors
 
 " :help F13
+
+"  <F10> - Clean up bookmarks.html file
+"   map <silent> <F10> :%s/.ADD_DATE[^>]*//g<CR>
+
 " :%s/^I/  /gc                    replace \t with 2 spaces (Ctrl-V Ctrl-I) - vi
 " :%s/^M//g                       remove  \r               (Ctrl-V Ctrl-M)
 
@@ -35,7 +39,7 @@ map <silent> <C-PageDown> G
 "  <F8>  - Join current line with line below
 
 "  <F9>  - Search / Replace (disable magic mode)
-"  <F10> - Clean up bookmarks.html file
+"  <F10> - Find char outside of 7-bit Ascii table
 "  <F11> - Replace tabs with spaces
 "  <F12> - Remove trailing whitespace
 
@@ -50,7 +54,7 @@ map <silent> <F7> <S-~>
 map <silent> <F8> gJ
 
 map <F9> :.,$sno/
-map <silent> <F10> :%s/.ADD_DATE[^>]*//g<CR>
+map <F10> :%s/[^\x00-\x7e]/
 map <silent> <F11> :%s/\t/  /g<CR>
 map <silent> <F12> :%s/\s\+$//g<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
