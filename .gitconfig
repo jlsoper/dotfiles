@@ -3,7 +3,6 @@
   email = soapman@zoho.com
 
 [core]
-  eol      = lf
   autocrlf = input
 
 [pull]
