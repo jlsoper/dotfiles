@@ -22,7 +22,6 @@ fi
 if [ -f ~/.bash_alias ]; then . ~/.bash_alias ; fi
 if [ -f ~/.bash_fcn   ]; then . ~/.bash_fcn   ; fi
 if [ -f ~/.bash_git   ]; then . ~/.bash_git   ; fi
-if [ -f ~/.bash_java  ]; then . ~/.bash_java  ; fi
 if [ -f ~/.bash_py    ]; then . ~/.bash_py    ; fi
 
 #  Setup the database login credentials
