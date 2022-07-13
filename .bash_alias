@@ -16,7 +16,6 @@
 #  usermod -aG sudo user_name
 
 
-alias aterm='urxvt -g 208x62'
 alias bash_options='shopt'
 alias battery-info='acpi -b -i'
 
@@ -32,16 +31,16 @@ alias del='rm -f'
 alias deltree='rm -rf'
 alias df='df -kTh'
 
-alias   dir='ls --group-directories-first -hl --color'
-alias dir-b='ls --group-directories-first -1A --color'  # single column view
-alias dir-d='ls --group-directories-first -dhl --color'  # directory listing with *
+alias   dir='ls -hl --color'
+alias dir-b='ls -1A --color'  # single column view
+alias dir-d='ls -dhl --color'  # directory listing with *
 alias dir-f='ls -ALhlp --color | grep "/"'  # folder only view
-alias dir-h='ls --group-directories-first -adhl --color .*'  # hidden files view
-alias dir-p='ls --group-directories-first -Ahl --color | more'  # single page view
+alias dir-h='ls -adhl --color .*'  # hidden files view
+alias dir-p='ls -Ahl --color | more'  # single page view
 alias dir-s='ls -AhlrS --color'  # size view
 alias dir-t='ls -Ahlrt --color'  # timestamp view
-alias dir-w='ls --group-directories-first -Alx --color'  # wide view
-alias  pdir='ls --group-directories-first -Ahl'  # printable view
+alias dir-w='ls -Alx --color'  # wide view
+alias  pdir='ls -Ahl'  # printable view
 
 alias dircmp='diff -r'
 alias du='du -kh'
@@ -53,14 +52,13 @@ alias fc-b='diff'
 
 alias fgrep='grep -In --color=auto'  # show line numbers with results
 
-alias finger='pinky -l'
 alias grupos='groups | tr " " "\n"'
 
 alias gzipinfo='tar -tvzf'
 alias gziptest='gzip -tv'
 
-alias ifconfig='ip -c a'
-alias ipconfig='ip -c -br a'  # 'ifconfig | grep --color=never "cast"'
+alias   ipconfig='/usr/sbin/ipconfig getifaddr en1'
+alias ipconfig-w='/usr/sbin/ipconfig getifaddr en0'
 
 alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
 
