@@ -9,8 +9,6 @@
 #  touch -t 200808281107.53            file1.txt
 #  touch -r                            file1.txt file2.txt
 
-#  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
-
 #  ln -s source_file link_name
 
 #  usermod -aG sudo user_name
@@ -57,8 +55,8 @@ alias grupos='groups | tr " " "\n"'
 alias gzipinfo='tar -tvzf'
 alias gziptest='gzip -tv'
 
-alias   ipconfig='/usr/sbin/ipconfig getifaddr en1'
-alias ipconfig-w='/usr/sbin/ipconfig getifaddr en0'
+alias ipconfig='/usr/sbin/ipconfig getifaddr en0'
+alias ipconfig-eth='/usr/sbin/ipconfig getifaddr en3'
 
 alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
 
