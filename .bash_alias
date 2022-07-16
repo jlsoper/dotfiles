@@ -44,7 +44,7 @@ alias du='du -kh'
 alias edit='vim'
 
 alias fc='vimdiff'
-alias fc-b='diff'
+alias fc-b='cmp'
 
 alias fgrep='grep -In --color=auto'  # show line numbers with results
 
