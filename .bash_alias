@@ -60,17 +60,12 @@ alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
 
 alias md='mkdir'
 
-alias mem-c='free -ht'
-alias mem='vmstat -s -S M | grep --color=never "mem"'
+alias mem='vm_stat'
 
 alias mount_iso='sudo mount -t iso9660 /tmp/temp.iso /mnt/iso -o loop'
 alias mount_usb='sudo mount /dev/sdc1 /mnt/usb/'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
-alias netsend='smbclient -M'  # 'net send' in NT
-alias nm-networks='nmcli connection show'
-alias nm-status='nmcli device'
-alias open_display='export DISPLAY=:0.0'
 
 alias path='echo -e ${PATH//:/\\n}'
 
@@ -82,7 +77,7 @@ alias pjobs_cancel='lprm'
 alias print='lpr -o cpi=14 -o prettyprint'
 
 alias printenv='env | sort'
-alias ps='ps x -o user,pid,ppid,tty,cmd'
+alias ps='ps x -o user,pid,ppid,tty,command'
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
 
