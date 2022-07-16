@@ -22,17 +22,17 @@ alias bzip2test='bzip2 -tv'
 
 alias chdir='pwd'
 
-alias cpu-info='cat /proc/cpuinfo'
+alias cpu-info='sysctl machdep.cpu.brand_string'
 alias del='rm -f'
 alias deltree='rm -rf'
-alias df='df -kTh'
+alias df='df -kH'
 
 alias   dir='ls -hl --color'
 alias dir-b='ls -1A --color'  # single column view
 alias dir-d='ls -dhl --color'  # directory listing with *
 alias dir-f='ls -ALhlp --color | grep "/"'  # folder only view
 alias dir-h='ls -adhl --color .*'  # hidden files view
-alias dir-p='ls -Ahl --color | more'  # single page view
+alias dir-p='ls -Ahl | more'  # single page view
 alias dir-s='ls -AhlrS --color'  # size view
 alias dir-t='ls -Ahlrt --color'  # timestamp view
 alias dir-w='ls -Alx --color'  # wide view
