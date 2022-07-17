@@ -28,8 +28,8 @@
  pkg-history_upgrade() { zgrep -h --color=never "upgrade " /var/log/dpkg.log* ; }
  pkg-history_remove() { zgrep -h --color=never "remove " /var/log/dpkg.log* ; }
  pkg-info() { dpkg -l ; }
- pkg-list-installed() { dpkg --get-selections | cut -f1 ; }
- pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ | sort ; }
+ pkg-list-installed() { brew list ; }
+ pkg-repolist() { brew tap ; }
 
 
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
