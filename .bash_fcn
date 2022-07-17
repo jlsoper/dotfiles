@@ -18,12 +18,19 @@
  md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
+
+ pkg-update()  { brew update    ; }
+ pkg-install() { brew install   ; }
+ pkg-remove()  { brew uninstall ; }
+ pkg-upgrade() { brew upgrade   ; }
+
  pkg-history_install() { zgrep -h --color=never "install " /var/log/dpkg.log* ; }
  pkg-history_upgrade() { zgrep -h --color=never "upgrade " /var/log/dpkg.log* ; }
  pkg-history_remove() { zgrep -h --color=never "remove " /var/log/dpkg.log* ; }
  pkg-info() { dpkg -l ; }
  pkg-list-installed() { dpkg --get-selections | cut -f1 ; }
  pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ | sort ; }
+
 
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  removeNPchar() { tr -cd '\11\12\15\40-\176' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
