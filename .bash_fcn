@@ -19,10 +19,10 @@
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
 
- pkg-update()  { brew update    ; }
- pkg-install() { brew install   ; }
- pkg-remove()  { brew uninstall ; }
- pkg-upgrade() { brew upgrade   ; }
+ pkg-update()  { brew update ; }
+ pkg-install() { brew install   "$@" ; }  # echo "$@"
+ pkg-remove()  { brew uninstall "$@" ; }  # echo "$@"
+ pkg-upgrade() { brew upgrade ; }
 
  pkg-history_install() { zgrep -h --color=never "install " /var/log/dpkg.log* ; }
  pkg-history_upgrade() { zgrep -h --color=never "upgrade " /var/log/dpkg.log* ; }
