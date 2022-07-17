@@ -85,7 +85,6 @@ alias rar-x='unrar -x'
 alias rarinfo='unrar -t'
 
 alias rd='rmdir'
-alias scanpci='lspci -vvnn'
 
 alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
 
