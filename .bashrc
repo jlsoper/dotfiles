@@ -27,16 +27,10 @@ then
 else
   PS1="(\[\033[1;31m\]\u\[\033[00m\]):\w>"
 
-  alias dir='ls --group-directories-first -ahl --color'
+  alias dir='ls -ahl --color'
 
   alias edit='nano'
   alias view='nano -v'
-
-
-  alias pkg-update='apt update'
-  alias pkg-install='apt install'
-  alias pkg-remove='apt remove'  # purge
-  alias pkg-upgrade='apt upgrade'
 
 fi
 
@@ -47,10 +41,6 @@ alias cls='clear'
 alias cp='cp -ir'
 alias mv='mv -i'
 alias rm='rm -i'
-
-alias samba-adduser='smbpasswd -a'
-alias samba-listuser='pdbedit -L'
-alias samba-test='testparm'
 
 alias vi='vim -i NONE -u NONE'  # \r  -->  ^M
 
