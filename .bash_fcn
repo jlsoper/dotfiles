@@ -4,7 +4,7 @@
 # functions - end with semicolon or newline
  copy() { cp "$1" "$1".bak.txt ; }
  dos2u() { perl -pi -e 's/\r\n/\n/' "$1" ; }
- dvd-split() { split -d -b 4G --verbose "$1" "$1". ; }
+ dvd-split() { split -d -b 4G "$1" "$1". ; }
  dvd-unsplit() { cat "$1".* > "$1" ; }
 
 # exfat - /dev/sdb1
@@ -33,8 +33,6 @@
  removeNPchar() { tr -cd '\11\12\15\40-\176' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  rlogin() { ssh "$1"@"$2" ; }
  rtext() { cat "$1" | fold -95 -s > "$1".text ; }
- setNcard() { sudo ifconfig enp6s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
- setWcard() { sudo ifconfig wlp7s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
  sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
 
  tar-x()    { if [ -n "$1" ]; then tar -xvvf  "$1" ; else echo "usage: $FUNCNAME <archive.tar> ." ; fi }
