@@ -24,9 +24,9 @@
  pkg-remove()  { brew uninstall "$@" ; }  # echo "$@"
  pkg-upgrade() { brew upgrade ; }
 
- pkg-info() { dpkg -l ; }
  pkg-list-installed() { brew list ; }
  pkg-repolist() { brew tap ; }
+ pkg-show() { brew info "$@" ; }
 
 
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
