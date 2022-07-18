@@ -15,7 +15,6 @@
  fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
  ftype() { grep -c $'\r' "$1" ; }
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
- md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
 
@@ -33,7 +32,7 @@
  removeNPchar() { tr -cd '\11\12\15\40-\176' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  rlogin() { ssh "$1"@"$2" ; }
  rtext() { cat "$1" | fold -95 -s > "$1".text ; }
- sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
+ sha256() { if [ -n "$1" ]; then shasum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
 
  tar-x()    { if [ -n "$1" ]; then tar -xvvf  "$1" ; else echo "usage: $FUNCNAME <archive.tar> ." ; fi }
  tbunzip2() { if [ -n "$1" ]; then tar -xvvjf "$1" ; else echo "usage: $FUNCNAME <archive.tar.bz2> ." ; fi }
