@@ -81,9 +81,6 @@ alias ps='ps x -o user,pid,ppid,tty,command'
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
 
-alias rar-x='unrar -x'
-alias rarinfo='unrar -t'
-
 alias rd='rmdir'
 
 alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
