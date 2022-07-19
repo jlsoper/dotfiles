@@ -62,8 +62,8 @@ alias md='mkdir'
 
 alias mem='vm_stat'
 
-alias mount_iso='sudo mount -t iso9660 /tmp/temp.iso /Volumes/iso -o loop'
-alias mount_usb='sudo mount /dev/disk2 /Volumes/usb/'
+alias mount_iso='hdiutil  mount'
+alias mount_usb='diskutil mount /dev/disk2s1'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 
@@ -99,8 +99,8 @@ alias tracert='tracepath'  # traceroute
 
 alias type='cat -e'  # ^M$ -> \r\n
 
-alias umount_iso='sudo umount /Volumes/iso/'
-alias umount_usb='sudo umount /Volumes/usb/'
+alias umount_iso='hdiutil  unmount /dev/disk2'
+alias umount_usb='diskutil unmount /dev/disk2s1'
 
 alias ver='sw_vers;echo "";uname -mrs'
 alias view='vim -MR'
