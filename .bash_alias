@@ -100,8 +100,6 @@ alias scanpci='lspci -vvnn'
 
 alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
 
-alias shrink_file='truncate -s 0'
-
 alias sql-admin='mysql --tee=/tmp/sql-admin.log -u root -p'  # notee
 
 alias tail='tail -n 35'
