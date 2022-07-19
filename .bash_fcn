@@ -7,9 +7,9 @@
  dvd-split() { split -d -b 4G "$1" "$1". ; }
  dvd-unsplit() { cat "$1".* > "$1" ; }
 
-# exfat - /dev/sdb1
- exfat_create() { if [ -n "$2" ]; then sudo mkfs.exfat -n "$1" "$2" ; else echo "usage: $FUNCNAME <label> <device ID>" ; fi }
- exfat_verify() { if [ -n "$1" ]; then sudo fsck.exfat "$1" ; else echo "usage: $FUNCNAME <device ID>" ; fi }
+# diskutil list
+# diskutil erasedisk FILE_SYSTEM DISK_NAME DISK_IDENTIFIER
+ exfat_create() { if [ -n "$2" ]; then diskutil erasedisk ExFAT "$1" MBRFormat "$2" ; else echo "usage: $FUNCNAME <label> <disk#>" ; fi }
 
  fbookmarks-clean() { if [ -n "$1" ]; then perl -pi -e 's/.ADD_DATE[^>]*//' "$1" ; else echo "usage: $FUNCNAME <bookmarks.html>" ; fi }
  fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
