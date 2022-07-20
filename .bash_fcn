@@ -17,11 +17,13 @@
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
+ pkg-cask-install() { brew install   --cask "$@" ; }
+ pkg-cask-remove()  { brew uninstall --cask "$@" ; }
 
  pkg-update()  { brew update ; }
  pkg-install() { brew install   "$@" ; }  # echo "$@"
  pkg-remove()  { brew uninstall "$@" ; }  # echo "$@"
- pkg-upgrade() { brew upgrade ; }
+ pkg-upgrade() { if [ "$1" = "yes" ]; then brew upgrade ; else echo "usage: $FUNCNAME <yes>" ; fi }
 
  pkg-list-installed() { brew list ; }
  pkg-repolist() { brew tap ; }
