@@ -10,6 +10,7 @@
 #  touch -r                            file1.txt file2.txt
 
 #  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
+#  alias chromebook-create='sudo dd if=cloudready.bin of=/dev/sdb bs=4M conv=fdatasync'
 
 #  ln -s source_file link_name
 
@@ -24,8 +25,6 @@ alias bzip2info='tar -tvjf'
 alias bzip2test='bzip2 -tv'
 
 alias chdir='pwd'
-
-alias chromebook-create='sudo dd if=cloudready.bin of=/dev/sdb bs=4M conv=fdatasync'
 
 alias cpu-info='cat /proc/cpuinfo'
 alias del='rm -f'
@@ -88,7 +87,7 @@ alias pjobs_cancel='lprm'
 alias print='lpr -o cpi=14 -o prettyprint'
 
 alias printenv='env | sort'
-alias ps='ps x -o user,pid,ppid,tty,cmd'
+alias ps='ps x -o user,pid,ppid,tty,cmd'  # /bin/ps -fu $USER
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
 
@@ -115,7 +114,7 @@ alias tgzip='tar -cvvzf'  # *.tgz
 alias tpad-0='synclient TouchPadOff=1'
 alias tpad-1='synclient TouchPadOff=0'
 
-alias tracert='tracepath'  # traceroute
+alias tracert='traceroute'
 
 alias type='cat -e'  # ^M$ -> \r\n
 
