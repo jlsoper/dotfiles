@@ -25,8 +25,6 @@ then
   umask 022
 
 else
-  PS1="(\[\033[1;31m\]\u\[\033[00m\]):\w>"
-
   alias dir='ls -ahl --color'
 
   alias edit='nano'

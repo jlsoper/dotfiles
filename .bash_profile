@@ -11,7 +11,10 @@ PATH=$PATH:~/scripts
 #  PATH=$PATH:$DB_HOME/bin
 
 export LANG=C
+export LESSHISTFILE=-
 export GREP_COLOR='1;33'
+
+export SUDO_PS1="(\[\033[1;31m\]\u\[\033[00m\]):\w>"
 
 #  Get the aliases and set PS1
 if [ -f ~/.bashrc ]
