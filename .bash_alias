@@ -11,8 +11,9 @@
 
 #  ln -s source_file link_name
 
-#  dscl
 
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport'
+alias airport-scan='airport -s'
 
 alias bash_options='shopt'
 alias battery-info='pmset -g batt'
@@ -53,8 +54,8 @@ alias grupos='groups | tr " " "\n"'
 alias gzipinfo='tar -tvzf'
 alias gziptest='gzip -tv'
 
-alias ipconfig='/usr/sbin/ipconfig getifaddr en0'
-alias ipconfig-eth='/usr/sbin/ipconfig getifaddr en3'
+alias     ipconfig='echo "en0:" ; ifconfig en0 | grep broadcast'
+alias ipconfig-eth='echo "en3:" ; ifconfig en3 | grep broadcast'
 
 alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
 
@@ -67,6 +68,8 @@ alias mount_usb='diskutil mount /dev/disk2s1'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 
+alias osx-remove-hf='find . \( -name ".DS_Store" -or -name ".Trashes" -or -name "._*" \) -exec rm -rf {} \;'
+
 alias path='echo -e ${PATH//:/\\n}'
 
 alias permiso-d='find . -type d -exec chmod 0755 {} \;'
@@ -77,7 +80,12 @@ alias pjobs_cancel='lprm'
 alias print='lpr -o cpi=14 -o prettyprint'
 
 alias printenv='env | sort'
-alias ps='ps x -o user,pid,ppid,tty,command'
+
+#     png screenshot all     -  command + shift + 3
+#     png screenshot partial -  command + shift + 4
+alias print-scr='screencapture -iW ~/Desktop/screenShot.`date +%Y-%m-%d_%H%M`.jpg'
+
+alias ps='ps x -o user,pid,ppid,tty,command'  # /bin/ps -fu $USER
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
 
@@ -87,6 +95,10 @@ alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
 
 alias sql-admin='mysql --tee=/tmp/sql-admin.log -u root -p'  # notee
 
+alias      systemInfo='system_profiler       -detailLevel mini > systemInfo.unx'
+alias systemInfo-json='system_profiler -json -detailLevel mini > systemInfo.json'
+alias  systemInfo-xml='system_profiler -xml  -detailLevel mini > systemInfo.spx'   # xml file (System Information.app)
+
 alias tail='tail -n 35'
 
 alias tar-c='tar -cvvf'
@@ -95,14 +107,14 @@ alias tarinfo='tar -tvf'
 alias tbzip2='tar -cvvjf'  # *.tbz2
 alias tgzip='tar -cvvzf'  # *.tgz
 
-alias tracert='tracepath'  # traceroute
+alias tracert='traceroute'
 
 alias type='cat -e'  # ^M$ -> \r\n
 
 alias umount_iso='hdiutil  unmount /dev/disk2'
 alias umount_usb='diskutil unmount /dev/disk2s1'
 
-alias ver='sw_vers;echo "";uname -mrs'
+alias ver='sw_vers ; echo "" ; uname -mrs'
 alias view='vim -MR'
 
 alias zip='zip -r'

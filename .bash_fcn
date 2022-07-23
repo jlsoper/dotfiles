@@ -2,7 +2,7 @@
 
 
 # functions - end with semicolon or newline
- copy() { cp "$1" "$1".bak.txt ; }
+ bkup() { if [ -n "$1" ]; then cp "$1" "$1".`date +%Y-%m-%d_%H%M` ; else echo "usage: $FUNCNAME <file>" ; fi }  # date +%Y-%m-%d_%H%M%S
  dos2u() { perl -pi -e 's/\r\n/\n/' "$1" ; }
  dvd-split() { split -d -b 4G "$1" "$1". ; }
  dvd-unsplit() { cat "$1".* > "$1" ; }
