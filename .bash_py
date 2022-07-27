@@ -1,5 +1,7 @@
 #  $HOME/.bash_py
 
+#  venv  - module included with Python3.4+
+
 #  pydoc3    <module_name>
 #  pydoc3 -w <module_name / package_name>
 
