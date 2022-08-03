@@ -10,7 +10,7 @@
 #  touch -r                            file1.txt file2.txt
 
 #  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
-#  alias chromebook-create='sudo dd if=cloudready.bin of=/dev/sdb bs=4M conv=fdatasync'
+#  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
 
 #  ln -s source_file link_name
 
