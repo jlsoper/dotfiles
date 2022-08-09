@@ -12,13 +12,13 @@
 *colorULMode:     true
 *cursorColor:     green
 *font:            9x15
-*geometry:        148x60
+*geometry:        146x42
 *saveLines:       1536
 
 xterm*font:       10x20
 xterm*background: black
 xterm*foreground: white
-xterm*geometry:   132x45
+xterm*geometry:   130x32
 xterm*scrollBar:  true
 
 urxvt*termName:   xterm
