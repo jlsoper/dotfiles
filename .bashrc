@@ -48,9 +48,5 @@ alias cp='cp -ir'
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias samba-adduser='smbpasswd -a'
-alias samba-listuser='pdbedit -L'
-alias samba-test='testparm'
-
 alias vi='vim -i NONE -u NONE'  # \r  -->  ^M
 

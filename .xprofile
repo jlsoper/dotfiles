@@ -3,7 +3,7 @@
 # synclient -> xserver-xorg-input-synaptics
 
 # Acer laptop
-if [ $HOSTNAME = Jaguar ]
+if [ $HOSTNAME = Penguin ]
 then
   if xrandr | fgrep "HDMI-0 disconnected"
   then
