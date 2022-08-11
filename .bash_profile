@@ -11,6 +11,7 @@ PATH=$PATH:~/scripts
 #  PATH=$PATH:$DB_HOME/bin
 
 export LANG=C
+export LESSHISTFILE=-
 export GREP_COLOR='1;33'
 
 #  Get the aliases and set PS1
