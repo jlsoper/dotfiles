@@ -26,6 +26,9 @@ alias bzip2test='bzip2 -tv'
 
 alias chdir='pwd'
 
+alias cleanBrowser-chromium='rm -rf ~/.config/chromium ~/.cache/chromium'
+alias cleanBrowser-firefox='rm -rf ~/.mozilla ~/.cache/mozilla'
+
 alias cpu-info='cat /proc/cpuinfo'
 alias del='rm -f'
 alias deltree='rm -rf'
