@@ -38,6 +38,9 @@ else
   alias pkg-remove='apt remove'  # purge
   alias pkg-upgrade='apt upgrade'
 
+        pkg-upgrade1() { if [ -n "$1" ]; then apt --only-upgrade install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+  alias pkg-list-upgradable='apt update && apt list --upgradable'
+
 fi
 
 
