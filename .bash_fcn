@@ -32,6 +32,7 @@
  setNcard() { sudo ifconfig enp6s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
  setWcard() { sudo ifconfig wlp7s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
  sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
+ sha512() { if [ -n "$1" ]; then sha512sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha512>" ; fi }
 
  tar-x()    { if [ -n "$1" ]; then tar -xvvf  "$1" ; else echo "usage: $FUNCNAME <archive.tar> ." ; fi }
  tbunzip2() { if [ -n "$1" ]; then tar -xvvjf "$1" ; else echo "usage: $FUNCNAME <archive.tar.bz2> ." ; fi }
