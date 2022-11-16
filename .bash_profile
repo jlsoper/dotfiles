@@ -25,7 +25,6 @@ if [ -f ~/.bash_fcn   ]; then . ~/.bash_fcn   ; fi
 if [ -f ~/.bash_git   ]; then . ~/.bash_git   ; fi
 if [ -f ~/.bash_java  ]; then . ~/.bash_java  ; fi
 if [ -f ~/.bash_py    ]; then . ~/.bash_py    ; fi
-if [ -f ~/.bash_vbox  ]; then . ~/.bash_vbox  ; fi
 
 #  /etc/lsb-release (Ubuntu)
 if [ ! -f /etc/redhat-release ]

@@ -1,8 +1,0 @@
-#  $HOME/.bash_vbox
-
-#  https://download.virtualbox.org/virtualbox/6.1.32/
-
-alias mount_vbox_iso='sudo mount -t iso9660 /usr/lib/virtualbox/additions/VBoxGuestAdditions.iso /opt/VBox/sharedF/vboxGA -o loop'
-alias umount_vbox_iso='sudo umount /opt/VBox/sharedF/vboxGA/'
-      vbox-ext-install() { if [ -n "$1" ]; then sudo VBoxManage extpack install "$1" ; else echo "usage: $FUNCNAME <file.vbox-extpack>" ; fi }
-
