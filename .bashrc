@@ -33,10 +33,10 @@ else
   alias view='nano -v'
 
 
-  alias pkg-update='apt update'
-  alias pkg-install='apt install'
-  alias pkg-remove='apt remove'  # purge
-  alias pkg-upgrade='apt upgrade'
+  alias pkg-update='nala update'    # apt update
+  alias pkg-install='nala install'  # apt install
+  alias pkg-remove='nala remove'    # apt remove
+  alias pkg-upgrade='nala upgrade'  # apt upgrade
 
         pkg-upgrade1() { if [ -n "$1" ]; then apt --only-upgrade install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
   alias pkg-list-upgradable='apt update && apt list --upgradable'

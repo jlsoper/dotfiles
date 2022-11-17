@@ -21,9 +21,10 @@
  pkg-history_install() { zgrep -h --color=never "install " /var/log/dpkg.log* ; }
  pkg-history_upgrade() { zgrep -h --color=never "upgrade " /var/log/dpkg.log* ; }
  pkg-history_remove() { zgrep -h --color=never "remove " /var/log/dpkg.log* ; }
- pkg-info() { dpkg -l ; }
- pkg-list-installed() { dpkg --get-selections | cut -f1 ; }
+ pkg-info() { if [ -n "$1" ]; then nala show "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+ pkg-list-installed() { dpkg -l ; }  # { dpkg --get-selections | cut -f1 ; }
  pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ | sort ; }
+ pkg-search() { if [ -n "$1" ]; then nala search -n "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
 
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  removeNPchar() { tr -cd '\11\12\15\40-\176' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
