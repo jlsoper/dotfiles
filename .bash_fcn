@@ -26,10 +26,10 @@
  pkg-upgrade() { if [ "$1" = "yes" ]; then brew upgrade ; else echo "usage: $FUNCNAME <yes>" ; fi }
 
  pkg-cleanup() { brew cleanup "$@" ; }
+ pkg-info() { brew info "$@" ; }
  pkg-list-installed() { brew list ; }
  pkg-outdated() { brew outdated "$@" ; }
  pkg-repolist() { brew tap ; }
- pkg-show() { brew info "$@" ; }
 
 
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
