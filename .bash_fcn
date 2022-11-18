@@ -18,11 +18,13 @@
  md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
+ pkg-history() { nala history "$@" ; }
  pkg-history_install() { zgrep -h --color=never "install " /var/log/dpkg.log* ; }
  pkg-history_upgrade() { zgrep -h --color=never "upgrade " /var/log/dpkg.log* ; }
  pkg-history_remove() { zgrep -h --color=never "remove " /var/log/dpkg.log* ; }
  pkg-info() { if [ -n "$1" ]; then nala show "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-list-installed() { dpkg -l ; }  # { dpkg --get-selections | cut -f1 ; }
+ pkg-outdated() { nala list -u ; }
  pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ | sort ; }
  pkg-search() { if [ -n "$1" ]; then nala search -n "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
 

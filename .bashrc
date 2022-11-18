@@ -38,8 +38,7 @@ else
   alias pkg-remove='nala remove'    # apt remove
   alias pkg-upgrade='nala upgrade'  # apt upgrade
 
-        pkg-upgrade1() { if [ -n "$1" ]; then apt --only-upgrade install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
-  alias pkg-list-upgradable='apt update && apt list --upgradable'
+  pkg-upgrade1() { if [ -n "$1" ]; then apt --only-upgrade install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
 
 fi
 
