@@ -1,7 +1,7 @@
 #  $HOME/.bash_profile
 
 #  Correct PATH variable (Debian)
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 
 
 PATH=$PATH:~/scripts
