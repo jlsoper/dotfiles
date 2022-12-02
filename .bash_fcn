@@ -49,6 +49,7 @@
  user-add() { if [ -n "$1" ]; then sudo adduser "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }                # /etc/adduser.conf
 # ps -fu userID
  user-del() { if [ -n "$1" ]; then sudo deluser --remove-home "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # /etc/deluser.conf
+ user-switch() { if [ -n "$1" ]; then su -l "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }
 
  wconnect() { nmcli dev wifi connect "$1" password "$2" ; }  # ESSID_NAME ESSID_PASSWORD
  xlogin() { ssh -X "$1"@"$2" ; }
