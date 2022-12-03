@@ -49,7 +49,8 @@ alias fc-b='cmp'
 
 alias fgrep='grep -In --color=auto'  # show line numbers with results
 
-alias grupos='groups | tr " " "\n"'
+alias groups='/usr/bin/groups | tr " " "\n"'
+alias grupos='cut -d: -f1 /etc/group | sort'
 
 alias gzipinfo='tar -tvzf'
 alias gziptest='gzip -tv'
