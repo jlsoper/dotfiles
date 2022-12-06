@@ -14,7 +14,7 @@
 alias gclean='git clean -i'
 alias gclean-show='git clean -d -n'
       gclone-branch() { if [ -n "$2" ]; then git clone -b "$1" --single-branch "$2" ; else echo "usage: $FUNCNAME <branch> <remoteRepoURL>" ; fi }
-alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) - $(hostname)"'
+alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) -- $(hostname) \ $USER"'
 alias gconfig='git config --list --show-origin'
 
 alias gdiff='git difftool'  # git diff
