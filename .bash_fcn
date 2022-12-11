@@ -17,6 +17,11 @@
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
+
+# downloads -> /Applications/Install macOS Monterey.app
+ osx-getOS() { if [ "$1" = "12.6.1" ]; then softwareupdate --fetch-full-installer --full-installer-version "$1" ; else echo "usage: $FUNCNAME <12.6.1>" ; fi }
+ osx-installers() { softwareupdate --list-full-installers ; }
+
  pkg-cask-install() { brew install   --cask "$@" ; }
  pkg-cask-remove()  { brew uninstall --cask "$@" ; }
 
