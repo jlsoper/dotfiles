@@ -46,7 +46,7 @@ fi
 # aliases (all users)
 alias cd..='cd ..'
 alias cls='clear'
-alias cp='cp -ir'
+alias cp='cp -iR'
 alias mv='mv -i'
 alias rm='rm -i'
 
