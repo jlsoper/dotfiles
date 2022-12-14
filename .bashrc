@@ -36,7 +36,7 @@ fi
 # aliases (all users)
 alias cd..='cd ..'
 alias cls='clear'
-alias cp='cp -ir'
+alias cp='cp -iR'  # if source_file == directory, do NOT end with '/' character (OSX)
 alias mv='mv -i'
 alias rm='rm -i'
 
