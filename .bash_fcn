@@ -19,8 +19,10 @@
 
 
 # downloads -> /Applications/Install macOS Monterey.app
- osx-getOS() { if [ "$1" = "12.6.1" ]; then softwareupdate --fetch-full-installer --full-installer-version "$1" ; else echo "usage: $FUNCNAME <12.6.1>" ; fi }
+ osx-getOS() { if [ -n "$1" ]; then softwareupdate --fetch-full-installer --full-installer-version "$1" ; else echo "usage: $FUNCNAME <version>" ; fi }  # 12.6.2
  osx-installers() { softwareupdate --list-full-installers ; }
+ osx-update()  { softwareupdate -l ; }
+ osx-upgrade() { sudo softwareupdate -i -a ; }
 
  pkg-cask-install() { brew install   --cask "$@" ; }
  pkg-cask-remove()  { brew uninstall --cask "$@" ; }
