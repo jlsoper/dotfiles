@@ -123,6 +123,9 @@ alias umount_usb='sudo umount /mnt/usb/'
 alias ver='lsb_release -a;echo "";uname -mrs'
 alias view='vim -MR'
 
+alias vt-cpu='lscpu | grep "Virtual"'
+alias vt-x='egrep -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
+
 alias wdisconnect='nmcli device disconnect wlp7s0'
 alias wifi-pwd='sudo grep psk= /etc/NetworkManager/system-connections/*'
 alias wscan='nmcli dev wifi'
