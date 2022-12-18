@@ -19,6 +19,13 @@
  ftype() { grep -c $'\r' "$1" ; }
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
+
+###  mount a filesystem
+ mnt-iso() { if [ -n "$1" ]; then sudo mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
+ mnt-usb() { sudo mount /dev/sdb /mnt/usb/ ; }
+ mnt-vmf() { sudo mount -t 9p -o trans=virtio /sharedF /mnt/sharedF/ ; }
+
+
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
  pkg-history() { nala history "$@" ; }
@@ -46,6 +53,13 @@
  trim-ws() { for f in *; do mv "$f" $(echo $f | tr -d ' ') ; done }
 
  u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
+
+###  unmount filesystems
+ umnt-iso() { sudo umount /mnt/iso/ ; }
+ umnt-usb() { sudo umount /mnt/usb/ ; }
+ umnt-vmf() { sudo umount /mnt/sharedF/ ; }
+
+
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
 
 # usermod -aG sudo userID
