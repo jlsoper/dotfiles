@@ -67,9 +67,6 @@ alias md='mkdir'
 alias mem-c='free -ht'
 alias mem='vmstat -s -S M | grep --color=never "mem"'
 
-alias mount_iso='sudo mount -t iso9660 /tmp/temp.iso /mnt/iso -o loop'
-alias mount_usb='sudo mount /dev/sdc1 /mnt/usb/'
-
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias netsend='smbclient -M'  # 'net send' in NT
 alias nm-networks='nmcli connection show'
@@ -116,9 +113,6 @@ alias tpad-1='synclient TouchPadOff=0'
 alias tracert='traceroute'
 
 alias type='cat -e'  # ^M$ -> \r\n
-
-alias umount_iso='sudo umount /mnt/iso/'
-alias umount_usb='sudo umount /mnt/usb/'
 
 alias ver='lsb_release -a;echo "";uname -mrs'
 alias view='vim -MR'
