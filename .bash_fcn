@@ -68,6 +68,11 @@
  user-del() { if [ -n "$1" ]; then sudo deluser --remove-home "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # /etc/deluser.conf
  user-switch() { if [ -n "$1" ]; then su -l "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }
 
+# Virtualization Technology
+ vt-convert()  { if [ -n "$1" ]; then qemu-img convert -f vmdk  "$1" "$1".qcow2 ; else echo "usage: $FUNCNAME <image.vmdk>" ; fi }
+ vt-img-info() { if [ -n "$1" ]; then qemu-img info "$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
+ vt-shrink()   { if [ -n "$1" ]; then qemu-img convert -O qcow2 "$1" /tmp/"$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
+
  wconnect() { nmcli dev wifi connect "$1" password "$2" ; }  # ESSID_NAME ESSID_PASSWORD
  xlogin() { ssh -X "$1"@"$2" ; }
 
