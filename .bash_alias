@@ -3,30 +3,28 @@
 #  scp <source-file> user@host:<path>
 #  scp user@host:<path of source file> <local target for file>
 
-#  grep parameters [-c count|-i ignorecase|-r recursive|-w whole word]
+#  grep parameters [ -c count | -i ignorecase | -r recursive | -w whole word ]
 
 #  touch -d 'Aug 28 11:07:53 EDT 2008' file1.txt
 #  touch -t 200808281107.53            file1.txt
 #  touch -r                            file1.txt file2.txt
 
 #  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
+#  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
 
 #  ln -s source_file link_name
 
-#  usermod -aG sudo user_name
-
-#  unzip file.zip -d directory
-
 alias aterm='urxvt -g 208x62'
 alias bash_options='shopt'
-alias battery-info='acpi -b -i'
+alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
 
 alias bzip2info='tar -tvjf'
 alias bzip2test='bzip2 -tv'
 
 alias chdir='pwd'
 
-alias chromebook-create='sudo dd if=cloudready.bin of=/dev/sdb bs=4M conv=fdatasync'
+alias cleanBrowser-chromium='rm -rf ~/.config/chromium ~/.cache/chromium'
+alias cleanBrowser-firefox='rm -rf ~/.mozilla ~/.cache/mozilla'
 
 alias cpu-info='cat /proc/cpuinfo'
 alias del='rm -f'
@@ -47,32 +45,29 @@ alias  pdir='ls --group-directories-first -Ahl'  # printable view
 alias dircmp='diff -r'
 alias du='du -kh'
 
-alias edit='vim -i NONE'
+alias edit='vim'
 
-alias fc='vimdiff -i NONE'
-alias fc-b='diff'
-
-alias fgrep='grep -In --color=auto'  # show line numbers with results
+alias fc='vimdiff'
+alias fc-b='cmp'
 
 alias finger='pinky -l'
-alias grupos='groups |tr " " "\n"'
+alias groups='/usr/bin/groups | tr " " "\n"'
+alias grupos='cut -d: -f1 /etc/group | sort'
 
 alias gzipinfo='tar -tvzf'
 alias gziptest='gzip -tv'
 
 alias ifconfig='ip -c a'
-alias ipconfig='ip -c -br a'  # ifconfig |grep --color=never "cast"'
+alias ipconfig='ip -c -br a'  # 'ifconfig | grep --color=never "cast"'
 
 alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
 
 alias md='mkdir'
 
 alias mem-c='free -ht'
-alias mem='vmstat -s -S M |grep --color=never "mem"'
+alias mem='vmstat -s -S M | grep --color=never "mem"'
 
-alias mount_iso='sudo mount -t iso9660 /tmp/temp.iso /mnt/iso -o loop'
-alias mount_usb='sudo mount /dev/sdc1 /mnt/usb/'
-alias mount_vbox_iso='sudo mount -t iso9660 /usr/lib/virtualbox/additions/VBoxGuestAdditions.iso /opt/VBox/sharedF -o loop'
+alias mnt-folders='mkdir /tmp/iso ; mkdir /tmp/usb ; mkdir /tmp/sharedF ; sudo mv /tmp/iso /mnt/ ; sudo mv /tmp/usb /mnt/ ; sudo mv /tmp/sharedF /mnt/'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias netsend='smbclient -M'  # 'net send' in NT
@@ -89,28 +84,27 @@ alias pjobs='lpq'
 alias pjobs_cancel='lprm'
 alias print='lpr -o cpi=14 -o prettyprint'
 
-alias printenv='env|sort'
-alias ps='ps x -o user,pid,ppid,tty,cmd'
+alias printenv='env | sort'
+alias ps='ps x -o user,pid,ppid,tty,cmd'  # /bin/ps -fu $USER
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
+
+alias rar-x='unrar -x'
+alias rarinfo='unrar -t'
 
 alias rd='rmdir'
 alias scanpci='lspci -vvnn'
 
 alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
 
-alias shrink_file='truncate -s 0'
-
 alias sql-admin='mysql --tee=/tmp/sql-admin.log -u root -p'  # notee
-
-alias sysD-svcs='systemctl list-unit-files --state=enabled --no-pager'
 
 alias tail='tail -n 35'
 
 alias tar-c='tar -cvvf'
 alias tarinfo='tar -tvf'
 
-alias tasklist='/usr/sbin/ps auxf'
+alias tasklist='/bin/ps auxf'
 
 alias tbzip2='tar -cvvjf'  # *.tbz2
 alias tgzip='tar -cvvzf'  # *.tgz
@@ -118,16 +112,15 @@ alias tgzip='tar -cvvzf'  # *.tgz
 alias tpad-0='synclient TouchPadOff=1'
 alias tpad-1='synclient TouchPadOff=0'
 
-alias tracert='tracepath'  # traceroute
+alias tracert='traceroute'
 
 alias type='cat -e'  # ^M$ -> \r\n
 
-alias umount_iso='sudo umount /mnt/iso/'
-alias umount_usb='sudo umount /mnt/usb/'
-alias umount_vbox_iso='sudo umount /opt/VBox/sharedF/'
-
 alias ver='lsb_release -a;echo "";uname -mrs'
-alias view='vim -MR -i NONE'
+alias view='vim -MR'
+
+alias vt-cpu='lscpu | grep "Virtual"'
+alias vt-x='egrep -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
 
 alias wdisconnect='nmcli device disconnect wlp7s0'
 alias wifi-pwd='sudo grep psk= /etc/NetworkManager/system-connections/*'
