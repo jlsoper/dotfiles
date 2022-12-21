@@ -9,7 +9,12 @@ then
   then
     PS1="(\[\033[1;32m\]ssh\[\033[00m\]):\w>"
   else
-    PS1="\w>"
+    if [ -n "$MINGW_PREFIX" ]
+    then
+      PS1="(\[\033[0;35m\]mintty\[\033[00m\]):\w>"
+    else
+      PS1="\w>"
+    fi
   fi
 
   if [ $TERM != linux ]
@@ -18,12 +23,6 @@ then
   fi
 
   umask 022
-
-  if [ -f ~/.bash_alias ]; then . ~/.bash_alias ; fi
-  if [ -f ~/.bash_fcn   ]; then . ~/.bash_fcn   ; fi
-  if [ -f ~/.bash_git   ]; then . ~/.bash_git   ; fi
-  if [ -f ~/.bash_java  ]; then . ~/.bash_java  ; fi
-  if [ -f ~/.bash_py    ]; then . ~/.bash_py    ; fi
 
 else
   PS1="(\[\033[1;31m\]\u\[\033[00m\]):\w>"
@@ -34,12 +33,12 @@ else
   alias view='nano -v'
 
 
-  alias pkg-fmirrors='pacman-mirrors -f 8'  # upgrade afterwards
-
   alias pkg-update='pacman -Syy'
   alias pkg-install='pacman -S'
   alias pkg-remove='pacman -Rns'
   alias pkg-upgrade='pacman -Syyu'
+
+  alias pkg-fmirrors='pacman-mirrors -f 8'  # upgrade afterwards
 
 fi
 
@@ -47,7 +46,7 @@ fi
 # aliases (all users)
 alias cd..='cd ..'
 alias cls='clear'
-alias cp='cp -ir'
+alias cp='cp -iR'
 alias mv='mv -i'
 alias rm='rm -i'
 

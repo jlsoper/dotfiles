@@ -1,0 +1,19 @@
+[user]
+  name = James
+  email = soapman@zoho.com
+
+[core]
+  autocrlf = input
+
+[pull]
+  ff = only
+
+[diff]
+  tool = vimdiff
+
+[difftool]
+  prompt = false
+
+[merge]
+  tool = vimdiff
+
