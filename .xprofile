@@ -19,7 +19,7 @@ then
 fi
 
 
-# laptop
+# HP laptop
 if [ $HOSTNAME = Lion ]
 then
   if xrandr | fgrep "HDMI-1 disconnected"
