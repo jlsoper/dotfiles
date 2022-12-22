@@ -31,12 +31,12 @@
  pkg-history_install() { grep -I "installed" /var/log/pacman.log |tr -d "[ALPM]" ; }
  pkg-history_upgrade() { grep -I "upgraded"  /var/log/pacman.log |tr -d "[ALPM]" ; }
  pkg-history_remove()  { grep -I "removed"   /var/log/pacman.log |tr -d "[ALPM]" ; }
+ pkg-info() { if [ -n "$1" ]; then pacman -Qi "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-list-installed() { pacman -Q ; }
  pkg-names() { pacman -Qq ; }
  pkg-orphans() { pacman -Qdt ; }
  pkg-repolist() { cat /etc/pacman.conf |grep "^\[" |tail -n+2 ; }
  pkg-search() { if [ -n "$1" ]; then pacman -Ss "$1" ; else echo "usage: $FUNCNAME <query>" ; fi }
- pkg-show() { if [ -n "$1" ]; then pacman -Si "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-servers() { cat /etc/pacman.d/mirrorlist |grep "^Server" ; }
 
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
