@@ -38,7 +38,7 @@ else
   alias pkg-remove='pacman -Rns'
   alias pkg-upgrade='pacman -Syyu'
 
-  alias pkg-fmirrors='pacman-mirrors -f 8'  # upgrade afterwards
+  pkg-fetch() { if [ -n "$1" ]; then pacman-mirrors -f "$1" && pacman -Syyu ; else echo "usage: $FUNCNAME <# of mirrors>" ; fi }
 
 fi
 
