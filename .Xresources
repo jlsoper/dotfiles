@@ -1,7 +1,7 @@
 !  $HOME/.Xresources
 !
-!  This file sets certain defaults for the X window system.
-!  Ubuntu -> *loginShell: true
+!  /usr/share/fonts/X11/misc
+!
 !
 !  fonts -> xlsfonts
 !  reload X settings -> xrdb -load ~/.Xresources
