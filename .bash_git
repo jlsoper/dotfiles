@@ -5,8 +5,14 @@
 #  git fetch -p
 #  git reset --soft HEAD~1 (better)
 #  git reset --hard HEAD~1
-
+#
 #  alias gconfig-helper='git config --global credential.helper store'
+#
+#
+## git push <remote> <branch>
+#
+#  git pull  origin   main
+#  git push  origin   main
 #
 ########################################
 
@@ -26,6 +32,10 @@ alias gdifftools='git difftool --tool-help'
       gdiscard() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
 alias glog='git --no-pager log --oneline'
 alias glogs='git --no-pager log'
+
+      gpull() { if [ -n "$1" ]; then git pull origin "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
+      gpush() { if [ -n "$1" ]; then git push origin "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
+
 alias grollback='git reset --soft HEAD~1'
 alias gstatus='git status -s'
       gunstage() { if [ -n "$1" ]; then git reset "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
