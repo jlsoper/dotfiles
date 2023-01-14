@@ -6,6 +6,9 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 PATH=$PATH:~/scripts
 
+#  Linux
+if [ ! -d ~/.config ]; then mkdir ~/.config ; fi
+
 #  Database settings
 #  export DB_HOME=/opt/hsqldb
 #  PATH=$PATH:$DB_HOME/bin
@@ -13,6 +16,9 @@ PATH=$PATH:~/scripts
 export LANG=C
 export LESSHISTFILE=-
 export GREP_COLOR='1;33'
+
+#  Visual Studo Code
+export USER_VSC=$HOME/.config/vscode/user-data/User
 
 export SUDO_PS1="(\[\033[1;31m\]\u\[\033[00m\]):\w>"
 
