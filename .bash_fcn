@@ -52,6 +52,7 @@
  tar-x()    { if [ -n "$1" ]; then tar -xvvf  "$1" ; else echo "usage: $FUNCNAME <archive.tar> ." ; fi }
  tbunzip2() { if [ -n "$1" ]; then tar -xvvjf "$1" ; else echo "usage: $FUNCNAME <archive.tar.bz2> ." ; fi }
  tgunzip()  { if [ -n "$1" ]; then tar -xvvzf "$1" ; else echo "usage: $FUNCNAME <archive.tar.gz> ." ; fi }
+ txz-x()    { if [ -n "$1" ]; then tar -xvvJf "$1" ; else echo "usage: $FUNCNAME <archive.tar.xz> ." ; fi }
 
  u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
