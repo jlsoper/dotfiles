@@ -107,7 +107,8 @@ alias tarinfo='tar -tvf'
 alias tasklist='/bin/ps auxf'
 
 alias tbzip2='tar -cvvjf'  # *.tbz2
-alias tgzip='tar -cvvzf'  # *.tgz
+alias tgzip='tar -cvvzf'   # *.tgz
+alias txz-c='tar -cvvJf'   # *.txz
 
 alias tpad-0='synclient TouchPadOff=1'
 alias tpad-1='synclient TouchPadOff=0'
@@ -128,6 +129,9 @@ alias wscan='nmcli dev wifi'
 alias wshutdown='nmcli radio wifi off'
 alias wstartup='nmcli radio wifi on'
 alias wstatus='nmcli general'
+
+alias xzinfo='tar -tvJf'
+alias xztest='xz -tv'
 
 alias zip='zip -r'
 alias zipinfo='unzip -Z'
