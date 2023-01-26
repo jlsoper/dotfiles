@@ -14,6 +14,9 @@ export LANG=C
 export LESSHISTFILE=-
 export GREP_COLOR='1;33'
 
+#  Visual Studo Code
+export USER_VSC=$HOME/.config/vscode/user-data/User
+
 #  Get the aliases and set PS1
 if [ -f ~/.bashrc ]
 then
