@@ -13,7 +13,7 @@
 *cursorColor:     green
 *font:            9x15
 *geometry:        148x60
-*saveLines:       1536
+*saveLines:       4096
 
 xterm*font:       10x20
 xterm*background: black
