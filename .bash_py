@@ -1,5 +1,8 @@
 #  $HOME/.bash_py
 
+#  eliminate __pycache__ directory ( Python3.8+ )
+export PYTHONPYCACHEPREFIX=/tmp/__pycache__
+
 #  venv  - module included with Python3.4+
 
 #  pydoc3    <module_name>
