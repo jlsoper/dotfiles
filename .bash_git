@@ -37,6 +37,7 @@ alias gdiffSA='git diff --staged'
 alias gdifftools='git difftool --tool-help'
 
       gdiscard() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
+alias gdtool='git difftool'
 alias glog='git --no-pager log --oneline'
 alias glogs='git --no-pager log'
 
