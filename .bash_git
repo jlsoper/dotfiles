@@ -34,12 +34,12 @@ alias gdiff='git difftool'
       gdiff-sa() { git "$GDIFF_STRING" --staged "$@" ; }
       gdiffB() { if [ -n "$2" ]; then git "$GDIFF_STRING" "$1".."$2" ; else echo "usage: $FUNCNAME <branch1> <branch2>" ; fi }  # for branch in remote repo, use syntax 'origin/branch2'
       gdiffC() { if [ -n "$2" ]; then git "$GDIFF_STRING" "$1".."$2" ; else echo "usage: $FUNCNAME <parent-SHA> <child-SHA>" ; fi }
-      gdiffF() { if [ -n "$3" ]; then git difftool "$1".."$2" -- "$3" ; else echo "usage: $FUNCNAME <branch1> <branch2> <file>" ; fi }
+      gdiffF() { if [ -n "$3" ]; then git difftool "$1".."$2" -- "$3" ; else echo -e "usage: $FUNCNAME <branch1> <branch2> <file>\n -- OR --\nusage: $FUNCNAME <parent-SHA> <child-SHA> <file>" ; fi }  # compare file across branches or commits
 alias gdifftools='git difftool --tool-help'
 
       gdiscard() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
-alias glog='git --no-pager log --oneline'
-alias glogs='git --no-pager log'
+alias glog='git --no-pager log --reverse --oneline'
+alias glogs='git --no-pager log --reverse'
 
       gpull() { if [ -n "$1" ]; then git pull origin "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
       gpush() { if [ -n "$1" ]; then git push origin "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
