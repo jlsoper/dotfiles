@@ -19,33 +19,35 @@
 #####  toggle variable for git diff / difftool
 GDIFF_STRING=diff
 
-gdiff() { if [ "$GDIFF_STRING" = "diff" ]; then GDIFF_STRING="difftool" ; else GDIFF_STRING="diff" ; fi ; echo $GDIFF_STRING ; }
+gdstring() { if [ "$GDIFF_STRING" = "diff" ]; then GDIFF_STRING="difftool" ; else GDIFF_STRING="diff" ; fi ; echo $GDIFF_STRING ; }
 
 
 
+alias gadd='git add -A'
 alias gbranch='git branch -a'
+      gcheckout() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
 alias gclean='git clean -i'
 alias gclean-show='git clean -d -n'
       gclone-branch() { if [ -n "$2" ]; then git clone -b "$1" --single-branch "$2" ; else echo "usage: $FUNCNAME <branch> <remoteRepoURL>" ; fi }
 alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) -- $(hostname) \ $USER"'
 alias gconfig='git config --list --show-origin'
+      gdel() { if [ -n "$1" ]; then git reset "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
 
+alias gdiff='git difftool'
+      gdiff-sa() { git "$GDIFF_STRING" --staged "$@" ; }
       gdiffB() { if [ -n "$2" ]; then git "$GDIFF_STRING" "$1".."$2" ; else echo "usage: $FUNCNAME <branch1> <branch2>" ; fi }  # for branch in remote repo, use syntax 'origin/branch2'
       gdiffC() { if [ -n "$2" ]; then git "$GDIFF_STRING" "$1".."$2" ; else echo "usage: $FUNCNAME <parent-SHA> <child-SHA>" ; fi }
-      gdiffF() { if [ -n "$3" ]; then git difftool "$1".."$2" -- "$3" ; else echo "usage: $FUNCNAME <branch1> <branch2> <file>" ; fi }
-alias gdiffSA='git diff --staged'
+      gdiffF() { if [ -n "$3" ]; then git difftool "$1".."$2" -- "$3" ; else echo -e "usage: $FUNCNAME <branch1> <branch2> <file>\n -- OR --\nusage: $FUNCNAME <parent-SHA> <child-SHA> <file>" ; fi }  # compare file across branches or commits
 alias gdifftools='git difftool --tool-help'
 
-      gdiscard() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
-alias glog='git --no-pager log --oneline'
-alias glogs='git --no-pager log'
+alias glog='git --no-pager log --reverse --oneline'
+alias glogs='git --no-pager log --reverse'
 
       gpull() { if [ -n "$1" ]; then git pull origin "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
       gpush() { if [ -n "$1" ]; then git push origin "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
 
 alias grollback='git reset --soft HEAD~1'
 alias gstatus='git status -s'
-      gunstage() { if [ -n "$1" ]; then git reset "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
 
 
 
