@@ -4,6 +4,9 @@
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 
 
+#  .NET telemetry setting
+#  export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 PATH=$PATH:~/scripts
 
 #  Database settings
