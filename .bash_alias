@@ -122,6 +122,7 @@ alias xzinfo='tar -tvJf'
 alias xztest='xz -tv'
 
 alias zip='zip -r'
+alias zip-key='zip -re'  # passwd
 alias zipinfo='unzip -Z'
 alias ziptest='unzip -tq'
 
