@@ -21,6 +21,8 @@ alias battery-info='pmset -g batt'
 alias bzip2info='tar -tvjf'
 alias bzip2test='bzip2 -tv'
 
+alias c-make='cmake -S . -B build'
+
 alias chdir='pwd'
 
 alias cpu-info='sysctl machdep.cpu.brand_string'
