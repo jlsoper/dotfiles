@@ -1,4 +1,4 @@
-#  $HOME/.bash_alias  ( alias / unalias )
+#  $HOME/.ash_alias  ( alias / unalias )
 
 #  scp <source-file> user@host:<path>
 #  scp user@host:<path of source file> <local target for file>
