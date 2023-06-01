@@ -32,12 +32,6 @@ if [ -f ~/.ash_git    ]; then . ~/.ash_git    ; fi
 if [ -f ~/.ash_nodejs ]; then . ~/.ash_nodejs ; fi
 if [ -f ~/.ash_py     ]; then . ~/.ash_py     ; fi
 
-#  /etc/lsb-release (Ubuntu)
-#if [ ! -f /etc/redhat-release ]
-#then
-#  eval "$(dircolors ~/.dir_colors)"
-#fi
-
 #  Setup the database login credentials
 if [ -f ~/.dblogin ]
 then
