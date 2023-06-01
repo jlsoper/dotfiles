@@ -47,7 +47,6 @@ fi
 alias cd..='cd ..'
 alias cls='clear'
 alias cp='cp -iR'
-alias exit='clear ; exit'
 alias mv='mv -i'
 alias rm='rm -i'
 

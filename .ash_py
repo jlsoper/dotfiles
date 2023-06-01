@@ -11,9 +11,9 @@ export PYTHONPYCACHEPREFIX=/tmp/__pycache__
 alias py-doc='pydoc3 -p 37000'
 alias py-install='pip3 install --user'
 alias py-list='pip3 list'
-      py-man() { if [ -n "$1" ]; then pydoc3 $1 > /tmp/$1.man ; else echo "usage: $FUNCNAME <module_name>" ; fi }
-      py-path() { python3 -c "import sys; print ('\n'.join(sys.path))" ; }  # sys.path
-      py-show() { if [ -n "$1" ]; then pip3 show $1 ; else echo "usage: $FUNCNAME <package>" ; fi }
+#      py-man() { if [ -n "$1" ]; then pydoc3 $1 > /tmp/$1.man ; else echo "usage: $FUNCNAME <module_name>" ; fi }
+#      py-path() { python3 -c "import sys; print ('\n'.join(sys.path))" ; }  # sys.path
+#      py-show() { if [ -n "$1" ]; then pip3 show $1 ; else echo "usage: $FUNCNAME <package>" ; fi }
 alias py-site='python3 -m site'
 alias py-uninstall='pip3 uninstall'
 

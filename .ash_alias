@@ -49,6 +49,8 @@ alias du='du -kh'
 
 alias edit='vim'
 
+alias exit='clear ; exit'
+
 alias fc='vimdiff'
 alias fc-b='cmp'
 

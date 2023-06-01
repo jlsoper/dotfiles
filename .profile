@@ -26,12 +26,11 @@ then
   . ~/.ashrc
 fi
 
-if [ -f ~/.alias  ]; then . ~/.alias  ; fi
-if [ -f ~/.bash_fcn    ]; then . ~/.bash_fcn    ; fi
-if [ -f ~/.bash_git    ]; then . ~/.bash_git    ; fi
-if [ -f ~/.bash_java   ]; then . ~/.bash_java   ; fi
-if [ -f ~/.bash_nodejs ]; then . ~/.bash_nodejs ; fi
-if [ -f ~/.bash_py     ]; then . ~/.bash_py     ; fi
+if [ -f ~/.ash_alias  ]; then . ~/.ash_alias  ; fi
+#  if [ -f ~/.ash_fcn    ]; then . ~/.ash_fcn    ; fi
+if [ -f ~/.ash_git    ]; then . ~/.ash_git    ; fi
+if [ -f ~/.ash_nodejs ]; then . ~/.ash_nodejs ; fi
+if [ -f ~/.ash_py     ]; then . ~/.ash_py     ; fi
 
 #  /etc/lsb-release (Ubuntu)
 #if [ ! -f /etc/redhat-release ]
