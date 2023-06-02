@@ -1,12 +1,12 @@
 #!/bin/ash
 
 
-/bin/cp  .X* $HOME
-/bin/cp  .a* $HOME
-/bin/cp  .d* $HOME
-/bin/cp  .gitconfig $HOME
-/bin/cp  .n* $HOME
-/bin/cp  .profile   $HOME
-/bin/cp  .v* $HOME
-/bin/cp  .x* $HOME
+cp  .X* $HOME
+cp  .a* $HOME
+cp  .d* $HOME
+cp  .gitconfig $HOME
+cp  .n* $HOME
+cp  .profile   $HOME
+cp  .v* $HOME
+cp  .x* $HOME
 

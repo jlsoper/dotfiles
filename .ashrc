@@ -1,4 +1,4 @@
-#  $HOME/.bashrc
+#  $HOME/.ashrc
 
 # clear aliases
 unalias -a
