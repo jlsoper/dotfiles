@@ -1,4 +1,4 @@
-#  $HOME/.bash_git
+#  $HOME/.ash_git
 
 ########################################
 #
@@ -27,14 +27,12 @@ alias gadd='git add -A'
 alias gbranch='git branch -a'
       gcheckout() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
 alias gclean='git clean -i'
-alias gclean_show='git clean -d -n'
-      gclone_branch() { if [ -n "$2" ]; then git clone -b "$1" --single-branch "$2" ; else echo "usage: $FUNCNAME <branch> <remoteRepoURL>" ; fi }
+alias gclean-show='git clean -d -n'
 alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) -- $(hostname) \ $USER"'
 alias gconfig='git config --list --show-origin'
       gdel() { if [ -n "$1" ]; then git reset "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
 
 alias gdiff='git difftool'
-      gdiff_sa() { git "$GDIFF_STRING" --staged "$@" ; }
       gdiffB() { if [ -n "$2" ]; then git "$GDIFF_STRING" "$1".."$2" ; else echo "usage: $FUNCNAME <branch1> <branch2>" ; fi }  # for branch in remote repo, use syntax 'origin/branch2'
       gdiffC() { if [ -n "$2" ]; then git "$GDIFF_STRING" "$1".."$2" ; else echo "usage: $FUNCNAME <parent-SHA> <child-SHA>" ; fi }
       gdiffF() { if [ -n "$3" ]; then git difftool "$1".."$2" -- "$3" ; else echo -e "usage: $FUNCNAME <branch1> <branch2> <file>\n -- OR --\nusage: $FUNCNAME <parent-SHA> <child-SHA> <file>" ; fi }  # compare file across branches or commits
@@ -51,13 +49,30 @@ alias gstatus='git status -s'
 
 
 
-#####  Github
- wget_gha() { if [ -n "$2" ]; then wget "https://github.com/$1/$2/archive/main.zip" ; else echo "usage: $FUNCNAME <userID> <repo>" ; fi }
- wget_ghf() { if [ -n "$4" ]; then wget "https://raw.githubusercontent.com/$1/$2/$3/$4" ; else echo "usage: $FUNCNAME <userID> <repo> <branch> <fileName>" ; fi }
+##### alias 2 function #####
 
 
-#####  gitLab
- wget_gla() { if [ -n "$2" ]; then wget "https://gitlab.com/$1/$2/-/archive/main/$2-main.zip" ; else echo "usage: $FUNCNAME <userID> <repo>" ; fi }
- wget_glf() { if [ -n "$4" ]; then wget "https://gitlab.com/$1/$2/-/raw/$3/$4" ; else echo "usage: $FUNCNAME <userID> <repo> <branch> <fileName>" ; fi }
+alias gclone-branch='__gclone_branch'
+alias gdiff-sa='__gdiff_sa'
+
+
+alias wget-gha='__wget_gha'
+alias wget-ghf='__wget_ghf'
+
+
+alias wget-gla='__wget_gla'
+alias wget-glf='__wget_glf'
+
+
+      __gclone_branch() { if [ -n "$2" ]; then git clone -b "$1" --single-branch "$2" ; else echo "usage: gclone-branch <branch> <remoteRepoURL>" ; fi }
+      __gdiff_sa() { git "$GDIFF_STRING" --staged "$@" ; }
+
+
+      __wget_gha() { if [ -n "$2" ]; then wget "https://github.com/$1/$2/archive/main.zip" ; else echo "usage: wget-gha <userID> <repo>" ; fi }
+      __wget_ghf() { if [ -n "$4" ]; then wget "https://raw.githubusercontent.com/$1/$2/$3/$4" ; else echo "usage: wget-ghf <userID> <repo> <branch> <fileName>" ; fi }
+
+
+      __wget_gla() { if [ -n "$2" ]; then wget "https://gitlab.com/$1/$2/-/archive/main/$2-main.zip" ; else echo "usage: wget-gla <userID> <repo>" ; fi }
+      __wget_glf() { if [ -n "$4" ]; then wget "https://gitlab.com/$1/$2/-/raw/$3/$4" ; else echo "usage: wget-glf <userID> <repo> <branch> <fileName>" ; fi }
 
 
