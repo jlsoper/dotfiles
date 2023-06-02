@@ -1,4 +1,4 @@
-#  $HOME/.bash_py
+#  $HOME/.ash_py
 
 #  move __pycache__ directory  ( Python3.8+ )
 export PYTHONPYCACHEPREFIX=/tmp/__pycache__
