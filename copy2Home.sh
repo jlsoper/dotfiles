@@ -1,12 +1,12 @@
 #!/bin/ash
 
 
-cp  .X* $HOME
-cp  .a* $HOME
-cp  .d* $HOME
-cp  .gitconfig $HOME
-cp  .n* $HOME
-cp  .profile   $HOME
-cp  .v* $HOME
-cp  .x* $HOME
+cp  .Xresources $HOME
+cp  .a*         $HOME
+cp  .dblogin    $HOME
+cp  .gitconfig  $HOME
+cp  .nanorc     $HOME
+cp  .profile    $HOME
+cp  .vimrc      $HOME
+cp  .xprofile   $HOME
 
