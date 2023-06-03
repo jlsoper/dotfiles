@@ -8,6 +8,7 @@ export PYTHONPYCACHEPREFIX=/tmp/__pycache__
 #  pydoc3    <module_name>
 #  pydoc3 -w <module_name / package_name>
 
+
 alias py-doc='pydoc3 -p 37000'
 alias py-install='pip3 install --user'
 alias py-list='pip3 list'
