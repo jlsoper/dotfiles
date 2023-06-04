@@ -15,6 +15,7 @@
 #  ln -s source_file link_name
 
 alias aterm='urxvt -g 208x62'
+alias bash_options='shopt'
 alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
 
 alias bzip2info='tar -tvjf'
