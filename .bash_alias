@@ -1,8 +1,5 @@
 #  $HOME/.bash_alias  ( alias / unalias )
 
-#  scp <source-file> user@host:<path>
-#  scp user@host:<path of source file> <local target for file>
-
 #  grep parameters [ -c count | -i ignorecase | -r recursive | -w whole word ]
 
 #  touch -d 'Aug 28 11:07:53 EDT 2008' file1.txt
@@ -16,9 +13,6 @@
 
 alias aterm='urxvt -g 208x62'
 alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
-
-alias bzip2info='tar -tvjf'
-alias bzip2test='bzip2 -tv'
 
 alias c-make='cmake -S . -B build'
 
@@ -55,9 +49,6 @@ alias finger='pinky -l'
 alias groups='/usr/bin/groups | tr " " "\n"'
 alias grupos='cut -d: -f1 /etc/group | sort'
 
-alias gzipinfo='tar -tvzf'
-alias gziptest='gzip -tv'
-
 alias ipconfig='ip -c -br a'  # 'ifconfig | grep --color=never "cast"'
 
 alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
@@ -89,9 +80,6 @@ alias ps='ps x -o user,pid,ppid,tty,cmd'  # /bin/ps -fu $USER
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
 
-alias rar-x='unrar -x'
-alias rarinfo='unrar -t'
-
 alias rd='rmdir'
 alias scanpci='lspci -vvnn'
 
@@ -101,14 +89,7 @@ alias sql-admin='mysql --tee=/tmp/sql-admin.log -u root -p'  # notee
 
 alias tail='tail -n 35'
 
-alias tar-c='tar -cvvf'
-alias tarinfo='tar -tvf'
-
 alias tasklist='/bin/ps auxf'
-
-alias tbzip2='tar -cvvjf'  # *.tbz2
-alias tgzip='tar -cvvzf'   # *.tgz
-alias txz-c='tar -cvvJf'   # *.txz
 
 alias tpad-0='synclient TouchPadOff=1'
 alias tpad-1='synclient TouchPadOff=0'
@@ -129,17 +110,4 @@ alias wscan='nmcli dev wifi'
 alias wshutdown='nmcli radio wifi off'
 alias wstartup='nmcli radio wifi on'
 alias wstatus='nmcli general'
-
-alias xzinfo='tar -tvJf'
-alias xztest='xz -tv'
-
-alias zip='zip -r'
-alias zip-key='zip -re'  # passwd
-alias zipinfo='unzip -Z'
-alias ziptest='unzip -tq'
-
-
-alias 7zip='7z a -t7Z'
-alias 7zipinfo='7z l'
-alias 7ziptest='7z t'
 
