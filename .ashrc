@@ -32,14 +32,6 @@ else
   alias edit='nano'
   alias view='nano -v'
 
-
-  alias pkg-update='apk update'                    # apt update
-  alias pkg-install='apk install --no-autoremove'  # apt install
-  alias pkg-remove='apk  remove  --no-autoremove'  # apt remove
-  alias pkg-upgrade='apk upgrade --no-autoremove'  # apt upgrade
-
-#    pkg-upgrade1() { if [ -n "$1" ]; then apt --only-upgrade install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
-
 fi
 
 

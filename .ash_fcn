@@ -1,34 +1,21 @@
 #  $HOME/.ash_fcn
 
 
-############ alias / fcn ############
-
-alias 7unzip='__7unzip'
-alias 7zip_key='__7zip_key'
-
-
- __7unzip()   { if [ -n "$1" ]; then 7z x -t7Z $1 -o. ; else echo "usage: 7unzip <archive.7Z> ." ; fi }
- __7zip_key() { if [ -n "$3" ]; then 7z a -t7Z -p"$1" "${@:2}" ; else echo "usage: 7zip_key <password> <archive.7Z> <directory>" ; fi }  # passwd
-
-
-#####################################
-
-
 # functions - end with semicolon or newline
  bkup() { if [ -n "$1" ]; then cp "$1" "$1".`date +%Y-%m-%d_%H%M` ; else echo "usage: $FUNCNAME <file>" ; fi }  # date +%Y-%m-%d_%H%M%S
 
- compiler_c()   { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; gcc "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.c>"   ; fi }  # a.out
- compiler_cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
+ compiler-c()   { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; gcc "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.c>"   ; fi }  # a.out
+ compiler-cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
 
  dos2u() { perl -pi -e 's/\r\n/\n/' "$1" ; }
- dvd_split() { split -d -b 4G --verbose "$1" "$1". ; }
- dvd_unsplit() { cat "$1".* > "$1" ; }
+ dvd-split() { split -d -b 4G --verbose "$1" "$1". ; }
+ dvd-unsplit() { cat "$1".* > "$1" ; }
 
 # exfat - /dev/sdb1
  exfat_create() { if [ -n "$2" ]; then sudo mkfs.exfat -n "$1" "$2" ; else echo "usage: $FUNCNAME <label> <device ID>" ; fi }
  exfat_verify() { if [ -n "$1" ]; then sudo fsck.exfat "$1" ; else echo "usage: $FUNCNAME <device ID>" ; fi }
 
- fbookmarks_clean() { if [ -n "$1" ]; then perl -pi -e 's/.ADD_DATE[^>]*//' "$1" ; else echo "usage: $FUNCNAME <bookmarks.html>" ; fi }
+ fbookmarks-clean() { if [ -n "$1" ]; then perl -pi -e 's/.ADD_DATE[^>]*//' "$1" ; else echo "usage: $FUNCNAME <bookmarks.html>" ; fi }
 
  fgrep() { if [ -n "$1" ]; then find . -maxdepth 1 -type f -name "*" -exec grep -HIn --color=auto "$1" {} \; ; else echo "usage: $FUNCNAME <string>" ; fi }
 
@@ -41,23 +28,23 @@ alias 7zip_key='__7zip_key'
  md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
 
 ###  mount a filesystem
- mnt_iso() { if [ -n "$1" ]; then sudo mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
- mnt_usb() { sudo mount /dev/sdb /mnt/usb/ ; }
- mnt_vmf() { sudo mount -t 9p -o trans=virtio /sharedF /mnt/sharedF/ ; }
+ mnt-iso() { if [ -n "$1" ]; then sudo mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
+ mnt-usb() { sudo mount /dev/sdb /mnt/usb/ ; }
+ mnt-vmf() { sudo mount -t 9p -o trans=virtio /sharedF /mnt/sharedF/ ; }
 
 
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
- pkg_history() { nala history "$@" ; }
- pkg_history_install() { zgrep -h --color=never "install " /var/log/dpkg.log* ; }
- pkg_history_upgrade() { zgrep -h --color=never "upgrade " /var/log/dpkg.log* ; }
- pkg_history_remove() { zgrep -h --color=never "remove " /var/log/dpkg.log* ; }
- pkg_info() { if [ -n "$1" ]; then nala show "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
- pkg_list_installed() { dpkg -l ; }
- pkg_names() { dpkg --get-selections | cut -f1 ; }
- pkg_outdated() { nala list -u ; }
- pkg_repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ | sort ; }
- pkg_search() { if [ -n "$1" ]; then nala search -n "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+ pkg-history() { nala history "$@" ; }
+ pkg-history_install() { zgrep -h --color=never "install " /var/log/dpkg.log* ; }
+ pkg-history_upgrade() { zgrep -h --color=never "upgrade " /var/log/dpkg.log* ; }
+ pkg-history_remove() { zgrep -h --color=never "remove " /var/log/dpkg.log* ; }
+ pkg-info() { if [ -n "$1" ]; then nala show "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+ pkg-list-installed() { dpkg -l ; }
+ pkg-names() { dpkg --get-selections | cut -f1 ; }
+ pkg-outdated() { nala list -u ; }
+ pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ | sort ; }
+ pkg-search() { if [ -n "$1" ]; then nala search -n "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
 
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  removeNPchar() { tr -cd '\11\12\15\40-\176' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
@@ -68,37 +55,31 @@ alias 7zip_key='__7zip_key'
  sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
  sha512() { if [ -n "$1" ]; then sha512sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha512>" ; fi }
 
- tar_x()    { if [ -n "$1" ]; then tar -xvvf  "$1" ; else echo "usage: $FUNCNAME <archive.tar> ." ; fi }
- tbunzip2() { if [ -n "$1" ]; then tar -xvvjf "$1" ; else echo "usage: $FUNCNAME <archive.tar.bz2> ." ; fi }
- tgunzip()  { if [ -n "$1" ]; then tar -xvvzf "$1" ; else echo "usage: $FUNCNAME <archive.tar.gz> ." ; fi }
- txz_x()    { if [ -n "$1" ]; then tar -xvvJf "$1" ; else echo "usage: $FUNCNAME <archive.tar.xz> ." ; fi }
-
- trim_ws() { for f in *; do mv "$f" $(echo $f | tr -d ' ') ; done }
+ trim-ws() { for f in *; do mv "$f" $(echo $f | tr -d ' ') ; done }
 
  u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
 
 ###  unmount filesystems
- umnt_iso() { sudo umount /mnt/iso/ ; }
- umnt_usb() { sudo umount /mnt/usb/ ; }
- umnt_vmf() { sudo umount /mnt/sharedF/ ; }
+ umnt-iso() { sudo umount /mnt/iso/ ; }
+ umnt-usb() { sudo umount /mnt/usb/ ; }
+ umnt-vmf() { sudo umount /mnt/sharedF/ ; }
 
 
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
 
 # usermod -aG sudo userID
- user_add() { if [ -n "$1" ]; then sudo adduser "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }                # /etc/adduser.conf
+ user-add() { if [ -n "$1" ]; then sudo adduser "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }                # /etc/adduser.conf
 # ps -fu userID
- user_del() { if [ -n "$1" ]; then sudo deluser --remove-home "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # /etc/deluser.conf
- user_switch() { if [ -n "$1" ]; then su -l "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }
+ user-del() { if [ -n "$1" ]; then sudo deluser --remove-home "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # /etc/deluser.conf
+ user-switch() { if [ -n "$1" ]; then su -l "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }
 
 # Virtualization Technology
- vt_convert()  { if [ -n "$1" ]; then qemu-img convert -f vmdk  "$1" "$1".qcow2 ; else echo "usage: $FUNCNAME <image.vmdk>" ; fi }
- vt_img_info() { if [ -n "$1" ]; then qemu-img info "$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
- vt_shrink()   { if [ -n "$1" ]; then qemu-img convert -O qcow2 "$1" /tmp/"$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
+ vt-convert()  { if [ -n "$1" ]; then qemu-img convert -f vmdk  "$1" "$1".qcow2 ; else echo "usage: $FUNCNAME <image.vmdk>" ; fi }
+ vt-img-info() { if [ -n "$1" ]; then qemu-img info "$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
+ vt-shrink()   { if [ -n "$1" ]; then qemu-img convert -O qcow2 "$1" /tmp/"$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
 
  wconnect() { nmcli dev wifi connect "$1" password "$2" ; }  # ESSID_NAME ESSID_PASSWORD
  xlogin() { ssh -X "$1"@"$2" ; }
 
- xml_format() { if [ -n "$1" ]; then perl -pi -e 's/\x3c/\n\x3c/g' "$1" ; tail -n +2 "$1" > .tempFile ; mv -f .tempFile "$1" ; else echo "usage: $FUNCNAME <file.xml>" ; fi }  # < character
-
+ xml-format() { if [ -n "$1" ]; then perl -pi -e 's/\x3c/\n\x3c/g' "$1" ; tail -n +2 "$1" > .tempFile ; mv -f .tempFile "$1" ; else echo "usage: $FUNCNAME <file.xml>" ; fi }  # < character
 
