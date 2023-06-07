@@ -32,6 +32,12 @@ else
   alias edit='nano'
   alias view='nano -v'
 
+
+  alias pkg-update='apk update'    # apt update
+  alias pkg-install='apk add'      # apt install
+  alias pkg-remove='apk del'       # apt remove
+  alias pkg-upgrade='apk upgrade'  # apt upgrade
+
 fi
 
 
