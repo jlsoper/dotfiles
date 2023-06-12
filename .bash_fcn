@@ -8,14 +8,14 @@
  compiler-cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
 
  dos2u() { perl -pi -e 's/\r\n/\n/' "$1" ; }
- dvd-split() { split -d -b 4G --verbose "$1" "$1". ; }
- dvd-unsplit() { cat "$1".* > "$1" ; }
+ dvd_split() { split -d -b 4G --verbose "$1" "$1". ; }
+ dvd_unsplit() { cat "$1".* > "$1" ; }
 
 # exfat - /dev/sdb1
  exfat_create() { if [ -n "$2" ]; then sudo mkfs.exfat -n "$1" "$2" ; else echo "usage: $FUNCNAME <label> <device ID>" ; fi }
  exfat_verify() { if [ -n "$1" ]; then sudo fsck.exfat "$1" ; else echo "usage: $FUNCNAME <device ID>" ; fi }
 
- fbookmarks-clean() { if [ -n "$1" ]; then perl -pi -e 's/.ADD_DATE[^>]*//' "$1" ; else echo "usage: $FUNCNAME <bookmarks.html>" ; fi }
+ fbookmarks_clean() { if [ -n "$1" ]; then perl -pi -e 's/.ADD_DATE[^>]*//' "$1" ; else echo "usage: $FUNCNAME <bookmarks.html>" ; fi }
 
  fgrep() { if [ -n "$1" ]; then find . -maxdepth 1 -type f -name "*" -exec grep -HIn --color=auto "$1" {} \; ; else echo "usage: $FUNCNAME <string>" ; fi }
 
@@ -28,9 +28,9 @@
  md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
 
 ###  mount a filesystem
- mnt-iso() { if [ -n "$1" ]; then sudo mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
- mnt-usb() { sudo mount /dev/sdb /mnt/usb/ ; }
- mnt-vmf() { sudo mount -t 9p -o trans=virtio /sharedF /mnt/sharedF/ ; }
+ mnt_iso() { if [ -n "$1" ]; then sudo mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
+ mnt_usb() { sudo mount /dev/sdb /mnt/usb/ ; }
+ mnt_vmf() { sudo mount -t 9p -o trans=virtio /sharedF /mnt/sharedF/ ; }
 
 
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
@@ -55,31 +55,31 @@
  sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
  sha512() { if [ -n "$1" ]; then sha512sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha512>" ; fi }
 
- trim-ws() { for f in *; do mv "$f" $(echo $f | tr -d ' ') ; done }
+ trim_ws() { for f in *; do mv "$f" $(echo $f | tr -d ' ') ; done }
 
  u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
 
 ###  unmount filesystems
- umnt-iso() { sudo umount /mnt/iso/ ; }
- umnt-usb() { sudo umount /mnt/usb/ ; }
- umnt-vmf() { sudo umount /mnt/sharedF/ ; }
+ umnt_iso() { sudo umount /mnt/iso/ ; }
+ umnt_usb() { sudo umount /mnt/usb/ ; }
+ umnt_vmf() { sudo umount /mnt/sharedF/ ; }
 
 
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
 
 # usermod -aG sudo userID
- user-add() { if [ -n "$1" ]; then sudo adduser "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }                # /etc/adduser.conf
+ user_add() { if [ -n "$1" ]; then sudo adduser "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }                # /etc/adduser.conf
 # ps -fu userID
- user-del() { if [ -n "$1" ]; then sudo deluser --remove-home "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # /etc/deluser.conf
- user-switch() { if [ -n "$1" ]; then su -l "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }
+ user_del() { if [ -n "$1" ]; then sudo deluser --remove-home "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # /etc/deluser.conf
+ user_switch() { if [ -n "$1" ]; then su -l "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }
 
 # Virtualization Technology
- vt-convert()  { if [ -n "$1" ]; then qemu-img convert -f vmdk  "$1" "$1".qcow2 ; else echo "usage: $FUNCNAME <image.vmdk>" ; fi }
- vt-img-info() { if [ -n "$1" ]; then qemu-img info "$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
- vt-shrink()   { if [ -n "$1" ]; then qemu-img convert -O qcow2 "$1" /tmp/"$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
+ vt_convert()  { if [ -n "$1" ]; then qemu-img convert -f vmdk  "$1" "$1".qcow2 ; else echo "usage: $FUNCNAME <image.vmdk>" ; fi }
+ vt_img_info() { if [ -n "$1" ]; then qemu-img info "$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
+ vt_shrink()   { if [ -n "$1" ]; then qemu-img convert -O qcow2 "$1" /tmp/"$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
 
  wconnect() { nmcli dev wifi connect "$1" password "$2" ; }  # ESSID_NAME ESSID_PASSWORD
  xlogin() { ssh -X "$1"@"$2" ; }
 
- xml-format() { if [ -n "$1" ]; then perl -pi -e 's/\x3c/\n\x3c/g' "$1" ; tail -n +2 "$1" > .tempFile ; mv -f .tempFile "$1" ; else echo "usage: $FUNCNAME <file.xml>" ; fi }  # < character
+ xml_format() { if [ -n "$1" ]; then perl -pi -e 's/\x3c/\n\x3c/g' "$1" ; tail -n +2 "$1" > .tempFile ; mv -f .tempFile "$1" ; else echo "usage: $FUNCNAME <file.xml>" ; fi }  # < character
 
