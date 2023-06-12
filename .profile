@@ -26,6 +26,9 @@ then
   . ~/.ashrc
 fi
 
+alias doas-su='doas su -'
+
+
 if [ -f ~/.ash_alias   ]; then . ~/.ash_alias   ; fi
 if [ -f ~/.ash_archive ]; then . ~/.ash_archive ; fi
 if [ -f ~/.ash_fcn     ]; then . ~/.ash_fcn     ; fi
