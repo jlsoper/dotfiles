@@ -26,6 +26,9 @@ then
   . ~/.bashrc
 fi
 
+alias sudo-su='sudo su -'
+
+
 if [ -f ~/.bash_alias   ]; then . ~/.bash_alias   ; fi
 if [ -f ~/.bash_archive ]; then . ~/.bash_archive ; fi
 if [ -f ~/.bash_fcn     ]; then . ~/.bash_fcn     ; fi
