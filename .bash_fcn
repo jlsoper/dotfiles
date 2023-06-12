@@ -68,8 +68,8 @@
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
 
 # usermod -aG sudo userID
- user_add() { if [ -n "$1" ]; then sudo adduser "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }                # /etc/adduser.conf
 # ps -fu userID
+ user_add() { if [ -n "$1" ]; then sudo adduser "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }                # /etc/adduser.conf
  user_del() { if [ -n "$1" ]; then sudo deluser --remove-home "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # /etc/deluser.conf
  user_switch() { if [ -n "$1" ]; then su -l "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }
 
