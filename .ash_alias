@@ -11,6 +11,8 @@
 
 #  ln -s source_file link_name
 
+alias aliases='alias | sort'
+
 alias aterm='urxvt -g 208x62'
 alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
 
