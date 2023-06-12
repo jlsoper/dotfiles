@@ -102,7 +102,7 @@ alias tracert='traceroute'
 
 alias type='cat -e'  # ^M$ -> \r\n
 
-alias ver='lsb_release -a;echo "";uname -mrs'
+alias ver='echo -n "Alpine Linux " ; cat /etc/alpine-release ; echo "" ; uname -mrs'
 alias view='vim -MR'
 
 alias vt-cpu='lscpu | grep "Virtual"'
