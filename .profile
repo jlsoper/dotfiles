@@ -32,6 +32,8 @@ alias doas-su='doas su -'
 if [ -f ~/.ash_alias   ]; then . ~/.ash_alias   ; fi
 if [ -f ~/.ash_archive ]; then . ~/.ash_archive ; fi
 if [ -f ~/.ash_fcn     ]; then . ~/.ash_fcn     ; fi
+if [ -f ~/.ash_pkg     ]; then . ~/.ash_pkg     ; fi
+
 if [ -f ~/.ash_git     ]; then . ~/.ash_git     ; fi
 if [ -f ~/.ash_nodejs  ]; then . ~/.ash_nodejs  ; fi
 if [ -f ~/.ash_py      ]; then . ~/.ash_py      ; fi

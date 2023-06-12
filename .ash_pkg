@@ -1,0 +1,12 @@
+#  $HOME/.ash_pkg
+
+
+alias pkg-info='apk info -a'
+alias pkg-list-installed='apk info -v | sort'
+alias pkg-repolist='cat /etc/apk/repositories'
+alias pkg-search='apk search -v -d'
+
+
+##########
+
+
