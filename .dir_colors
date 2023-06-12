@@ -307,6 +307,7 @@ EXEC 01;32
 .bash_java      00;33
 .bash_logout    00;33
 .bash_nodejs    00;33
+.bash_pkg       00;33
 .bash_profile   00;33
 .bash_py        00;33
 .bashrc         00;33

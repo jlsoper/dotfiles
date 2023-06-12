@@ -32,6 +32,8 @@ alias sudo-su='sudo su -'
 if [ -f ~/.bash_alias   ]; then . ~/.bash_alias   ; fi
 if [ -f ~/.bash_archive ]; then . ~/.bash_archive ; fi
 if [ -f ~/.bash_fcn     ]; then . ~/.bash_fcn     ; fi
+if [ -f ~/.bash_pkg     ]; then . ~/.bash_pkg     ; fi
+
 if [ -f ~/.bash_git     ]; then . ~/.bash_git     ; fi
 if [ -f ~/.bash_java    ]; then . ~/.bash_java    ; fi
 if [ -f ~/.bash_nodejs  ]; then . ~/.bash_nodejs  ; fi
