@@ -1,0 +1,42 @@
+#  $HOME/.bash_archive
+
+
+alias bzip2info='tar -tvjf'
+alias bzip2test='bzip2 -tv'
+
+alias gzipinfo='tar -tvzf'
+alias gziptest='gzip -tv'
+
+alias rar_x='unrar -x'
+alias rarinfo='unrar -t'
+
+alias tar_c='tar -cvvf'  # *.tar
+alias tarinfo='tar -tvf'
+
+
+alias tbzip2='tar -cvvjf'  # *.tbz2
+alias tgzip='tar -cvvzf'   # *.tgz
+alias txz_c='tar -cvvJf'   # *.txz
+
+
+alias xzinfo='tar -tvJf'
+alias xztest='xz -tv'
+
+alias zip='zip -r'       # *.zip
+alias zip_key='zip -re'  # *.zip (passwd)
+
+alias zipinfo='unzip -Z'
+alias ziptest='unzip -tq'
+
+
+
+##########
+
+
+
+ tar_x()    { if [ -n "$1" ]; then tar -xvvf  "$1" ; else echo "usage: $FUNCNAME <archive.tar>"     ; fi }
+ tbunzip2() { if [ -n "$1" ]; then tar -xvvjf "$1" ; else echo "usage: $FUNCNAME <archive.tar.bz2>" ; fi }
+ tgunzip()  { if [ -n "$1" ]; then tar -xvvzf "$1" ; else echo "usage: $FUNCNAME <archive.tar.gz>"  ; fi }
+ txz_x()    { if [ -n "$1" ]; then tar -xvvJf "$1" ; else echo "usage: $FUNCNAME <archive.tar.xz>"  ; fi }
+
+

@@ -1,8 +1,5 @@
 #  $HOME/.bash_alias  ( alias / unalias )
 
-#  scp <source-file> user@host:<path>
-#  scp user@host:<path of source file> <local target for file>
-
 #  grep parameters [ -c count | -i ignorecase | -r recursive | -w whole word ]
 
 #  touch -d 'Aug 28 11:07:53 EDT 2008' file1.txt
@@ -11,15 +8,10 @@
 
 #  ln -s source_file link_name
 
-
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport'
 alias airport-scan='airport -s'
 
-alias bash_options='shopt'
 alias battery-info='pmset -g batt'
-
-alias bzip2info='tar -tvjf'
-alias bzip2test='bzip2 -tv'
 
 alias c-make='cmake -S . -B build'
 
@@ -51,9 +43,6 @@ alias fc-b='cmp'
 
 alias groups='/usr/bin/groups | tr " " "\n"'
 alias grupos='cut -d: -f1 /etc/group | sort'
-
-alias gzipinfo='tar -tvzf'
-alias gziptest='gzip -tv'
 
 alias     ipconfig='echo "en0:" ; ifconfig en0 | grep broadcast'
 alias ipconfig-eth='echo "en3:" ; ifconfig en3 | grep broadcast'
@@ -87,7 +76,7 @@ alias printenv='env | sort'
 #     png screenshot partial -  command + shift + 4
 alias print-scr='screencapture -iW ~/Desktop/screenShot.`date +%Y-%m-%d_%H%M`.jpg'
 
-alias ps='ps x -o user,pid,ppid,tty,command'  # /bin/ps -fu $USER
+alias ps='ps -x -o user,pid,ppid,tty,command'  # /bin/ps -fu $USER
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
 
@@ -103,13 +92,6 @@ alias  systemInfo-xml='system_profiler -xml  -detailLevel mini > systemInfo.spx'
 
 alias tail='tail -n 35'
 
-alias tar-c='tar -cvvf'
-alias tarinfo='tar -tvf'
-
-alias tbzip2='tar -cvvjf'  # *.tbz2
-alias tgzip='tar -cvvzf'   # *.tgz
-alias txz-c='tar -cvvJf'   # *.txz
-
 alias tracert='traceroute'
 
 alias type='cat -e'  # ^M$ -> \r\n
@@ -119,17 +101,4 @@ alias umount_usb='diskutil unmount /dev/disk2s1'
 
 alias ver='sw_vers ; echo "" ; uname -mrs'
 alias view='vim -MR'
-
-alias xzinfo='tar -tvJf'
-alias xztest='xz -tv'
-
-alias zip='zip -r'
-alias zip-key='zip -re'  # passwd
-alias zipinfo='unzip -Z'
-alias ziptest='unzip -tq'
-
-
-alias 7zip='7z a -t7Z'
-alias 7zipinfo='7z l'
-alias 7ziptest='7z t'
 
