@@ -79,7 +79,7 @@ alias print='lpr -o cpi=14 -o prettyprint'
 
 alias printenv='env | sort'
 
-alias ps='ps -o user,pid,ppid,tty,args'
+alias ps='ps -x -o user,pid,ppid,tty,args'
 
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status

@@ -9,6 +9,14 @@
 
 PATH=$PATH:~/scripts
 
+#  X Window System
+if [ "$(tty)" = "/dev/tty3" ]
+then
+  echo "Starting an X session.."
+  echo
+  startx
+fi
+
 #  Database settings
 #  export DB_HOME=/opt/hsqldb
 #  PATH=$PATH:$DB_HOME/bin
