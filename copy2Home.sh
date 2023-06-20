@@ -10,3 +10,10 @@ cp  .profile    $HOME
 cp  .vimrc      $HOME
 cp  .xprofile   $HOME
 
+if [ ! -d ~/.ssh ]
+then
+  cp -R .ssh $HOME
+else
+  cp  .ssh/config $HOME/.ssh
+fi
+
