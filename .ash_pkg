@@ -1,12 +1,17 @@
 #  $HOME/.ash_pkg
 
 
-alias pkg-info='apk info -a'
-alias pkg-list-installed='apk info -v | sort'
+alias pkg-info='bsd_info'
+alias pkg-list-installed='apk info -v'
+alias pkg-names='apk info'
 alias pkg-repolist='cat /etc/apk/repositories'
 alias pkg-search='apk search -v -d'
 
 
 ##########
+
+
+
+ bsd_info() { if [ -n "$1" ]; then apk info -a "$1" ; else echo "usage: pkg-info <package>" ; fi }
 
 

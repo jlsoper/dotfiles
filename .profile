@@ -46,6 +46,13 @@ if [ -f ~/.ash_git     ]; then . ~/.ash_git     ; fi
 if [ -f ~/.ash_nodejs  ]; then . ~/.ash_nodejs  ; fi
 if [ -f ~/.ash_py      ]; then . ~/.ash_py      ; fi
 
+#  Alpine - OpenRC
+if [ -d /etc/apk ]
+then
+  alias poweroff='doas poweroff'
+  alias reboot='doas reboot'
+fi
+
 #  Setup the database login credentials
 if [ -f ~/.dblogin ]
 then
