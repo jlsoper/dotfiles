@@ -95,9 +95,6 @@ alias tail='tail -n 35'
 
 alias tasklist='/bin/ps auxf'
 
-alias tpad-0='synclient TouchPadOff=1'
-alias tpad-1='synclient TouchPadOff=0'
-
 alias tracert='traceroute'
 
 alias type='cat -e'  # ^M$ -> \r\n
