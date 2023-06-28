@@ -59,6 +59,9 @@ then
   . ~/.dblogin
 fi
 
+#  Wifi ssid
+if [ -f /sbin/iwgetid ]; then export WIFI=$(iwgetid -r) ; fi
+
 # XScreenSaver off
 if [ -n "$DISPLAY" ]
 then

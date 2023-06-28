@@ -64,7 +64,18 @@
  vt_img_info() { if [ -n "$1" ]; then qemu-img info "$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
  vt_shrink()   { if [ -n "$1" ]; then qemu-img convert -O qcow2 "$1" /tmp/"$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
 
- wconnect() { nmcli dev wifi connect "$1" password "$2" ; }  # ESSID_NAME ESSID_PASSWORD
+
+# WLAN - $USER
+ wifi_connect()    { if [ -n "$2" ]; then nmcli dev wifi connect "$1" password "$2" ; else echo "usage: $FUNCNAME <ESSID_NAME> <ESSID_PASSWORD>" ; fi }
+ wifi_disconnect() { nmcli device disconnect wlan0 ; }
+ wifi_info()       { nmcli connection show "$WIFI" ; }
+ wifi_off()        { nmcli radio wifi off ; }
+ wifi_on()         { nmcli radio wifi on ; }
+ wifi_passwd()     { doas grep psk= /etc/NetworkManager/system-connections/* ; }
+ wifi_scan()       { nmcli dev wifi ; }
+ wifi_status()     { nmcli general ; }
+
+
  xlogin() { ssh -X "$1"@"$2" ; }
 
  xml_format() { if [ -n "$1" ]; then perl -pi -e 's/\x3c/\n\x3c/g' "$1" ; tail -n +2 "$1" > .tempFile ; mv -f .tempFile "$1" ; else echo "usage: $FUNCNAME <file.xml>" ; fi }  # < character
