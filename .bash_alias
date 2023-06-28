@@ -103,10 +103,3 @@ alias view='vim -MR'
 alias vt-cpu='lscpu | grep "Virtual"'
 alias vt-x='grep -E -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
 
-alias wdisconnect='nmcli device disconnect wlp7s0'
-alias wifi-pwd='sudo grep psk= /etc/NetworkManager/system-connections/*'
-alias wscan='nmcli dev wifi'
-alias wshutdown='nmcli radio wifi off'
-alias wstartup='nmcli radio wifi on'
-alias wstatus='nmcli general'
-
