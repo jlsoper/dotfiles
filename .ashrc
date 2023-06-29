@@ -19,7 +19,7 @@ then
 
   if [ $TERM != linux ]
   then
-    PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"'
+    echo -ne "\033]0;${HOSTNAME}\007"
   fi
 
   umask 022

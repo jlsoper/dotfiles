@@ -13,7 +13,7 @@
 
 alias aliases='alias | sort'
 
-alias aterm='urxvt -g 208x62'
+#  alias aterm='urxvt -g 208x62'
 alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
 
 alias c-make='cmake -S . -B build'
@@ -43,6 +43,8 @@ alias dircmp='diff -r'
 alias du='du -kh'
 
 alias edit='vim'
+
+alias exit='clear ; exit'
 
 alias fc='vimdiff'
 alias fc-b='cmp'
