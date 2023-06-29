@@ -44,8 +44,7 @@ alias fc-b='cmp'
 alias groups='/usr/bin/groups | tr " " "\n"'
 alias grupos='cut -d: -f1 /etc/group | sort'
 
-alias     ipconfig='echo "en0:" ; ifconfig en0 | grep broadcast'
-alias ipconfig-eth='echo "en3:" ; ifconfig en3 | grep broadcast'
+alias ipconfig='ifconfig | grep --color=never "cast"'
 
 alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
 
