@@ -71,7 +71,7 @@
 # WLAN - $USER
  wifi_connect()    { if [ -n "$2" ]; then nmcli dev wifi connect "$1" password "$2" ; else echo "usage: $FUNCNAME <ESSID_NAME> <ESSID_PASSWORD>" ; fi }
  wifi_disconnect() { nmcli device disconnect wlan0 ; }
- wifi_info()       { nmcli connection show "$WIFI" ; }
+ wifi_info()       { iwconfig wlan0 ; }  # nmcli connection show
  wifi_off()        { nmcli radio wifi off ; }
  wifi_on()         { nmcli radio wifi on ; }
  wifi_passwd()     { sudo grep psk= /etc/NetworkManager/system-connections/* ; }
