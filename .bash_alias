@@ -9,7 +9,6 @@
 #  ln -s source_file link_name
 
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport'
-alias airport-scan='airport -s'
 
 alias battery-info='pmset -g batt'
 
