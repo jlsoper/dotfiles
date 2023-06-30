@@ -45,5 +45,8 @@ then
   . ~/.dblogin
 fi
 
+#  Wifi ssid
+export WIFI=$(airport -I | grep "[^B]SSID" | awk '{$1="" ; print substr($0,2)}')
+
 export PATH
 
