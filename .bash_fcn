@@ -40,6 +40,7 @@
  pkg-history_remove()  { grep -I "removed"   /var/log/pacman.log |tr -d "[ALPM]" ; }
  pkg-info() { if [ -n "$1" ]; then pacman -Qi "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-list-installed() { pacman -Q ; }
+ pkg-locate() { if [ -n "$1" ]; then pacman -Qo "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
  pkg-names() { pacman -Qq ; }
  pkg-orphans() { pacman -Qdt ; }
  pkg-repolist() { cat /etc/pacman.conf |grep "^\[" |tail -n+2 ; }
