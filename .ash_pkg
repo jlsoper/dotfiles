@@ -14,6 +14,6 @@ alias pkg-search='apk search -v -d'
 
 
  bsd_info() { if [ -n "$1" ]; then apk info -a "$1" ; else echo "usage: pkg-info <package>" ; fi }
- bsd_locate() { if [ -n "$1" ]; then apk info --who-owns $(which "$1") ; else echo "usage: pkg-locate <package>" ; fi }
+ bsd_locate() { if [ -n "$1" ]; then apk info --who-owns $(which "$1") ; else echo "usage: pkg-locate <file>" ; fi }
 
 
