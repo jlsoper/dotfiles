@@ -35,11 +35,14 @@
 
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
 
+##########  /var/cache/pacman/pkg/
+ pkg-contents() { if [ -n "$1" ]; then pacman -Qlp "$1" ; else echo "usage: $FUNCNAME <file.pkg.tar.zst>" ; fi }
  pkg-history_install() { grep -I "installed" /var/log/pacman.log |tr -d "[ALPM]" ; }
  pkg-history_upgrade() { grep -I "upgraded"  /var/log/pacman.log |tr -d "[ALPM]" ; }
  pkg-history_remove()  { grep -I "removed"   /var/log/pacman.log |tr -d "[ALPM]" ; }
  pkg-info() { if [ -n "$1" ]; then pacman -Qi "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-list-installed() { pacman -Q ; }
+ pkg-listfiles() { if [ -n "$1" ]; then pacman -Ql "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-locate() { if [ -n "$1" ]; then pacman -Qo "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
  pkg-names() { pacman -Qq ; }
  pkg-orphans() { pacman -Qdt ; }
