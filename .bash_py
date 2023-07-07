@@ -27,4 +27,10 @@ export PYTHONPYCACHEPREFIX=/tmp/__pycache__
  py_site()      { python3 -m site ; }
  py_uninstall() { pip3 uninstall "$@" ; }
 
+ py_venv()       { python3 -m venv venv ; }
+ py_venv_off()   { deactivate ; }
+ py_venv_on()    { source venv/bin/activate ; }
+ py_venv_req_r() { pip3 install -r requirements.txt ; }
+ py_venv_req_w() { pip3 freeze > requirements.txt ; }
+
 
