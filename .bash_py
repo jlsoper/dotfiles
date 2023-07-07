@@ -1,12 +1,21 @@
 #  $HOME/.bash_py
 
+
+########################################
+: '
+
+venv  - module ( Python3.4+ )
+
+pydoc3    <module_name>
+pydoc3 -w <module_name / package_name>
+
+
+'
+########################################
+
+
 #  move __pycache__ directory  ( Python3.8+ )
 export PYTHONPYCACHEPREFIX=/tmp/__pycache__
-
-#  venv  - module ( Python3.4+ )
-
-#  pydoc3    <module_name>
-#  pydoc3 -w <module_name / package_name>
 
 
 alias py_doc='pydoc3 -p 37000'
