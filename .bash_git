@@ -51,6 +51,7 @@ alias glogs='git --no-pager log --reverse'
       greset() { if [ -n "$1" ]; then git reset -- "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
 
 alias grollback='git reset --soft HEAD~1'
+alias gstage_deleted='git add $(git ls-files -d)'
 alias gstatus='git status -s'
 
 
