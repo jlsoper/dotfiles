@@ -7,7 +7,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 #  .NET telemetry setting
 #  export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-PATH=$PATH:~/scripts
+PATH=~/scripts:$PATH
 
 #  Linux
 if [ ! -d ~/.config ]; then mkdir ~/.config ; fi
