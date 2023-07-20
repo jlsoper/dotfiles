@@ -7,7 +7,7 @@
 #  .NET telemetry setting
 #  export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-PATH=$PATH:~/scripts
+PATH=~/scripts:$PATH
 
 #  X Window System
 if [ "$(tty)" = "/dev/tty3" ]
