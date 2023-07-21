@@ -1,6 +1,14 @@
 #!/bin/bash
 
-# synclient -> xserver-xorg-input-synaptics
+
+####################################
+#
+#
+#  synclient -> xserver-xorg-input-synaptics
+#
+#
+####################################
+
 
 # Acer laptop
 if [ $HOSTNAME = Jaguar ]
