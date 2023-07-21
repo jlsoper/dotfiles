@@ -27,13 +27,13 @@ gdstring() { if [ "$GDIFF_STRING" = "diff" ]; then GDIFF_STRING="difftool" ; els
 
 alias gadd='git add -A'
 alias gbranch='git branch -a'
-      gcheckout() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
+      gcheckout() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
 alias gclean='git clean -i'
 alias gclean_show='git clean -d -n'
       gclone_branch() { if [ -n "$2" ]; then git clone -b "$1" --single-branch "$2" ; else echo "usage: $FUNCNAME <branch> <remoteRepoURL>" ; fi }
 alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) -- $(hostname) \ $USER"'
 alias gconfig='git config --list --show-origin'
-      gdel() { if [ -n "$1" ]; then git reset "$1" ; else echo "usage: $FUNCNAME <fileName>" ; fi }
+alias gdel='git reset --'
 
 alias gdiff='git difftool'
       gdiff_sa() { git "$GDIFF_STRING" --staged "$@" ; }
@@ -42,24 +42,29 @@ alias gdiff='git difftool'
       gdiffF() { if [ -n "$3" ]; then git difftool "$1".."$2" -- "$3" ; else echo -e "usage: $FUNCNAME <branch1> <branch2> <file>\n -- OR --\nusage: $FUNCNAME <parent-SHA> <child-SHA> <file>" ; fi }  # compare file across branches or commits
 alias gdifftools='git difftool --tool-help'
 
+      ghelp() { if [ -n "$1" ]; then git help "$1" | col -b | expand -t 2 > /tmp/git-"$1".man ; else echo "usage: $FUNCNAME <command>" ; fi }
+
 alias glog='git --no-pager log --reverse --oneline'
 alias glogs='git --no-pager log --reverse'
 
       gpull() { if [ -n "$1" ]; then git pull origin "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
       gpush() { if [ -n "$1" ]; then git push origin "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
 
+      greset() { if [ -n "$1" ]; then git reset -- "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
+
 alias grollback='git reset --soft HEAD~1'
+alias gstage_deleted='git add $(git ls-files -d)'
 alias gstatus='git status -s'
 
 
 
 #####  Github
  wget_gha() { if [ -n "$2" ]; then wget "https://github.com/$1/$2/archive/main.zip" ; else echo "usage: $FUNCNAME <userID> <repo>" ; fi }
- wget_ghf() { if [ -n "$4" ]; then wget "https://raw.githubusercontent.com/$1/$2/$3/$4" ; else echo "usage: $FUNCNAME <userID> <repo> <branch> <fileName>" ; fi }
+ wget_ghf() { if [ -n "$4" ]; then wget "https://raw.githubusercontent.com/$1/$2/$3/$4" ; else echo "usage: $FUNCNAME <userID> <repo> <branch> <file>" ; fi }
 
 
 #####  gitLab
  wget_gla() { if [ -n "$2" ]; then wget "https://gitlab.com/$1/$2/-/archive/main/$2-main.zip" ; else echo "usage: $FUNCNAME <userID> <repo>" ; fi }
- wget_glf() { if [ -n "$4" ]; then wget "https://gitlab.com/$1/$2/-/raw/$3/$4" ; else echo "usage: $FUNCNAME <userID> <repo> <branch> <fileName>" ; fi }
+ wget_glf() { if [ -n "$4" ]; then wget "https://gitlab.com/$1/$2/-/raw/$3/$4" ; else echo "usage: $FUNCNAME <userID> <repo> <branch> <file>" ; fi }
 
 
