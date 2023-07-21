@@ -1,17 +1,16 @@
 #  $HOME/.bash_py
 
 
-########################################
-: '
-
-venv  - module ( Python3.4+ )
-
-pydoc3    <module_name>
-pydoc3 -w <module_name / package_name>
-
-
-'
-########################################
+####################################
+#
+#
+#  venv  - module ( Python3.4+ )
+#
+#  pydoc3    <module_name>
+#  pydoc3 -w <module_name / package_name>
+#
+#
+####################################
 
 
 #  move __pycache__ directory  ( Python3.8+ )

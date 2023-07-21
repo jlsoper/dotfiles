@@ -1,6 +1,7 @@
 #  $HOME/.bash_git
 
-########################################
+
+####################################
 #
 #  git fetch -p
 #  git reset --soft HEAD~1 (better)
@@ -9,12 +10,13 @@
 #  alias gconfig_helper='git config --global credential.helper store'
 #
 #
-## git push <remote> <branch>
+#  git push <remote> <branch>
 #
 #  git pull  origin   main
 #  git push  origin   main
 #
-########################################
+####################################
+
 
 #####  toggle variable for git diff / difftool
 GDIFF_STRING=diff
