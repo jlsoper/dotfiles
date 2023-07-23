@@ -3,6 +3,8 @@
 #  OSX stop console message
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+#  Homebrew  ( brew analytics off )
+export HOMEBREW_NO_ANALYTICS=1
 
 #  .NET telemetry setting
 #  export DOTNET_CLI_TELEMETRY_OPTOUT=1
