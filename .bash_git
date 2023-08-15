@@ -41,6 +41,7 @@ alias gdiff='git difftool'
       gdiffC() { if [ -n "$2" ]; then git "$GDIFF_STRING" "$1".."$2" ; else echo "usage: $FUNCNAME <parent-SHA> <child-SHA>" ; fi }
       gdiffF() { if [ -n "$3" ]; then git difftool "$1".."$2" -- "$3" ; else echo -e "usage: $FUNCNAME <branch1> <branch2> <file>\n -- OR --\nusage: $FUNCNAME <parent-SHA> <child-SHA> <file>" ; fi }  # compare file across branches or commits
 alias gdifftools='git difftool --tool-help'
+alias gdir='git ls-files --eol'
 
       ghelp() { if [ -n "$1" ]; then git help "$1" | col -b | expand -t 2 > /tmp/git-"$1".man ; else echo "usage: $FUNCNAME <command>" ; fi }
 
