@@ -87,6 +87,8 @@ alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
 
 alias sql-admin='mysql --tee=/tmp/sql-admin.log -u root -p'  # notee
 
+alias sysD-svcs='systemctl list-unit-files --state=enabled --no-pager'
+
 alias tail='tail -n 35'
 
 alias tasklist='/bin/ps auxf'
