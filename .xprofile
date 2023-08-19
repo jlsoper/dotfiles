@@ -5,17 +5,14 @@
 # Acer laptop
 if [ $HOSTNAME = Jaguar ]
 then
-  if xrandr | fgrep "HDMI-0 disconnected"
+  if xrandr | fgrep "HDMI-1 disconnected"
   then
-    xrandr --output VGA-0 --off --output HDMI-0 --off --output LVDS   --primary --auto
-    synclient TouchPadOff=0
+    xrandr --output VGA-0 --off --output HDMI-1 --off --output LVDS-1   --primary --auto
+#    synclient TouchPadOff=0
   else
-    xrandr --output VGA-0 --off --output LVDS   --off --output HDMI-0 --primary --auto
-    synclient TouchPadOff=1
+    xrandr --output VGA-0 --off --output LVDS-1   --off --output HDMI-1 --primary --auto
+#    synclient TouchPadOff=1
   fi
-
-  # vlc adjustment
-  export QT_AUTO_SCREEN_SCALE_FACTOR=0
 fi
 
 
