@@ -7,7 +7,8 @@
  compiler-c()   { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; gcc "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.c>"   ; fi }  # a.out
  compiler-cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
 
- dos2u() { perl -pi -e 's/\r\n/\n/' "$1" ; }
+ dos2u() { if [ -n "$1" ]; then perl -pi -e 's/\r\n/\n/' "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
+
  dvd_split() { split -d -b 4G "$1" "$1". ; }
  dvd_unsplit() { cat "$1".* > "$1" ; }
 
@@ -36,7 +37,8 @@
  sha256() { if [ -n "$1" ]; then shasum -a 256 -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
  sha512() { if [ -n "$1" ]; then shasum -a 512 -c "$1" ; else echo "usage: $FUNCNAME <file.sha512>" ; fi }
 
- u2dos() { perl -pi -e 's/\n/\r\n/' "$1" ; }
+ u2dos() { if [ -n "$1" ]; then perl -pi -e 's/\n/\r\n/' "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
+
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
 
 # WLAN - $USER
