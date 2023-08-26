@@ -21,9 +21,6 @@
  fgrep() { if [ -n "$1" ]; then find . -maxdepth 1 -type f -name "*" -exec grep -HIn --color=auto "$1" {} \; ; else echo "usage: $FUNCNAME <string>" ; fi }
 
  fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
- ftype() { grep -c $'\r' "$1" ; }
-
- gedit() { if [ -n "$1" ]; then (mousepad "$1" &) ; else echo "usage: $FUNCNAME <file>" ; fi }  # mousepad
 
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
