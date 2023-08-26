@@ -3,6 +3,8 @@
 #  Correct PATH variable (Debian)
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 
+#  WSL 2 - USERPROFILE=C:\Users\James
+export HOME_W=/mnt/c/Users/James
 
 #  .NET telemetry setting
 #  export DOTNET_CLI_TELEMETRY_OPTOUT=1
