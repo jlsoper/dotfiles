@@ -17,7 +17,7 @@ PATH=~/scripts:$PATH
 
 export LANG=C
 export LESSHISTFILE=-
-export GREP_COLOR='1;33'
+export GREP_COLORS='mt=1;33'
 
 #  Visual Studo Code
 export USER_VSC=$HOME/.config/vscode/user-data/User
