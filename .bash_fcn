@@ -18,7 +18,8 @@
 
  fbookmarks_clean() { if [ -n "$1" ]; then perl -pi -e 's/.ADD_DATE[^>]*//' "$1" ; else echo "usage: $FUNCNAME <bookmarks.html>" ; fi }
 
- fgrep() { if [ -n "$1" ]; then find . -maxdepth 1 -type f -name "*" -exec grep -HIn --color=auto "$1" {} \; ; else echo "usage: $FUNCNAME <string>" ; fi }
+# --fixed-strings  (search)
+ fgrep() { if [ -n "$1" ]; then find . -type f -name "*" -exec grep -HIn --color=auto "$1" {} \; ; else echo "usage: $FUNCNAME \"string\"" ; fi }
 
  fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
  ftype() { grep -c $'\r' "$1" ; }
