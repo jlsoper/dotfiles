@@ -42,6 +42,11 @@ alias gdiff='git difftool'
       gdiffF() { if [ -n "$3" ]; then git difftool "$1".."$2" -- "$3" ; else echo -e "usage: $FUNCNAME <branch1> <branch2> <file>\n -- OR --\nusage: $FUNCNAME <parent-SHA> <child-SHA> <file>" ; fi }  # compare file across branches or commits
 alias gdifftools='git difftool --tool-help'
 
+alias gdir='git ls-files --eol'
+
+#####  export Repo - current branch
+      gexport() { if [ -d .git ]; then git archive --format=zip -o /tmp/gitRepo.zip $(git branch --show-current) ; else echo "Invalid directory or location. Run from top level directory of Git Repository!" ; fi }
+
       ghelp() { if [ -n "$1" ]; then git help "$1" | col -b | expand -t 2 > /tmp/git-"$1".man ; else echo "usage: $FUNCNAME <command>" ; fi }
 
 alias glog='git --no-pager log --reverse --oneline'
