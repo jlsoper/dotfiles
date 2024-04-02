@@ -43,8 +43,11 @@ else
 fi
 
 
-# tweak for  io.elementary.terminal
-if [ -f ~/.bash_profile ]; then . ~/.bash_profile ; fi
+### tweak for  io.elementary.terminal
+if [ $0 != "-bash" ]
+then
+  if [ -f ~/.bash_profile ]; then . ~/.bash_profile ; fi
+fi
 
 
 # aliases (all users)

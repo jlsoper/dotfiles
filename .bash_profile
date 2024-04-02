@@ -22,10 +22,10 @@ export USER_VSC=$HOME/.config/vscode/user-data/User
 
 #  Get the aliases and set PS1
 ### tweak for  io.elementary.terminal
-####if [ -f ~/.bashrc ]
-####then
-####  . ~/.bashrc
-####fi
+if [ $0 == "-bash" ]
+then
+  if [ -f ~/.bashrc ]; then . ~/.bashrc ; fi
+fi
 
 alias sudo-su='sudo su -'
 
