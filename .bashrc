@@ -43,6 +43,10 @@ else
 fi
 
 
+# tweak for  io.elementary.terminal
+if [ -f ~/.bash_profile ]; then . ~/.bash_profile ; fi
+
+
 # aliases (all users)
 alias cd..='cd ..'
 alias cls='clear'
