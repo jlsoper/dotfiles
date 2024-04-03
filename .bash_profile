@@ -54,13 +54,5 @@ fi
 #  Wifi ssid
 if [ -f /sbin/iwgetid ]; then export WIFI=$(iwgetid -r) ; fi
 
-# XScreenSaver off
-if [ -n "$DISPLAY" ]
-then
-  xset s off
-  xset s noblank
-  xset -dpms
-fi
-
 export PATH
 
