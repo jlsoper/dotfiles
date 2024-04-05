@@ -13,10 +13,13 @@
 ####################################
 
 
+pip_upgrade() { python3 -m pip install --upgrade pip ; }
+
 #####  toggle variable for python venv
 PYTHON_VENV=0
 
 py_venv() { if [ "$PYTHON_VENV" = "0" ]; then source venv/bin/activate ; PYTHON_VENV=1 ; else deactivate ; PYTHON_VENV=0 ; fi }
+
 
 #  move __pycache__ directory  ( Python3.8+ )
 export PYTHONPYCACHEPREFIX=/tmp/__pycache__
