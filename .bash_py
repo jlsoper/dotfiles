@@ -13,6 +13,11 @@
 ####################################
 
 
+#####  toggle variable for python venv
+PYTHON_VENV=0
+
+py_venv() { if [ "$PYTHON_VENV" = "0" ]; then source venv/bin/activate ; PYTHON_VENV=1 ; else deactivate ; PYTHON_VENV=0 ; fi }
+
 #  move __pycache__ directory  ( Python3.8+ )
 export PYTHONPYCACHEPREFIX=/tmp/__pycache__
 
@@ -26,10 +31,8 @@ export PYTHONPYCACHEPREFIX=/tmp/__pycache__
  py_site()      { python3 -m site ; }
  py_uninstall() { pip3 uninstall "$@" ; }
 
- py_venv()       { python3 -m venv venv ; }
- py_venv_off()   { deactivate ; }
- py_venv_on()    { source venv/bin/activate ; }
- py_venv_req_r() { pip3 install -r requirements.txt ; }
- py_venv_req_w() { pip3 freeze > requirements.txt ; }
+ py_venv_create() { python3 -m venv venv ; }
+ py_venv_read()   { pip3 install -r requirements.txt ; }
+ py_venv_write()  { pip3 freeze > requirements.txt ; }
 
 
