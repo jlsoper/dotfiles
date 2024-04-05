@@ -13,6 +13,7 @@
 ####################################
 
 
+#  Run pip upgrade for: (system, venv)
 pip_upgrade() { python3 -m pip install --upgrade pip ; }
 
 #####  toggle variable for python venv
