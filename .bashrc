@@ -22,6 +22,9 @@ then
     PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"'
   fi
 
+  # set cursor color
+  printf '%b' '\e]12;cyan\a'
+
   umask 022
 
 else
@@ -35,6 +38,11 @@ else
   alias pkg-upgrade='apt upgrade'
 
   pkg-upgrade1() { if [ -n "$1" ]; then apt --only-upgrade install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+
+
+  ###  sudo group ( add / delete )
+  adduser_sudo() { if [ -n "$1" ]; then usermod -aG sudo "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # touch ~/.sudo_as_admin_successful
+  deluser_sudo() { if [ -n "$1" ]; then deluser "$1" sudo ; else echo "usage: $FUNCNAME <userID>" ; fi }
 
 fi
 
