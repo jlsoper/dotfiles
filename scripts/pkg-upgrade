@@ -1,0 +1,34 @@
+#!/bin/bash
+
+
+####################################
+#
+# read    - chmod 644
+# execute - chmod 755
+#
+#  ${var,,} for lower-case
+#  ${var^^} for upper-case
+#
+#
+#  lsb_release -a;echo "";uname -mrs
+#
+#
+####################################
+
+
+clear
+echo
+
+echo -n "Ready to upgrade Linux system? (y/n): " ; read answer
+echo
+
+if [ "${answer,,}" = "y" ]
+then
+  sudo apt update && sudo apt upgrade -y
+  echo
+else
+  echo "  System not updated, exiting.."
+  echo
+fi
+
+

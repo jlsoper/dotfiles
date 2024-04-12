@@ -27,10 +27,6 @@ then
 else
   PS1="(\[\033[1;31m\]\u\[\033[00m\]):\w>"
 
-  alias dir='ls --group-directories-first -ahl --color'
-
-  alias edit='nano'
-  alias view='nano -v'
 
 
   alias pkg-update='apt  update'
@@ -54,12 +50,39 @@ fi
 alias cd..='cd ..'
 alias cls='clear'
 alias cp='cp -iR'
+
+alias del='rm -f'
+alias deltree='rm -rf'
+
+
+alias   dir='ls --group-directories-first -hl --color'
+alias dir-b='ls --group-directories-first -1A --color'  # single column view
+alias dir-d='ls --group-directories-first -dhl --color'  # directory listing with *
+alias dir-f='ls -ALhlp --color | grep "/"'  # folder only view
+alias dir-h='ls --group-directories-first -adhl --color .*'  # hidden files view
+alias dir-p='ls --group-directories-first -Ahl --color | more'  # single page view
+alias dir-s='ls -AhlrS --color'  # size view
+alias dir-t='ls -Ahlrt --color'  # timestamp view
+alias dir-w='ls --group-directories-first -Alx --color'  # wide view
+alias  pdir='ls --group-directories-first -Ahl'  # printable view
+
+alias dircmp='diff -r'
+
+
+alias edit='nano'
+
+alias fc='vimdiff'
+alias fc-b='cmp'
+
+alias md='mkdir'
 alias mv='mv -i'
+
+alias path='echo -e ${PATH//:/\\n}'
+
+alias rd='rmdir'
 alias rm='rm -i'
 
-alias samba-adduser='smbpasswd -a'
-alias samba-listuser='pdbedit -L'
-alias samba-test='testparm'
 
 alias vi='vim -i NONE -u NONE'  # \r  -->  ^M
+alias view='nano -v'
 

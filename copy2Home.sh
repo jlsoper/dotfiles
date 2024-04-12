@@ -1,17 +1,15 @@
 #!/bin/bash
 
 
-cp  --preserve=mode .b*         $HOME
-cp  --preserve=mode .d*         $HOME
-cp  --preserve=mode .gitconfig  $HOME
-cp  --preserve=mode .nanorc     $HOME
-cp  --preserve=mode .vimrc      $HOME
+/usr/bin/cp  --preserve=mode .b*         $HOME
+/usr/bin/cp  --preserve=mode .dir_colors $HOME
+/usr/bin/cp  --preserve=mode .nanorc     $HOME
 
 
-if [ ! -d ~/.ssh ]
+if [ ! -d ~/scripts ]
 then
-  cp -R .ssh $HOME
+  /usr/bin/cp  -R scripts $HOME
 else
-  cp  --preserve=mode .ssh/config $HOME/.ssh
+  /usr/bin/cp  --preserve=mode scripts/pkg-upgrade $HOME/scripts
 fi
 
