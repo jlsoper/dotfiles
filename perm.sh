@@ -1,7 +1,10 @@
 #!/bin/bash
 
-chmod 755 scripts scripts/pkg-upgrade
+chmod 700 .ssh
 
-chmod 644 .b* .dir_colors .nanorc
+chmod 600 .dblogin .ssh/config
+
+chmod 644 .b* .dir_colors .gitconfig .nanorc .vimrc
+
 
 
