@@ -1,0 +1,19 @@
+#  $HOME/.bash_sysD
+
+###  alias / unalias
+
+alias sysD-svcs='systemctl list-unit-files --state=enabled --no-pager'
+
+
+###  functions - end with semicolon or newline
+
+#  systemctl does not require '.service' extension
+sysD-service-start() { if [ -n "$1" ]; then sudo systemctl start  "$1" ; else echo "usage: $FUNCNAME <service>" ; fi }
+sysD-service-stop()  { if [ -n "$1" ]; then sudo systemctl stop   "$1" ; else echo "usage: $FUNCNAME <service>" ; fi }
+
+#  does either reload(no) or restart(yes) [ config file ]
+sysD-service-r() { if [ -n "$1" ]; then sudo systemctl reload-or-restart "$1" ; else echo "usage: $FUNCNAME <service>" ; fi }
+
+sysD-service-status() { if [ -n "$1" ]; then systemctl status "$1" ; else echo "usage: $FUNCNAME <service>" ; fi }
+
+
