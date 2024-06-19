@@ -10,7 +10,7 @@
 PATH=~/scripts:$PATH
 
 #  X Window System
-if [ "$(tty)" = "/dev/tty3" ]
+if [ "$(tty)" = "/dev/tty1" ]
 then
   echo "Starting an X session.."
   echo
