@@ -68,6 +68,7 @@ set laststatus=2
 set mouse-=a
 set mousehide
 set nocompatible
+set nomodeline
 set nowrap
 set nowrapscan
 set ruler
