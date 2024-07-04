@@ -1,0 +1,22 @@
+#  $HOME/.ash_flatpak
+
+
+# doas apk add flatpak
+# doas apk add gnome-software-plugin-flatpak
+
+
+alias fpak-addRepo='doas flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo'
+alias fpak-delRepo='doas flatpak remote-delete flathub'
+
+alias fpak-help='flatpak -h'
+alias fpak-install='FPAK_install'
+alias fpak-list-installed='flatpak list'
+alias fpak-repolist='flatpak remotes'
+alias fpak-search='flatpak search'
+
+
+##########
+
+ FPAK_install() { if [ -n "$1" ]; then doas flatpak install flathub "$1" ; else echo "usage: fpak-install <Application ID>" ; fi }
+
+
