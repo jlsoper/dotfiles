@@ -6,8 +6,13 @@ cp  -p .dblogin   $HOME
 cp  -p .gitconfig $HOME
 cp  -p .vimrc     $HOME
 
-cp  -iR  .cache   $HOME
-cp  -iR  .config  $HOME
+rm  -f $HOME/.cache
+rm  -f $HOME/.config
+
+sleep 2
+
+ln -s $HOME/Library/Caches               $HOME/.cache
+ln -s $HOME/Library/Application\ Support $HOME/.config
 
 
 if [ ! -d ~/.ssh ]
