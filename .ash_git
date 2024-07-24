@@ -35,12 +35,18 @@ alias gcommit='git commit -m "$(date +%a) $(date +%D) $(date +%R) -- $(hostname)
 alias gconfig='git config --list --show-origin'
 alias gdel='git reset --'
 
+
 alias gdiff='git difftool'
+
       gdiff_sa() { git "$GDIFF_STRING" --staged "$@" ; }
-      gdiffB() { if [ -n "$2" ]; then git "$GDIFF_STRING" "$1".."$2" ; else echo "usage: $FUNCNAME <branch1> <branch2>" ; fi }  # for branch in remote repo, use syntax 'origin/branch2'
-      gdiffC() { if [ -n "$2" ]; then git "$GDIFF_STRING" "$1".."$2" ; else echo "usage: $FUNCNAME <parent-SHA> <child-SHA>" ; fi }
-      gdiffF() { if [ -n "$3" ]; then git difftool "$1".."$2" -- "$3" ; else echo -e "usage: $FUNCNAME <branch1> <branch2> <file>\n -- OR --\nusage: $FUNCNAME <parent-SHA> <child-SHA> <file>" ; fi }  # compare file across branches or commits
+      gdiff_branch() { if [ -n "$2" ]; then git "$GDIFF_STRING" origin/"$1".."$2" ; else echo -e "\nusage: $FUNCNAME <remote>  <active>\n"  ; fi }
+      gdiff_commit() { if [ -n "$2" ]; then git "$GDIFF_STRING"        "$1".."$2" ; else echo -e "\nusage: $FUNCNAME <old-SHA> <new-SHA>\n" ; fi }
+
+      gdiff_fb() { if [ -n "$3" ]; then git difftool origin/"$1".."$2" -- "$3" ; else echo -e "\nusage: $FUNCNAME <remote>  <active>  <file>\n" ; fi }
+      gdiff_fc() { if [ -n "$3" ]; then git difftool        "$1".."$2" -- "$3" ; else echo -e "\nusage: $FUNCNAME <old-SHA> <new-SHA> <file>\n" ; fi }
+
 alias gdifftools='git difftool --tool-help'
+
 
 alias gdir='git ls-files --eol'
 
