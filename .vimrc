@@ -30,7 +30,7 @@ map <silent> <C-PageDown> G
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  <F1>  - Open file (unix)
 "  <F2>  - Save file
-"  <F3>  - Save as file
+"  <F3>  - Save as.. (diff.tool=vimdiff)
 "  <F4>  - Quit
 
 "  <F5>  - Show non-printing chars
@@ -45,7 +45,7 @@ map <silent> <C-PageDown> G
 
 map <F1> :e ++ff=unix 
 map <F2> :w<CR>
-map <F3> :w 
+map <F3> :w ~/Desktop/
 map <F4> :q!<CR>
 
 map <silent> <F5> :set invlist<CR>
@@ -68,6 +68,7 @@ set laststatus=2
 set mouse-=a
 set mousehide
 set nocompatible
+set nomodeline
 set nowrap
 set nowrapscan
 set ruler
