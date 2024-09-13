@@ -4,8 +4,9 @@
 # functions - end with semicolon or newline
  bkup() { if [ -n "$1" ]; then cp "$1" "$1".`date +%Y-%m-%d_%H%M` ; else echo "usage: $FUNCNAME <file>" ; fi }  # date +%Y-%m-%d_%H%M%S
 
- compiler-c()   { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; gcc "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.c>"   ; fi }  # a.out
- compiler-cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
+# C / C++ compiler with debug information (gdb)
+ compile_c()   { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; gcc -g "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.c>"   ; fi }  # a.out
+ compile_cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ -g "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
 
  dos2u() { if [ -n "$1" ]; then perl -pi -e 's/\r\n/\n/' "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
 
