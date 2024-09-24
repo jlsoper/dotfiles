@@ -6,8 +6,8 @@
 #  touch -t 200808281107.53            file1.txt
 #  touch -r                            file1.txt file2.txt
 
-#  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
-#  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
+#  alias bootsect_lnx='doas dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
+#  alias chromebook-create='doas dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
 
 #  ln -s source_file link_name
 
@@ -52,14 +52,14 @@ alias grupos='cut -d: -f1 /etc/group | sort'
 
 alias ipconfig='ifconfig | grep --color=never "cast"'
 
-alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
+alias iso2usb='doas dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
 
 alias md='mkdir'
 
 alias mem-c='free -ht'
 alias mem='vmstat -s -S M | grep --color=never "mem"'
 
-alias mnt-folders='mkdir /tmp/iso ; mkdir /tmp/usb ; mkdir /tmp/sharedF ; sudo mv /tmp/iso /mnt/ ; sudo mv /tmp/usb /mnt/ ; sudo mv /tmp/sharedF /mnt/'
+alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/usb ; doas mv /tmp/iso /mnt/ ; doas mv /tmp/usb /mnt/'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias netsend='smbclient -M'  # 'net send' in NT
