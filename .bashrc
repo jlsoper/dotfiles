@@ -33,12 +33,12 @@ else
   alias view='nano -v'
 
 
-  alias pkg-update='nala update'    # apt update
-  alias pkg-install='nala install'  # apt install
-  alias pkg-remove='nala  remove'   # apt remove
-  alias pkg-upgrade='nala upgrade'  # apt upgrade
+  alias pkg-update='xbps-install -S'   # apt update
+  alias pkg-install='xbps-install'     # apt install
+  alias pkg-remove='xbps-remove'       # apt remove
+  alias pkg-upgrade='xbps-install -u'  # apt upgrade
 
-  pkg-upgrade1() { if [ -n "$1" ]; then apt --only-upgrade install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+  pkg-upgrade1() { if [ -n "$1" ]; then xbps-install -u "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
 
 fi
 
