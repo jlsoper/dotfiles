@@ -99,3 +99,5 @@ alias umount_usb='diskutil unmount /dev/disk2s1'
 alias ver='sw_vers ; echo "" ; uname -mrs'
 alias view='vim -MR'
 
+alias wifiCard='ioreg -l | grep IO80211DriverVersion | tr -d "|"'
+
