@@ -39,6 +39,7 @@ alias du='du -kh'
 
 alias edit='vim'
 
+alias enetCard='lspci | grep "Ethernet controller"'
 alias fc='vimdiff'
 alias fc-b='cmp'
 
@@ -100,4 +101,6 @@ alias view='vim -MR'
 
 alias vt-cpu='lscpu | grep "Virtual"'
 alias vt-x='grep -E -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
+
+alias wifiCard='lspci | grep "Network controller"'
 

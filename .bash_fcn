@@ -41,8 +41,8 @@
  rlogin() { if [ -n "$2" ]; then ssh "$1"@"$2" ; else echo "usage: $FUNCNAME <userID> <host>" ; fi }
 
  rtext() { if [ -n "$1" ]; then cat "$1" | fold -95 -s > "$1".text ; else echo "usage: $FUNCNAME <file>" ; fi }
- setNcard() { sudo ifconfig enp6s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
- setWcard() { sudo ifconfig wlp7s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
+ setEnetCard() { sudo ifconfig enp6s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
+ setWifiCard() { sudo ifconfig wlp7s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
  sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
  sha512() { if [ -n "$1" ]; then sha512sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha512>" ; fi }
 
