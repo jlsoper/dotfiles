@@ -19,6 +19,14 @@ export LESSHISTFILE=-
 #  export GREP_COLOR='1;33'
 export GREP_COLORS='mt=1;33'
 
+#  ldd --version
+if [ -f /lib/ld-musl-x86_64.so.1 ]
+then
+  export C_LIBRARY='musl libc'
+else
+  export C_LIBRARY='glibc'
+fi
+
 #  Visual Studo Code
 export USER_VSC=$HOME/.config/vscode/user-data/User
 
@@ -56,6 +64,7 @@ fi
 
 #  Wifi ssid
 if [ -f /sbin/iwgetid ]; then export WIFI=$(iwgetid -r) ; fi
+
 
 export PATH
 

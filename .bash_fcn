@@ -4,10 +4,13 @@
 # functions - end with semicolon or newline
  bkup() { if [ -n "$1" ]; then cp "$1" "$1".`date +%Y-%m-%d_%H%M` ; else echo "usage: $FUNCNAME <file>" ; fi }  # date +%Y-%m-%d_%H%M%S
 
- compiler-c()   { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; gcc "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.c>"   ; fi }  # a.out
- compiler-cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
+# C / C++ compiler with debug information (gdb)
+ compile_c()   { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; gcc -g "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.c>"   ; fi }  # a.out
+ compile_cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ -g "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
 
  dos2u() { if [ -n "$1" ]; then perl -pi -e 's/\r\n/\n/' "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
+
+ dsize() { if [ -n "$1" ]; then du -khs "$1" ; else echo "usage: $FUNCNAME <directory>" ; fi }
 
  dvd_split() { split -d -b 4G --verbose "$1" "$1". ; }
  dvd_unsplit() { cat "$1".* > "$1" ; }
@@ -28,8 +31,8 @@
 
 ###  mount a filesystem
  mnt_iso() { if [ -n "$1" ]; then sudo mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
- mnt_usb() { sudo mount /dev/sdb /mnt/usb/ ; }
- mnt_vmf() { sudo mount -t 9p -o trans=virtio /sharedF /mnt/sharedF/ ; }
+ mnt_usb() { sudo mount -t exfat /dev/sdb1 /mnt/usb/ ; }
+# mnt_vmf() { sudo mount -t 9p -o trans=virtio /sharedF /mnt/sharedF/ ; }
 
 
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
@@ -40,8 +43,8 @@
  rlogin() { if [ -n "$2" ]; then ssh "$1"@"$2" ; else echo "usage: $FUNCNAME <userID> <host>" ; fi }
 
  rtext() { if [ -n "$1" ]; then cat "$1" | fold -95 -s > "$1".text ; else echo "usage: $FUNCNAME <file>" ; fi }
- setNcard() { sudo ifconfig enp6s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
- setWcard() { sudo ifconfig wlp7s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
+ setEnetCard() { sudo ifconfig enp6s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
+ setWifiCard() { sudo ifconfig wlp7s0 192.168."$1" netmask 255.255.255.0 broadcast 192.168."$1" ; }
  sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
  sha512() { if [ -n "$1" ]; then sha512sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha512>" ; fi }
 
@@ -52,7 +55,7 @@
 ###  unmount filesystems
  umnt_iso() { sudo umount /mnt/iso/ ; }
  umnt_usb() { sudo umount /mnt/usb/ ; }
- umnt_vmf() { sudo umount /mnt/sharedF/ ; }
+# umnt_vmf() { sudo umount /mnt/sharedF/ ; }
 
 
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
