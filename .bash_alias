@@ -21,7 +21,7 @@ alias chdir='pwd'
 alias cpu-info='cat /proc/cpuinfo'
 alias del='rm -f'
 alias deltree='rm -rf'
-alias df='df -kTh'
+alias df='df -kTh | grep "Used" ; df -kThx tmpfs | grep "/dev/" | sort'  # sda or vda
 
 alias   dir='ls --group-directories-first -hl --color'
 alias dir-b='ls --group-directories-first -1A --color'  # single column view
@@ -35,10 +35,10 @@ alias dir-w='ls --group-directories-first -Alx --color'  # wide view
 alias  pdir='ls --group-directories-first -Ahl'  # printable view
 
 alias dircmp='diff -r'
-alias du='du -kh'
 
 alias edit='vim'
 
+alias enetCard='lspci | grep "Ethernet controller"'
 alias fc='vimdiff'
 alias fc-b='cmp'
 
@@ -100,4 +100,6 @@ alias view='vim -MR'
 
 alias vt-cpu='lscpu | grep "Virtual"'
 alias vt-x='grep -E -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
+
+alias wifiCard='lspci | grep "Network controller"'
 
