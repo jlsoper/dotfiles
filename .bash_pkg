@@ -8,6 +8,7 @@
  pkg-list-installed() { xbps-query -l ; }
  pkg-listfiles() { if [ -n "$1" ]; then xbps-query -f "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-names() { xbps-query -l | cut -d' ' -f2 ; }
+ pkg-repolist() { xbps-query -L ; }
  pkg-search() { xbps-query -Rs "$@" ; }
 
 
