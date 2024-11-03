@@ -19,7 +19,7 @@ alias chdir='pwd'
 alias cpu-info='sysctl machdep.cpu.brand_string'
 alias del='rm -f'
 alias deltree='rm -rf'
-alias df='df -kH'
+alias df='df -klH | grep "Used" ; df -klH | grep "/dev/" | sort'
 
 alias   dir='ls -hl --color'
 alias dir-b='ls -1A --color'  # single column view
@@ -33,7 +33,6 @@ alias dir-w='ls -Alx --color'  # wide view
 alias  pdir='ls -Ahl'  # printable view
 
 alias dircmp='diff -r'
-alias du='du -kh'
 
 alias edit='vim'
 
