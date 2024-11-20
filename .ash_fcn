@@ -10,6 +10,8 @@
 
  dos2u() { if [ -n "$1" ]; then perl -pi -e 's/\r\n/\n/' "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
 
+ dsize() { if [ -n "$1" ]; then du -khs "$1" ; else echo "usage: $FUNCNAME <directory>" ; fi }
+
  dvd_split() { split -d -b 4G --verbose "$1" "$1". ; }
  dvd_unsplit() { cat "$1".* > "$1" ; }
 
