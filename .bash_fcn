@@ -32,7 +32,6 @@
 ###  mount a filesystem
  mnt_iso() { if [ -n "$1" ]; then sudo mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
  mnt_usb() { sudo mount -t exfat /dev/sdb1 /mnt/usb/ ; }
-# mnt_vmf() { sudo mount -t 9p -o trans=virtio /sharedF /mnt/sharedF/ ; }
 
 
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
@@ -55,7 +54,6 @@
 ###  unmount filesystems
  umnt_iso() { sudo umount /mnt/iso/ ; }
  umnt_usb() { sudo umount /mnt/usb/ ; }
-# umnt_vmf() { sudo umount /mnt/sharedF/ ; }
 
 
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
