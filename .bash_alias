@@ -55,7 +55,7 @@ alias md='mkdir'
 alias mem-c='free -ht'
 alias mem='vmstat -s -S M | grep --color=never "mem"'
 
-alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/unix ; mkdir -p /tmp/win ; mkdir -p /tmp/usb ; sudo mv /tmp/iso /mnt/ ; sudo mv /tmp/unix /mnt/ ; sudo mv /tmp/win /mnt/ ; sudo mv /tmp/usb /mnt/'
+alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sharedF ; mkdir -p /tmp/usb ; sudo mv /tmp/iso /mnt/ ; sudo mv /tmp/sharedF /mnt/ ; sudo mv /tmp/usb /mnt/'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias netsend='smbclient -M'  # 'net send' in NT
