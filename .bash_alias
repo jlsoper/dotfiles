@@ -11,7 +11,7 @@
 
 #  ln -s source_file link_name
 
-alias aterm='urxvt -g 208x62'
+alias aterm='urxvt -g 182x60'
 alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
 
 alias c-make='cmake -S . -B build && make -C build'  # (cd build && make)
