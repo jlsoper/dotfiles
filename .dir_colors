@@ -299,6 +299,7 @@ EXEC 01;32
 
 # colorize (my dotfiles) [ brown ]
 
+.Xmodmap        00;33
 .Xresources     00;33
 .bash_alias     00;33
 .bash_archive   00;33
