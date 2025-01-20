@@ -19,15 +19,15 @@ then
 fi
 
 
-# HP laptop
-if [ $HOSTNAME = Leopard ]
+# Macbook Pro laptop
+if [ $HOSTNAME = Lion ]
 then
-  if xrandr | fgrep "HDMI-1 disconnected"
+  if xrandr | fgrep "HDMI1 disconnected"
   then
-    xrandr --output HDMI-1 --off --output eDP-1  --primary --auto
+    xrandr --output HDMI1 --off --output eDP1  --primary --auto
     synclient TouchPadOff=0
   else
-    xrandr --output eDP-1  --off --output HDMI-1 --primary --auto
+    xrandr --output eDP1  --off --output HDMI1 --primary --auto
     synclient TouchPadOff=1
   fi
 fi
