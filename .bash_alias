@@ -48,8 +48,6 @@ alias grupos='cut -d: -f1 /etc/group | sort'
 
 alias ipconfig='ip -c -br a | grep "UP"'  # ifconfig | grep --color=never "cast"
 
-alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
-
 alias md='mkdir'
 
 alias mem-c='free -ht'
