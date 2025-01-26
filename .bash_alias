@@ -1,27 +1,13 @@
 #  $HOME/.bash_alias  ( alias / unalias )
 
-#  grep parameters [ -c count | -i ignorecase | -r recursive | -w whole word ]
-
-#  touch -d 'Aug 28 11:07:53 EDT 2008' file1.txt
-#  touch -t 200808281107.53            file1.txt
-#  touch -r                            file1.txt file2.txt
-
-#  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
-#  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
-
 #  ln -s source_file link_name
-
-alias aterm='urxvt -g 208x62'
-alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
 
 alias c-make='cmake -S . -B build && make -C build'  # (cd build && make)
 
 alias chdir='pwd'
 
-alias cpu-info='cat /proc/cpuinfo'
 alias del='rm -f'
 alias deltree='rm -rf'
-alias df='df -kTh | grep "Used" ; df -kThx tmpfs | grep "/dev/" | sort'  # sda or vda
 
 alias   dir='ls --group-directories-first -hl --color'
 alias dir-b='ls --group-directories-first -1A --color'  # single column view
@@ -38,66 +24,32 @@ alias dircmp='diff -r'
 
 alias edit='vim'
 
-alias enetCard='lspci | grep "Ethernet controller"'
 alias fc='vimdiff'
 alias fc-b='cmp'
 
 alias finger='pinky -l'
-alias groups='/usr/bin/groups | tr " " "\n"'
-alias grupos='cut -d: -f1 /etc/group | sort'
+alias groups='/bin/groups | tr " " "\n"'
 
-alias ipconfig='ip -c -br a | grep "UP"'  # ifconfig | grep --color=never "cast"
+alias ipconfig='ifconfig | grep --color=never "Bcast"'
 
 alias md='mkdir'
 
-alias mem-c='free -ht'
-alias mem='vmstat -s -S M | grep --color=never "mem"'
-
-alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sharedF ; mkdir -p /tmp/usb ; sudo mv /tmp/iso /mnt/ ; sudo mv /tmp/sharedF /mnt/ ; sudo mv /tmp/usb /mnt/'
-
 alias nbrfiles='echo $(ls -A1 | wc -l)'
-alias netsend='smbclient -M'  # 'net send' in NT
-alias nm-networks='nmcli connection show'
-alias nm-status='nmcli device'
-alias open_display='export DISPLAY=:0.0 ; xhost +'
 
 alias path='echo -e ${PATH//:/\\n}'
 
-alias permiso-d='find . -type d -exec chmod 0755 {} \;'
-alias permiso-f='find . -type f -exec chmod 0644 {} \;'
-
-alias pjobs='lpq'
-alias pjobs_cancel='lprm'
-alias print='lpr -o cpi=14 -o prettyprint'
-
 alias printenv='env | sort'
 
-alias ps='ps -x -o user,pid,ppid,tty,args'  # /bin/ps -fu $USER
-alias ps-tree='pstree -anp $USER'
-
-alias pscan='netstat -natup'
-alias pserver='lpstat -r'  # CUPS server status
-
 alias rd='rmdir'
-alias scanpci='lspci -vvnn'
 
 alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
 
-alias sql-admin='mysql --tee=/tmp/sql-admin.log -u root -p'  # notee
-
 alias tail='tail -n 35'
-
-alias tasklist='/bin/ps auxf'
 
 alias tracert='traceroute'
 
 alias type='cat -e'  # ^M$ -> \r\n
 
-alias ver='lsb_release -a;echo "";uname -mrs'
+alias ver='uname -ms'
 alias view='vim -MR'
-
-alias vt-cpu='lscpu | grep "Virtual"'
-alias vt-x='grep -E -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
-
-alias wifiCard='lspci | grep "Network controller"'
 
