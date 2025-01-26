@@ -1,13 +1,9 @@
 #!/bin/bash
 
 
-cp  --preserve=mode .Xresources $HOME
 cp  --preserve=mode .b*         $HOME
-cp  --preserve=mode .d*         $HOME
 cp  --preserve=mode .gitconfig  $HOME
 cp  --preserve=mode .nanorc     $HOME
-cp  --preserve=mode .vimrc      $HOME
-cp  --preserve=mode .xprofile   $HOME
 
 
 if [ ! -d ~/.ssh ]
