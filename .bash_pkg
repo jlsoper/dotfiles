@@ -13,6 +13,8 @@
 
 
  pkg-info() { if [ -n "$1" ]; then pkgman info "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+ pkg-list-installed() { cd /boot/system/packages/ ; ls -1A --color *.hpkg ; cd ; }
+ pkg-names() { ls -1A --color /boot/system/apps/ ; }
  pkg-repolist() { pkgman list-repos ; }
  pkg-search() { if [ -n "$1" ]; then pkgman search "$1" ; else echo "usage: $FUNCNAME <search-string>" ; fi }
 
