@@ -4,9 +4,12 @@
 ##########
 
  pkg-update()  { pkgman refresh ; }
- pkg-install() { pkgman install ; }
- pkg-remove()  { pkgman uninstall ; }
+
+ pkg-install() { if [ -n "$1" ]; then pkgman install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+ pkg-remove() { if [ -n "$1" ]; then pkgman uninstall "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+
  pkg-upgrade() { pkgman update ; }
+
 
 
  pkg-info() { if [ -n "$1" ]; then pkgman info "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
