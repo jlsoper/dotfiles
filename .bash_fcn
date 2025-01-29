@@ -26,8 +26,6 @@
 
  fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
 
- iso2usb() { if [ -n "$1" ]; then sudo dd if="$1" of=/dev/sdb bs=4M conv=fdatasync ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
-
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
 
