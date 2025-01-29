@@ -32,7 +32,6 @@
 ###  mount a filesystem
  mnt_iso() { if [ -n "$1" ]; then doas mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
  mnt_usb() { doas mount -t exfat /dev/sdb1 /mnt/usb/ ; }
-# mnt_vmf() { doas mount -t 9p -o trans=virtio /sharedF /mnt/sharedF/ ; }
 
 
  mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
@@ -76,7 +75,7 @@
  wifi_info() { iwconfig wlan0 ; }
 
 
- xlogin() { ssh -X "$1"@"$2" ; }
+ xlogin() { if [ -n "$2" ]; then ssh -X "$1"@"$2" ; else echo "usage: $FUNCNAME <userID> <host>" ; fi }
 
  xml_format() { if [ -n "$1" ]; then perl -pi -e 's/\x3c/\n\x3c/g' "$1" ; tail -n +2 "$1" > .tempFile ; mv -f .tempFile "$1" ; else echo "usage: $FUNCNAME <file.xml>" ; fi }  # < character
 
