@@ -8,7 +8,7 @@ cp  .gitconfig  $HOME
 cp  .nanorc     $HOME
 cp  .profile    $HOME
 cp  .vimrc      $HOME
-cp  .xprofile   $HOME
+
 
 if [ ! -d ~/.ssh ]
 then
