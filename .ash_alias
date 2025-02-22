@@ -56,7 +56,7 @@ alias md='mkdir'
 alias mem-c='free -ht'
 alias mem='vmstat -s -S M | grep --color=never "mem"'
 
-alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/usb ; doas mv /tmp/iso /mnt/ ; doas mv /tmp/usb /mnt/'
+alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sdcard ; mkdir -p /tmp/usb ; doas mv /tmp/iso /mnt/ ; doas mv /tmp/sdcard /mnt/ ; doas mv /tmp/usb /mnt/'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias netsend='smbclient -M'  # 'net send' in NT

@@ -31,6 +31,7 @@
 
 ###  mount a filesystem
  mnt_iso() { if [ -n "$1" ]; then doas mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
+ mnt_sdcard() { doas mount -t exfat /dev/mmcblk0p1 /mnt/sdcard ; }
  mnt_usb() { doas mount -t exfat /dev/sdb1 /mnt/usb/ ; }
 
 
@@ -53,8 +54,8 @@
 
 ###  unmount filesystems
  umnt_iso() { doas umount /mnt/iso/ ; }
+ umnt_sdcard() { doas umount /mnt/sdcard/ ; }
  umnt_usb() { doas umount /mnt/usb/ ; }
-# umnt_vmf() { doas umount /mnt/sharedF/ ; }
 
 
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
