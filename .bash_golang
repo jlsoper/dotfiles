@@ -1,0 +1,11 @@
+#  $HOME/.bash_golang
+
+
+export GOLANG_HOME=/opt/go
+
+
+PATH=$GOLANG_HOME/bin:$PATH
+
+export PATH
+
+
