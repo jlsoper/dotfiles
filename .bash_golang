@@ -1,10 +1,8 @@
 #  $HOME/.bash_golang
 
 
-#   $USER_VSC/settings.json
+#   VSCode settings.json
 #   "go.goroot": "/opt/go"
-
-export GOPATH=$HOME/golang
 
 
 PATH=/opt/go/bin:$PATH
