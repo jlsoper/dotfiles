@@ -1,10 +1,13 @@
 #  $HOME/.bash_golang
 
 
-export GOLANG_HOME=/opt/go
+#   $USER_VSC/settings.json
+#   "go.goroot": "/opt/go"
+
+export GOPATH=$HOME/golang
 
 
-PATH=$GOLANG_HOME/bin:$PATH
+PATH=/opt/go/bin:$PATH
 
 export PATH
 
