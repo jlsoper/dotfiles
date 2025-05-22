@@ -29,7 +29,7 @@ alias gadd='git add -A'
 
 alias gbranch='git branch -a'
       gbranch_add() { if [ -n "$1" ]; then git branch    "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
-      gbranch_del() { if [ -n "$1" ]; then git branch -d "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
+      gbranch_del() { if [ -n "$1" ]; then git branch -D "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
 
       gbranch_merge() { if [ -n "$1" ]; then git merge "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
 alias gbranch_merge_status='git branch --merged'
