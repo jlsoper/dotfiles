@@ -64,6 +64,10 @@
  user_del() { if [ -n "$1" ]; then sudo deluser --remove-home "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # /etc/deluser.conf
  user_switch() { if [ -n "$1" ]; then su -l "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }
 
+
+# vsc() { if [ -n "$1" ]; then /opt/VSCode/bin/codium  --extensions-dir ~/.config/vscodevim/extensions  --user-data-dir $HOME/.config/vscodevim/user-data "$1" &> /dev/null ; else echo "usage: $FUNCNAME <file>" ; fi }
+
+
 # Virtualization Technology
  vt_convert()  { if [ -n "$1" ]; then qemu-img convert -f vmdk  "$1" "$1".qcow2 ; else echo "usage: $FUNCNAME <image.vmdk>" ; fi }
  vt_img_info() { if [ -n "$1" ]; then qemu-img info "$1" ; else echo "usage: $FUNCNAME <image.qcow2>" ; fi }
