@@ -26,7 +26,19 @@ gdstring() { if [ "$GDIFF_STRING" = "diff" ]; then GDIFF_STRING="difftool" ; els
 
 
 alias gadd='git add -A'
+
 alias gbranch='git branch -a'
+      gbranch_add() { if [ -n "$1" ]; then git branch    "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
+      gbranch_del() { if [ -n "$1" ]; then git branch -D "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
+
+      gbranch_merge() { if [ -n "$1" ]; then git merge "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
+alias gbranch_merge_status='git branch --merged'
+
+      gbranch_remote_add() { if [ -n "$1" ]; then git push -u origin          "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
+      gbranch_remote_del() { if [ -n "$1" ]; then git push    origin --delete "$1" ; else echo "usage: $FUNCNAME <branch>" ; fi }
+
+      gbranch_rename() { if [ -n "$2" ]; then git branch -m "$1" "$2" ; else echo "usage: $FUNCNAME <oldbranch> <newbranch>" ; fi }
+
       gcheckout() { if [ -n "$1" ]; then git checkout -- "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
 alias gclean='git clean -i'
 alias gclean_show='git clean -d -n'
