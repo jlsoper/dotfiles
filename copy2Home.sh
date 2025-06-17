@@ -1,18 +1,12 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 
-cp  -p .b*        $HOME
-cp  -p .dblogin   $HOME
-cp  -p .gitconfig $HOME
-cp  -p .vimrc     $HOME
-
-rm  -f $HOME/.cache
-rm  -f $HOME/.config
-
-sleep 2
-
-ln -s $HOME/Library/Caches               $HOME/.cache
-ln -s $HOME/Library/Application\ Support $HOME/.config
+cp  -p .Xresources $HOME
+cp  -p .b*         $HOME
+cp  -p .dblogin    $HOME
+cp  -p .gitconfig  $HOME
+cp  -p .nanorc     $HOME
+cp  -p .vimrc      $HOME
 
 
 if [ ! -d ~/.ssh ]

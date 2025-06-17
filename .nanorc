@@ -1,0 +1,67 @@
+# ~/.nanorc
+
+
+# set tabstospaces
+# set unix
+
+set autoindent
+set casesensitive
+set constantshow
+set matchbrackets "(<[{)>]}"
+set nohelp
+set nowrap
+set quickblank
+set tabsize 4
+
+
+# set functioncolor  black,yellow
+set keycolor       yellow,black
+set numbercolor    green,black
+set statuscolor    green,black
+set titlecolor     white,blue
+
+
+unset backup
+unset historylog
+
+
+## vim like settings
+#bind F1 insert            main
+#bind F2 savefile          main
+#bind F3 writeout          main
+#bind F4 exit              main
+ bind F5 whitespacedisplay main
+
+
+unbind F2  all
+unbind F3  all
+unbind F4  all
+
+bind   F6  linenumbers main
+unbind F7  all
+unbind F8  all
+
+unbind F9  all
+unbind F10 all
+unbind F11 all
+unbind F12 all
+
+
+## Ctrl key ##
+bind ^C copy     main
+bind ^F whereis  main
+bind ^G findnext main
+
+bind ^O insert   main
+
+bind ^Q exit     all
+
+bind ^R replace  main
+bind ^S writeout main
+bind ^V paste    main
+bind ^X cut      main
+
+## Alt key ##
+bind M-/ comment main
+bind M-H help    all
+
