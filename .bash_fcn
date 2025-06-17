@@ -45,9 +45,7 @@
  upperCase() { tr "[:lower:]" "[:upper:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
 
 # WLAN - $USER
- wifi_info()   { airport -I ; }
  wifi_passwd() { if [ -n "$1" ]; then security find-generic-password -ga "$1" | grep "password:" ; else echo "usage: $FUNCNAME <SSID>" ; fi }
- wifi_scan()   { airport -s ; }
 
  xlogin() { ssh -X "$1"@"$2" ; }
 

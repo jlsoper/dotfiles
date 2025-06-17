@@ -8,8 +8,6 @@
 
 #  ln -s source_file link_name
 
-alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport'
-
 alias battery-info='pmset -g batt'
 
 alias c-make='cmake -S . -B build'
