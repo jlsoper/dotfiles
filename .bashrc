@@ -24,24 +24,10 @@ then
 
   umask 022
 
-else
-  PS1="(\[\033[1;31m\]\u\[\033[00m\]):\w>"
-
-  alias dir='ls -ahl --color'
-
-  alias edit='nano'
-  alias view='nano -v'
-
-
-  alias pkg-update='pkg update'    # apt update
-  alias pkg-install='pkg install'  # apt install
-  alias pkg-remove='pkg  remove'   # apt remove
-  alias pkg-upgrade='pkg upgrade'  # apt upgrade
-
 fi
 
 
-# aliases (all users)
+# aliases
 alias cd..='cd ..'
 alias cls='clear'
 alias cp='cp -iR'  # if source_file == directory, do NOT end with '/' character (OSX)
