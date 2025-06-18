@@ -1,5 +1,9 @@
 #  $HOME/.bash_profile
 
+#  Correct PATH variable (FreeBSD)
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+
+
 #  .NET telemetry setting
 #  export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
