@@ -28,6 +28,7 @@ fi
 
 
 # aliases
+alias aterm='urxvt -fn "xft:DejaVu Sans Mono"'
 alias cd..='cd ..'
 alias cls='clear'
 alias cp='cp -iR'  # if source_file == directory, do NOT end with '/' character (OSX)
