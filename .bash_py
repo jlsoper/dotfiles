@@ -1,5 +1,8 @@
 #  $HOME/.bash_py
 
+#  FreeBSD
+alias pip3='pip'
+
 
 ####################################
 #
