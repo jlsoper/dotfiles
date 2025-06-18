@@ -1,18 +1,9 @@
 #  $HOME/.bash_profile
 
-#  OSX stop console message
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
-#  Homebrew  ( brew analytics off )
-export HOMEBREW_NO_ANALYTICS=1
-
 #  .NET telemetry setting
 #  export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 PATH=~/scripts:$PATH
-
-#  Linux
-if [ ! -d ~/.config ]; then mkdir ~/.config ; fi
 
 #  Database settings
 #  export DB_HOME=/opt/hsqldb
@@ -25,15 +16,15 @@ export LESSHISTFILE=-
 export GREP_COLORS='mt=1;33'
 
 #  Visual Studo Code
-export USER_VSC=$HOME/.config/vscode/user-data/User
-
-export SUDO_PS1="(\[\033[1;31m\]\u\[\033[00m\]):\w>"
+#   export USER_VSC=$HOME/.config/vscode/user-data/User
 
 #  Get the aliases and set PS1
 if [ -f ~/.bashrc ]
 then
   . ~/.bashrc
 fi
+
+alias sudo-su='sudo su -'
 
 if [ -f ~/.bash_alias   ]; then . ~/.bash_alias   ; fi
 if [ -f ~/.bash_archive ]; then . ~/.bash_archive ; fi
