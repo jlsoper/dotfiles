@@ -5,7 +5,7 @@
 
 
 
-# pkg-info() { if [ -n "$1" ]; then xbps-query -RS "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+ pkg-info() { if [ -n "$1" ]; then pkg info "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-list-installed() { pkg info ; }
  pkg-listfiles() { if [ -n "$1" ]; then pkg info -l "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-names() { pkg info | cut -d' ' -f1 ; }
