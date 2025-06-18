@@ -11,7 +11,7 @@
 
 #  ln -s source_file link_name
 
-alias aterm='urxvt -g 182x60'
+alias aterm='urxvt -fn "xft:DejaVu Sans Mono"'
 alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
 
 alias c-make='cmake -S . -B build && make -C build'  # (cd build && make)
@@ -42,7 +42,6 @@ alias enetCard='lspci | grep "Ethernet controller"'
 alias fc='vimdiff'
 alias fc-b='cmp'
 
-alias finger='pinky -l'
 alias groups='/usr/bin/groups | tr " " "\n"'
 alias grupos='cut -d: -f1 /etc/group | sort'
 
