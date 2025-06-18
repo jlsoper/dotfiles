@@ -1,7 +1,33 @@
 #  $HOME/.bash_py
 
-#  FreeBSD
-alias pip3='pip'
+
+########## FreeBSD #################
+#
+  alias pip3='pip'
+#
+#
+#  Message from py311-pip-23.3.2_4:
+#
+#  pip MUST ONLY be used:
+#
+#  * With the --user flag,
+#
+#  OR
+#
+#  * To install or manage Python packages in virtual environments
+#
+#  Failure to follow this warning can and will result in an
+#  inconsistent system-wide Python environment
+#
+#  (LOCALBASE/lib/pythonX.Y/site-packages)
+#
+#  and cause errors
+#
+#  Avoid using pip as root!
+#
+########## FreeBSD #################
+
+
 
 
 ####################################
