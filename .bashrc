@@ -33,6 +33,7 @@ alias cls='clear'
 alias cp='cp -iR'  # if source_file == directory, do NOT end with '/' character (OSX)
 alias mv='mv -i'
 alias rm='rm -i'
+alias sudo-su='sudo su -'
 
 alias vi='vim -i NONE -u NONE'  # \r  -->  ^M
 
