@@ -6,25 +6,29 @@
 #  touch -t 200808281107.53            file1.txt
 #  touch -r                            file1.txt file2.txt
 
+#  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
+#  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
+
 #  ln -s source_file link_name
 
-alias battery-info='pmset -g batt'
+alias aterm='urxvt -g 182x60'
+alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
 
-alias c-make='cmake -S . -B build'
+alias c-make='cmake -S . -B build && make -C build'  # (cd build && make)
 
 alias chdir='pwd'
 
-alias cpu-info='sysctl machdep.cpu.brand_string'
+alias cpu-info='cat /proc/cpuinfo'
 alias del='rm -f'
 alias deltree='rm -rf'
-alias df='df -klH | grep "Used" ; df -klH | grep "/dev/" | sort'
+alias df='df -kTh | grep "Used" ; df -kThx tmpfs | grep "/dev/" | sort'  # sda or vda
 
 alias   dir='ls -hl --color'
 alias dir-b='ls -1A --color'  # single column view
 alias dir-d='ls -dhl --color'  # directory listing with *
 alias dir-f='ls -ALhlp --color | grep "/"'  # folder only view
 alias dir-h='ls -adhl --color .*'  # hidden files view
-alias dir-p='ls -Ahl | more'  # single page view
+alias dir-p='ls -Ahl --color | more'  # single page view
 alias dir-s='ls -AhlrS --color'  # size view
 alias dir-t='ls -Ahlrt --color'  # timestamp view
 alias dir-w='ls -Alx --color'  # wide view
@@ -34,26 +38,28 @@ alias dircmp='diff -r'
 
 alias edit='vim'
 
+alias enetCard='lspci | grep "Ethernet controller"'
 alias fc='vimdiff'
 alias fc-b='cmp'
 
+alias finger='pinky -l'
 alias groups='/usr/bin/groups | tr " " "\n"'
 alias grupos='cut -d: -f1 /etc/group | sort'
 
-alias ipconfig='ifconfig | grep --color=never "cast"'
-
-alias iso2usb='sudo dd if=/tmp/temp.iso of=/dev/sdb bs=4M conv=fdatasync'
+alias ipconfig='ip -c -br a | grep "UP"'  # ifconfig | grep --color=never "cast"
 
 alias md='mkdir'
 
-alias mem='vm_stat'
+alias mem-c='free -ht'
+alias mem='vmstat -s -S M | grep --color=never "mem"'
 
-alias mount_iso='hdiutil  mount'
-alias mount_usb='diskutil mount /dev/disk2s1'
+alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sharedF ; mkdir -p /tmp/usb ; sudo mv /tmp/iso /mnt/ ; sudo mv /tmp/sharedF /mnt/ ; sudo mv /tmp/usb /mnt/'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
-
-alias osx-remove-hf='find . \( -name ".DS_Store" -or -name ".Trashes" -or -name "._*" \) -exec rm -rf {} \;'
+alias netsend='smbclient -M'  # 'net send' in NT
+alias nm-networks='nmcli connection show'
+alias nm-status='nmcli device'
+alias open_display='export DISPLAY=:0.0 ; xhost +'
 
 alias path='echo -e ${PATH//:/\\n}'
 
@@ -66,35 +72,32 @@ alias print='lpr -o cpi=14 -o prettyprint'
 
 alias printenv='env | sort'
 
-#     png screenshot all     -  command + shift + 3
-#     png screenshot partial -  command + shift + 4
-alias print-scr='screencapture -iW ~/Desktop/screenShot.`date +%Y-%m-%d_%H%M`.jpg'
+alias ps='ps -x -o user,pid,ppid,tty,args'  # /bin/ps -fu $USER
+alias ps-tree='pstree -anp $USER'
 
-alias ps='ps -x -o user,pid,ppid,tty,command'  # /bin/ps -fu $USER
 alias pscan='netstat -natup'
 alias pserver='lpstat -r'  # CUPS server status
 
 alias rd='rmdir'
+alias scanpci='lspci -vvnn'
 
 alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
 
 alias sql-admin='mysql --tee=/tmp/sql-admin.log -u root -p'  # notee
 
-alias      systemInfo='system_profiler       -detailLevel mini > systemInfo.unx'
-alias systemInfo-json='system_profiler -json -detailLevel mini > systemInfo.json'
-alias  systemInfo-xml='system_profiler -xml  -detailLevel mini > systemInfo.spx'   # xml file (System Information.app)
-
 alias tail='tail -n 35'
+
+alias tasklist='/bin/ps auxf'
 
 alias tracert='traceroute'
 
 alias type='cat -e'  # ^M$ -> \r\n
 
-alias umount_iso='hdiutil  unmount /dev/disk2'
-alias umount_usb='diskutil unmount /dev/disk2s1'
-
-alias ver='sw_vers ; echo "" ; uname -mrs'
+alias ver='lsb_release -a;echo "";uname -mrs'
 alias view='vim -MR'
 
-alias wifiCard='ioreg -l | grep IO80211DriverVersion | tr -d "|"'
+alias vt-cpu='lscpu | grep "Virtual"'
+alias vt-x='grep -E -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
+
+alias wifiCard='lspci | grep "Network controller"'
 
