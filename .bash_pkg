@@ -8,7 +8,7 @@
 # pkg-info() { if [ -n "$1" ]; then xbps-query -RS "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-list-installed() { pkg info ; }
  pkg-listfiles() { if [ -n "$1" ]; then pkg info -l "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
-# pkg-names() { xbps-query -l | cut -d' ' -f2 ; }
+ pkg-names() { pkg info | cut -d' ' -f1 ; }
  pkg-repolist() { pkg -vv | grep -A 55 '^Repo' ; }
  pkg-search() { pkg search "$@" ; }
 
