@@ -34,7 +34,7 @@
  mnt_usb() { sudo mount -t exfat /dev/sdb1 /mnt/usb/ ; }
 
 
- mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
+ mprint() { if [ -n "$1" ]; then man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; else echo "usage: $FUNCNAME <command>" ; fi }
 
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  removeNPchar() { tr -cd '\11\12\15\40-\176' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
