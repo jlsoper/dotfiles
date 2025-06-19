@@ -11,16 +11,16 @@
 
 #  ln -s source_file link_name
 
-alias battery-info='upower -i `upower -e | grep "BAT"`'  # 'acpi -b -i'
+alias battery-info='acpiconf -i 0'
 
 alias c-make='cmake -S . -B build && make -C build'  # (cd build && make)
 
 alias chdir='pwd'
 
-alias cpu-info='cat /proc/cpuinfo'
+alias cpu-info='sysctl hw.model hw.machine hw.ncpu'
 alias del='rm -f'
 alias deltree='rm -rf'
-alias df='df -kTh | grep "Used" ; df -kThx tmpfs | grep "/dev/" | sort'  # sda or vda
+alias df='df -ahT'
 
 alias   dir='ls -hl --color'
 alias dir-b='ls -1A --color'  # single column view
@@ -37,14 +37,13 @@ alias dircmp='diff -r'
 
 alias edit='vim'
 
-alias enetCard='lspci | grep "Ethernet controller"'
 alias fc='vimdiff'
 alias fc-b='cmp'
 
 alias groups='/usr/bin/groups | tr " " "\n"'
-alias grupos='cut -d: -f1 /etc/group | sort'
+alias groups-all='cut -d: -f1 /etc/group | sort'
 
-alias ipconfig='ip -c -br a | grep "UP"'  # ifconfig | grep --color=never "cast"
+alias ipconfig='ifconfig | grep --color=never "cast"'
 
 alias md='mkdir'
 
@@ -54,6 +53,7 @@ alias mem='vmstat -s -S M | grep --color=never "mem"'
 alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sharedF ; mkdir -p /tmp/usb ; sudo mv /tmp/iso /mnt/ ; sudo mv /tmp/sharedF /mnt/ ; sudo mv /tmp/usb /mnt/'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
+alias net-devices='pciconf -lv | grep -A1 -B3 network'
 alias netsend='smbclient -M'  # 'net send' in NT
 alias nm-networks='nmcli connection show'
 alias nm-status='nmcli device'
@@ -97,5 +97,4 @@ alias view='vim -MR'
 alias vt-cpu='lscpu | grep "Virtual"'
 alias vt-x='grep -E -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
 
-alias wifiCard='lspci | grep "Network controller"'
 
