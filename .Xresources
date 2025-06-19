@@ -12,7 +12,7 @@
 *colorULMode:     true
 *cursorColor:     green
 *font:            9x15
-*geometry:        146x33
+*geometry:        132x32
 *saveLines:       4096
 
 xterm*font:       10x20
