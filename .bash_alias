@@ -8,6 +8,7 @@
 
 #  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
 #  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
+#  alias type='cat -e'  # ^M$ -> \r\n
 
 #  ln -s source_file link_name
 
@@ -47,16 +48,13 @@ alias ipconfig='ifconfig | grep --color=never "cast"'
 
 alias md='mkdir'
 
-alias mem-c='free -ht'
-alias mem='vmstat -s -S M | grep --color=never "mem"'
+alias mem='top -bt 0 | grep "Mem"'
 
 alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sharedF ; mkdir -p /tmp/usb ; sudo mv /tmp/iso /mnt/ ; sudo mv /tmp/sharedF /mnt/ ; sudo mv /tmp/usb /mnt/'
 
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias net-devices='pciconf -lv | grep -A1 -B3 network'
 alias netsend='smbclient -M'  # 'net send' in NT
-alias nm-networks='nmcli connection show'
-alias nm-status='nmcli device'
 alias open_display='export DISPLAY=:0.0 ; xhost +'
 
 alias path='echo -e ${PATH//:/\\n}'
@@ -70,14 +68,14 @@ alias print='lpr -o cpi=14 -o prettyprint'
 
 alias printenv='env | sort'
 
-alias ps='ps -x -o user,pid,ppid,tty,args'  # /bin/ps -fu $USER
+alias ps='ps -x -o user,pid,ppid,tty,args'  # /bin/ps -U $USER
 alias ps-tree='pstree -anp $USER'
 
-alias pscan='netstat -natup'
+alias pscan='netstat -na4'  # sockstat -4 -l | sort
 alias pserver='lpstat -r'  # CUPS server status
 
 alias rd='rmdir'
-alias scanpci='lspci -vvnn'
+alias scanpci='pciconf -lv'
 
 alias search='find . 2>/dev/null -iname'  # search "*.tar.gz"
 
@@ -89,12 +87,6 @@ alias tasklist='/bin/ps auxf'
 
 alias tracert='traceroute'
 
-alias type='cat -e'  # ^M$ -> \r\n
-
-alias ver='lsb_release -a;echo "";uname -mrs'
+alias ver='echo "";uname -mrs'
 alias view='vim -MR'
-
-alias vt-cpu='lscpu | grep "Virtual"'
-alias vt-x='grep -E -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
-
 
