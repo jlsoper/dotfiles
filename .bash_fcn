@@ -5,8 +5,8 @@
  bkup() { if [ -n "$1" ]; then cp "$1" "$1".`date +%Y-%m-%d_%H%M` ; else echo "usage: $FUNCNAME <file>" ; fi }  # date +%Y-%m-%d_%H%M%S
 
 # C / C++ compiler with debug information (gdb)
- compile_c()   { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; gcc -g "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.c>"   ; fi }  # a.out
- compile_cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ -g "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
+ build_c()   { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; gcc -g "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.c>"   ; fi }  # a.out
+ build_cpp() { if [ -n "$1" ]; then TRIMMED=$(echo "$1" | cut -f 1 -d '.') ; g++ -g "$1" -o $TRIMMED ; unset TRIMMED ; else echo "usage: $FUNCNAME <file.cpp>" ; fi }  # a.out
 
  dos2u() { if [ -n "$1" ]; then perl -pi -e 's/\r\n/\n/' "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
 
@@ -24,8 +24,6 @@
 # --fixed-strings  (search)
  fgrep() { if [ -n "$1" ]; then find . -maxdepth 1 -type f -name "*" -exec grep -HIn --color=auto "$1" {} \; ; else echo "usage: $FUNCNAME \"string\"" ; fi }
 
- fsplit() { split -a 3 -d -l "$1" "$2" "$2". ; }
-
  lowerCase() { tr "[:upper:]" "[:lower:]" < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
 
@@ -34,7 +32,7 @@
  mnt_usb() { sudo mount -t exfat /dev/sdb1 /mnt/usb/ ; }
 
 
- mprint() { man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; }
+ mprint() { if [ -n "$1" ]; then man "$1" | col -b | expand -t 2 > /tmp/"$1".man ; else echo "usage: $FUNCNAME <command>" ; fi }
 
  removeCRchar() { tr -d '\r' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
  removeNPchar() { tr -cd '\11\12\15\40-\176' < "$1" > .tempFile ; mv -f .tempFile "$1" ; }
@@ -63,6 +61,10 @@
  user_add() { if [ -n "$1" ]; then sudo adduser "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }                # /etc/adduser.conf
  user_del() { if [ -n "$1" ]; then sudo deluser --remove-home "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }  # /etc/deluser.conf
  user_switch() { if [ -n "$1" ]; then su -l "$1" ; else echo "usage: $FUNCNAME <userID>" ; fi }
+
+
+# vsc() { if [ -n "$1" ]; then /opt/VSCode/bin/codium  --extensions-dir ~/.config/vscodevim/extensions  --user-data-dir $HOME/.config/vscodevim/user-data "$1" &> /dev/null ; else echo "usage: $FUNCNAME <file>" ; fi }
+
 
 # Virtualization Technology
  vt_convert()  { if [ -n "$1" ]; then qemu-img convert -f vmdk  "$1" "$1".qcow2 ; else echo "usage: $FUNCNAME <image.vmdk>" ; fi }
