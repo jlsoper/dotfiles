@@ -8,6 +8,7 @@
 
 #  alias bootsect_lnx='doas dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
 #  alias chromebook-create='doas dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
+#  alias type='cat -e'  # ^M$ -> \r\n
 
 #  ln -s source_file link_name
 
@@ -47,14 +48,14 @@ alias fc-b='cmp'
 
 alias finger='pinky -l'
 alias groups='/usr/bin/groups | tr " " "\n"'
-alias grupos='cut -d: -f1 /etc/group | sort'
+alias groups-all='cut -d: -f1 /etc/group | sort'
 
 alias ipconfig='ifconfig | grep --color=never "cast"'
 
 alias md='mkdir'
 
-alias mem-c='free -ht'
 alias mem='vmstat -s -S M | grep --color=never "mem"'
+alias mem-c='free -ht'
 
 alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sdcard ; mkdir -p /tmp/usb ; doas mv /tmp/iso /mnt/ ; doas mv /tmp/sdcard /mnt/ ; doas mv /tmp/usb /mnt/'
 
@@ -93,8 +94,6 @@ alias tail='tail -n 35'
 alias tasklist='/bin/ps auxf'
 
 alias tracert='traceroute'
-
-alias type='cat -e'  # ^M$ -> \r\n
 
 alias ver='echo -n "Alpine Linux " ; cat /etc/alpine-release ; echo "" ; uname -mrs'
 alias view='vim -MR'
