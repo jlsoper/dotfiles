@@ -50,8 +50,8 @@ alias ipconfig='ip -c -br a | grep "UP"'  # ifconfig | grep --color=never "cast"
 
 alias md='mkdir'
 
-alias mem-c='free -ht'
 alias mem='vmstat -s -S M | grep --color=never "mem"'
+alias mem-c='free -ht'
 
 alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sharedF ; mkdir -p /tmp/usb ; sudo mv /tmp/iso /mnt/ ; sudo mv /tmp/sharedF /mnt/ ; sudo mv /tmp/usb /mnt/'
 
