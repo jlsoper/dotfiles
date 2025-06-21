@@ -29,7 +29,7 @@
 
 ###  mount a filesystem
  mnt_hfs() { sudo hfsfuse /dev/da0s1 /mnt/usb/ ; }
-### mnt_iso() { if [ -n "$1" ]; then sudo mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
+ mnt_iso() { if [ -n "$1" ]; then sudo mdconfig -a -t vnode -f "$1" -u 1 ; sudo mount -t cd9660 /dev/md1 /mnt/iso ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
  mnt_usb() { sudo mount.exfat-fuse /dev/da1s1 /mnt/usb/ ; }
 
 
@@ -51,7 +51,7 @@
  u2dos() { if [ -n "$1" ]; then perl -pi -e 's/\n/\r\n/' "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
 
 ###  unmount filesystems
-### umnt_iso() { sudo umount /mnt/iso/ ; }
+ umnt_iso() { sudo umount /mnt/iso/ ; sudo mdconfig -du 1 ; }
  umnt_usb() { sudo umount /mnt/usb/ ; }
 
 
