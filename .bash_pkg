@@ -9,6 +9,9 @@
  pkg-upgrade() { sudo pkg upgrade ; }
 
 
+ pkg-orphans() { sudo pkg autoremove ; }
+
+
 ##########
 
 
@@ -19,5 +22,6 @@
  pkg-names() { pkg info | cut -d' ' -f1 ; }
  pkg-repolist() { pkg -vv | grep -A 55 '^Repo' ; }
  pkg-search() { pkg search "$@" ; }
+ pkg-stats() { pkg stats ; }
 
 
