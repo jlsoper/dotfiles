@@ -28,6 +28,7 @@
  md5() { if [ -n "$1" ]; then md5sum -c "$1" ; else echo "usage: $FUNCNAME <file.md5>" ; fi }  # md5 mini.iso.md5
 
 ###  mount a filesystem
+ mnt_hfs() { sudo hfsfuse /dev/da0s1 /mnt/usb/ ; }
 ### mnt_iso() { if [ -n "$1" ]; then sudo mount -t iso9660 "$1" /mnt/iso -o loop ; else echo "usage: $FUNCNAME <file.iso>" ; fi }
  mnt_usb() { sudo mount.exfat-fuse /dev/da1s1 /mnt/usb/ ; }
 
