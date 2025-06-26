@@ -1,15 +1,6 @@
 #  $HOME/.bash_pkg
 
 
- pkg-update()  { sudo pkg update  ; }
-
- pkg-install() { sudo pkg install "$@" ; }
- pkg-remove()  { sudo pkg remove  "$@" ; }
-
- pkg-upgrade() { sudo pkg upgrade ; }
-
-
- pkg-orphans() { sudo pkg autoremove ; }
 
 
 ##########
