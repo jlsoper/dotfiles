@@ -12,6 +12,7 @@
 
 #  ln -s source_file link_name
 
+alias aterm='urxvt -fn "xft:Misc Fixed"'
 alias battery-info='acpiconf -i 0'
 
 alias c-make='cmake -S . -B build && make -C build'  # (cd build && make)
