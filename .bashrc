@@ -35,5 +35,5 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias sudo-su='sudo su -'
 
-alias vi='vim -i NONE -u NONE'  # \r  -->  ^M
+alias xterm='urxvt -fn "xft:DejaVu Sans Mono"'
 
