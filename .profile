@@ -21,7 +21,7 @@ fi
 #  export DB_HOME=/opt/hsqldb
 #  PATH=$PATH:$DB_HOME/bin
 
-export LANG=C
+export LANG=en_US.UTF-8
 export LESSHISTFILE=-
 
 #  export GREP_COLOR='1;33'
