@@ -18,6 +18,19 @@
 let c_comment_strings=1
 let mapleader = ","
 
+
+
+""""""""
+let g:netrw_banner = 0
+let g:netrw_browse_split = 2
+let g:netrw_dirhistmax = 0
+let g:netrw_keepdir = 0
+let g:netrw_winsize = 75
+
+""""""""
+
+
+
 map \e[3~ x
 map ^H X
 
