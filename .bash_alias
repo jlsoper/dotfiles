@@ -56,7 +56,7 @@ alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sharedF ; mkdir -p /tmp/usb
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias net-devices='pciconf -lv | grep -A1 -B3 network'
 alias netsend='smbclient -M'  # 'net send' in NT
-alias open_display='export DISPLAY=:0.0 ; xhost +'
+#  alias open_display='export DISPLAY=:0.0 ; xhost +'
 
 alias path='echo -e ${PATH//:/\\n}'
 
