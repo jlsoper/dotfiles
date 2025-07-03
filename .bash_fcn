@@ -83,7 +83,7 @@
  wifi_status()     { nmcli general ; }
 
 
- xlogin() { if [ -n "$2" ]; then ssh -X "$1"@"$2" ; else echo "usage: $FUNCNAME <userID> <host>" ; fi }
+ xlogin() { if [ -n "$2" ]; then ssh -o ForwardX11=yes "$1"@"$2" ; else echo "usage: $FUNCNAME <userID> <host>" ; fi }
 
  xml_format() { if [ -n "$1" ]; then perl -pi -e 's/\x3c/\n\x3c/g' "$1" ; tail -n +2 "$1" > .tempFile ; mv -f .tempFile "$1" ; else echo "usage: $FUNCNAME <file.xml>" ; fi }  # < character
 
