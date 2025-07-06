@@ -20,7 +20,7 @@ py_venv() { if [ "$PYTHON_VENV" = "0" ]; then source .venv/bin/activate ; PYTHON
 
 
 #  move __pycache__ directory  ( Python3.8+ )
-export PYTHONPYCACHEPREFIX=/tmp/pycache
+export PYTHONPYCACHEPREFIX=/tmp/__pycache__
 
 
  py_doc()       { python3 -m pydoc -p 37000 ; }
