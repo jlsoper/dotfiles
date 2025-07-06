@@ -33,7 +33,7 @@ export PYTHONPYCACHEPREFIX=/tmp/pycache
  py_uninstall() { if [ "$PYTHON_VENV" = "1" ]; then pip3 uninstall "$@" ; else echo && echo "ERROR: You are not in an 'activated' virtual env" ; fi }
 
  py_venv_create() { python3 -m venv .venv ; }
- py_venv_read()   { pip3 install -r requirements.txt ; }
- py_venv_write()  { pip3 freeze > requirements.txt ; }
+ py_venv_read()   { if [ "$PYTHON_VENV" = "1" ]; then pip3 install -r requirements.txt ; else echo && echo "ERROR: You are not in an 'activated' virtual env" ; fi }
+ py_venv_write()  { if [ "$PYTHON_VENV" = "1" ]; then pip3 freeze   > requirements.txt ; else echo && echo "ERROR: You are not in an 'activated' virtual env" ; fi }
 
 
