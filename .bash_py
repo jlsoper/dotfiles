@@ -13,9 +13,6 @@
 ####################################
 
 
-#  Run pip upgrade for: (system, venv)
-pip_upgrade() { python3 -m pip install --upgrade pip ; }
-
 #####  toggle variable for python venv
 PYTHON_VENV=0
 
@@ -27,16 +24,16 @@ export PYTHONPYCACHEPREFIX=/tmp/__pycache__
 
 
  py_doc()       { python3 -m pydoc -p 37000 ; }
- py_install()   { pip3 install "$@" ; }
+ py_install()   { if [ "$PYTHON_VENV" = "1" ]; then pip3 install "$@" ; else echo && echo "ERROR: You are not in an 'activated' virtual env" ; fi }
  py_list()      { pip3 list ; }
  py_man()       { if [ -n "$1" ]; then python3 -m pydoc "$1" > /tmp/$1.man ; else echo "usage: $FUNCNAME <module_name>" ; fi }
  py_path()      { python3 -c "import sys; print ('\n'.join(sys.path))" ; }  # sys.path
  py_show()      { if [ -n "$1" ]; then pip3 show "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  py_site()      { python3 -m site ; }
- py_uninstall() { pip3 uninstall "$@" ; }
+ py_uninstall() { if [ "$PYTHON_VENV" = "1" ]; then pip3 uninstall "$@" ; else echo && echo "ERROR: You are not in an 'activated' virtual env" ; fi }
 
  py_venv_create() { python3 -m venv .venv ; }
- py_venv_read()   { pip3 install -r requirements.txt ; }
- py_venv_write()  { pip3 freeze > requirements.txt ; }
+ py_venv_read()   { if [ "$PYTHON_VENV" = "1" ]; then pip3 install -r requirements.txt ; else echo && echo "ERROR: You are not in an 'activated' virtual env" ; fi }
+ py_venv_write()  { if [ "$PYTHON_VENV" = "1" ]; then pip3 freeze   > requirements.txt ; else echo && echo "ERROR: You are not in an 'activated' virtual env" ; fi }
 
 
