@@ -54,7 +54,6 @@ if [ -f ~/.ash_flatpak ]; then . ~/.ash_flatpak ; fi
 if [ -f ~/.ash_pkg     ]; then . ~/.ash_pkg     ; fi
 
 if [ -f ~/.ash_git     ]; then . ~/.ash_git     ; fi
-if [ -f ~/.ash_nodejs  ]; then . ~/.ash_nodejs  ; fi
 if [ -f ~/.ash_py      ]; then . ~/.ash_py      ; fi
 
 #  Alpine - OpenRC
