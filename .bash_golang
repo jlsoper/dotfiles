@@ -4,6 +4,7 @@
 #   VSCode settings.json
 #   "go.goroot": "/opt/go"
 
+export GOPATH=$HOME/.gopath
 
 PATH=/opt/go/bin:$PATH
 
