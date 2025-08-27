@@ -35,6 +35,7 @@ if [ -f ~/.bash_fcn     ]; then . ~/.bash_fcn     ; fi
 if [ -f ~/.bash_pkg     ]; then . ~/.bash_pkg     ; fi
 
 if [ -f ~/.bash_git     ]; then . ~/.bash_git     ; fi
+if [ -f ~/.bash_golang  ]; then . ~/.bash_golang  ; fi
 if [ -f ~/.bash_py      ]; then . ~/.bash_py      ; fi
 
 #  Setup the database login credentials
