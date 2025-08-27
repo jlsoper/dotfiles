@@ -47,6 +47,9 @@ alias fc='vimdiff'
 alias fc-b='cmp'
 
 alias finger='pinky -l'
+
+alias gedit='vim -c "set noexpandtab"'  # golang indentation style
+
 alias groups='/usr/bin/groups | tr " " "\n"'
 alias groups-all='cut -d: -f1 /etc/group | sort'
 
