@@ -1,0 +1,18 @@
+#  $HOME/.bash_golang
+
+
+#   VSCode settings.json
+#   "go.goroot": "/opt/go"
+
+
+#  gofmt (reformat) package sources
+
+#  go fmt yourcode.go
+
+export GOPATH=$HOME/.gopath
+
+PATH=/opt/go/bin:$PATH
+
+export PATH
+
+

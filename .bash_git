@@ -67,6 +67,8 @@ alias gdir='git ls-files --eol'
 
       ghelp() { if [ -n "$1" ]; then git help "$1" | col -b | expand -t 2 > /tmp/git-"$1".man ; else echo "usage: $FUNCNAME <command>" ; fi }
 
+alias ginit='git init && touch .gitignore README.md'
+
 alias glog='git --no-pager log --reverse --oneline'
 alias glogs='git --no-pager log --reverse'
 
