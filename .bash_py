@@ -15,10 +15,6 @@
 ####################################
 
 
-#  Prepending path in case a system-installed binary needs to be overridden
-export PATH="$HOME/.local/share/../bin:$PATH"
-
-
 #  move __pycache__ directory  ( Python3.8+ )
 export PYTHONPYCACHEPREFIX=/tmp/__pycache__
 
