@@ -7,4 +7,3 @@ chmod 600 .dblogin .ssh/config
 chmod 644 .b* .dir_colors .gitconfig .nanorc .vimrc
 
 
-
