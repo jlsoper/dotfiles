@@ -7,7 +7,7 @@
 #  touch -r                            file1.txt file2.txt
 
 #  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
-#  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
+#  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'  # iso2usb
 #  alias type='cat -e'  # ^M$ -> \r\n
 
 #  ln -s source_file link_name
@@ -22,7 +22,7 @@ alias chdir='pwd'
 alias cpu-info='cat /proc/cpuinfo'
 alias del='rm -f'
 alias deltree='rm -rf'
-alias df='df -kTh | grep "Used" ; df -kThx tmpfs | grep "/dev/" | sort'  # sda or vda
+alias df='df -kTh | grep "Used" ; df -kThx squashfs | grep "^/dev/\|virtiofs" | sort'  # sda or vda
 
 alias   dir='ls --group-directories-first -hl --color'
 alias dir-b='ls --group-directories-first -1A --color'  # single column view
