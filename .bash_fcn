@@ -45,6 +45,8 @@
  sha256() { if [ -n "$1" ]; then sha256sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha256>" ; fi }
  sha512() { if [ -n "$1" ]; then sha512sum -c "$1" ; else echo "usage: $FUNCNAME <file.sha512>" ; fi }
 
+ tidy-html() { if [ -n "$2" ]; then tidy --indent auto --indent-spaces 2 --quiet yes --show-body-only auto --show-errors 0 --wrap 0 -o "$2" "$1" ; else echo "usage: $FUNCNAME <inputFile> <outputFile>" ; fi }
+
  trim_ws() { for f in *; do mv "$f" $(echo $f | tr -d ' ') ; done }
 
  u2dos() { if [ -n "$1" ]; then perl -pi -e 's/\n/\r\n/' "$1" ; else echo "usage: $FUNCNAME <file>" ; fi }
