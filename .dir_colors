@@ -306,6 +306,7 @@ EXEC 01;32
 .bash_alias       00;33
 .bash_archive     00;33
 .bash_fcn         00;33
+.bash_flatpak     00;33
 .bash_git         00;33
 .bash_golang      00;33
 .bash_java        00;33
@@ -315,6 +316,7 @@ EXEC 01;32
 .bash_profile     00;33
 .bash_py          00;33
 .bashrc           00;33
+.bash_sysD        00;33
 .dblogin          00;33
 .dir_colors       00;33
 .gitconfig        00;33
