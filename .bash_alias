@@ -94,7 +94,7 @@ alias tasklist='/bin/ps auxf'
 
 alias tracert='traceroute'
 
-alias ver='lsb_release -a;echo "";uname -mrs'
+alias ver='lsb_release -a;echo "";cat /etc/os-release | grep "LTS (";echo "";uname -mrs'
 alias view='vim -MR'
 
 alias vt-cpu='lscpu | grep "Virtual"'
