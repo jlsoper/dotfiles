@@ -100,5 +100,6 @@ alias view='vim -MR'
 alias vt-cpu='lscpu | grep "Virtual"'
 alias vt-x='grep -E -c "(vmx|svm)" /proc/cpuinfo'  # virtualization module: Intel (vmx) AMD (svm)
 
+alias wget='wget --hsts-file=/dev/null'
 alias wifiCard='lspci | grep "Network controller"'
 
