@@ -6,16 +6,15 @@
 
 
  pkg-contents() { if [ -n "$1" ]; then dpkg -c "$1" ; else echo "usage: $FUNCNAME <file.deb>" ; fi }
- pkg-history() { nala history "$@" ; }
  pkg-history_install() { zgrep -h --color=never "install " /var/log/dpkg.log* | sort ; }
  pkg-history_upgrade() { zgrep -h --color=never "upgrade " /var/log/dpkg.log* | sort ; }
  pkg-history_remove()  { zgrep -h --color=never "remove "  /var/log/dpkg.log* | sort ; }
- pkg-info() { if [ -n "$1" ]; then nala show "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+ pkg-info() { if [ -n "$1" ]; then apt show "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-list-installed() { dpkg -l ; }
  pkg-listfiles() { if [ -n "$1" ]; then dpkg -L "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-names() { dpkg --get-selections | cut -f1 ; }
- pkg-outdated() { nala list -u ; }
+ pkg-outdated() { apt list --upgradable ; }
  pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ | sort ; }
- pkg-search() { if [ -n "$1" ]; then nala search -n "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+ pkg-search() { if [ -n "$1" ]; then apt search --names-only "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
 
 
