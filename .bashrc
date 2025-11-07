@@ -35,8 +35,8 @@ else
 
   ## apt install software-properties-common (elementaryOS)
   ## add / remove repo (pkg-update)
-  pkg-add-repo() { if [ -n "$1" ]; then add-apt-repository    ppa:"$1" ; else echo "usage: $FUNCNAME ppa:<path>" ; fi }
-  pkg-del-repo() { if [ -n "$1" ]; then add-apt-repository -r ppa:"$1" ; else echo "usage: $FUNCNAME ppa:<path>" ; fi }
+  pkg-add-ppa() { if [ -n "$1" ]; then add-apt-repository    ppa:"$1" ; else echo "usage: $FUNCNAME ppa:<path>" ; fi }
+  pkg-del-ppa() { if [ -n "$1" ]; then add-apt-repository -r ppa:"$1" ; else echo "usage: $FUNCNAME ppa:<path>" ; fi }
 
   alias pkg-update='apt  update'
   alias pkg-install='apt install'
