@@ -14,7 +14,13 @@
  pkg-listfiles() { if [ -n "$1" ]; then dpkg -L "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-names() { dpkg --get-selections | cut -f1 ; }
  pkg-outdated() { apt list --upgradable ; }
- pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ | sort ; }
+ pkg-repolist() { grep -r --include '*.list' '^deb ' /etc/apt/ | sort ; ls -1A /var/lib/extrepo/keys/ 2>/dev/null ; }
  pkg-search() { if [ -n "$1" ]; then apt search --names-only "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+
+
+##########  /etc/extrepo
+
+ repoD-installed() { echo ""; for f in /etc/apt/sources.list.d/extrepo*; do cat "$f" && echo ""; done }
+ repoD-search() { if [ -n "$1" ]; then extrepo search "$1" ; else echo "usage: $FUNCNAME <repository>" ; fi }
 
 

@@ -45,6 +45,13 @@ else
 
   pkg-upgrade1() { if [ -n "$1" ]; then apt --only-upgrade install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
 
+
+  ##########  /etc/extrepo ( config.yaml )
+
+  repoD-enable()  { if [ -n "$1" ]; then extrepo enable  "$1" ; else echo "usage: $FUNCNAME <repository>" ; fi }
+  repoD-disable() { if [ -n "$1" ]; then extrepo disable "$1" ; else echo "usage: $FUNCNAME <repository>" ; fi }
+  repoD-update()  { if [ -n "$1" ]; then extrepo update  "$1" ; else echo "usage: $FUNCNAME <repository>" ; fi }
+
 fi
 
 
