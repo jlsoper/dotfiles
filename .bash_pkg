@@ -19,3 +19,9 @@
  pkg-search() { if [ -n "$1" ]; then nala search -n "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
 
 
+##########  /etc/extrepo
+
+ repoD-installed() { echo ""; for f in /etc/apt/sources.list.d/extrepo*; do cat "$f" && echo ""; done }
+ repoD-search() { if [ -n "$1" ]; then extrepo search "$1" ; else echo "usage: $FUNCNAME <repository>" ; fi }
+
+
