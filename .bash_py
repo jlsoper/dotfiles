@@ -6,8 +6,6 @@
 #
 #  venv  - module ( Python3.4+ )
 #
-#  python3 -m venv .venv
-#
 #  pydoc    <module_name>
 #  pydoc -w <module_name / package_name>
 #
@@ -20,11 +18,13 @@ export PYTHONPYCACHEPREFIX=/tmp/__pycache__
 
 
  py_doc()       { python3 -m pydoc -p 37000 ; }
-
+ py_install()   { uv add "$@" ; }
  py_list()      { uv pip list ; }
  py_man()       { if [ -n "$1" ]; then python3 -m pydoc "$1" > /tmp/$1.man ; else echo "usage: $FUNCNAME <module_name>" ; fi }
  py_path()      { python3 -c "import sys; print ('\n'.join(sys.path))" ; }  # sys.path
  py_show()      { if [ -n "$1" ]; then uv pip show "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  py_site()      { python3 -m site ; }
+ py_tree()      { echo "" ; uv tree ; echo "" ; }
+ py_uninstall() { uv remove "$@" ; }
 
 
