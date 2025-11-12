@@ -13,6 +13,14 @@
 ####################################
 
 
+#  uv tool install
+if [ -n "$(ls -A ~/.local/bin  2>/dev/null)" ]
+then
+  PATH=~/.local/bin:$PATH
+  export PATH
+fi
+
+
 #  move __pycache__ directory  ( Python3.8+ )
 export PYTHONPYCACHEPREFIX=/tmp/__pycache__
 
