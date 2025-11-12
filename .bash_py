@@ -29,7 +29,7 @@ export PYTHONPYCACHEPREFIX=/tmp/__pycache__
  py_init()      { uv init "$@" ; }  # create project [ --app or --lib ]
  py_install()   { uv add "$@" ; }
 
- py_list()      { uv pip list ; }  # installed pkgs
+ py_list()      { uv pip list "$@" ; }  # installed pkgs
 
  py_man()       { if [ -n "$1" ]; then python3 -m pydoc "$1" > /tmp/$1.man ; else echo "usage: $FUNCNAME <module_name>" ; fi }
  py_path()      { python3 -c "import sys; print ('\n'.join(sys.path))" ; }  # sys.path
