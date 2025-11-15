@@ -6,7 +6,11 @@ alias yum-delRepo='sudo flatpak remote-delete flathub'
 
 alias yum-help='flatpak -h'
 alias yum-info='flatpak info'
+
+#  ~/.var/app
 alias yum-install='YUM_install'
+alias yum-uninstall='YUM_uninstall'
+
 alias yum-list-installed='flatpak list'
 alias yum-repolist='flatpak remotes'
 alias yum-search='flatpak search'
@@ -14,6 +18,7 @@ alias yum-search='flatpak search'
 
 ##########
 
- YUM_install() { if [ -n "$1" ]; then sudo flatpak install flathub "$1" ; else echo "usage: yum-install <Application ID>" ; fi }
+ YUM_install()   { if [ -n "$1" ]; then sudo flatpak install flathub "$1" ; else echo "usage: yum-install <Application ID>" ; fi }
+ YUM_uninstall() { if [ -n "$1" ]; then sudo flatpak uninstall --delete-data "$1" ; else echo "usage: yum-uninstall <Application ID>" ; fi }
 
 
