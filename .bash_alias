@@ -7,7 +7,7 @@
 #  touch -r                            file1.txt file2.txt
 
 #  alias bootsect_lnx='sudo dd if=/dev/sda1 of=/tmp/bootsect.lnx bs=512 count=1'
-#  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'
+#  alias chromebook-create='sudo dd if=chromeos_flex.bin of=/dev/sdb bs=4M conv=fdatasync'  # iso2usb
 #  alias type='cat -e'  # ^M$ -> \r\n
 
 #  ln -s source_file link_name
@@ -58,7 +58,6 @@ alias mnt-folders='mkdir -p /tmp/iso ; mkdir -p /tmp/sharedF ; mkdir -p /tmp/usb
 alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias net-devices='pciconf -lv | grep -A1 -B3 network'
 alias netsend='smbclient -M'  # 'net send' in NT
-#  alias open_display='export DISPLAY=:0.0 ; xhost +'
 
 alias path='echo -e ${PATH//:/\\n}'
 
