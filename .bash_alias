@@ -63,7 +63,6 @@ alias nbrfiles='echo $(ls -A1 | wc -l)'
 alias netsend='smbclient -M'  # 'net send' in NT
 alias nm-networks='nmcli connection show'
 alias nm-status='nmcli device'
-#  alias open_display='export DISPLAY=:0.0 ; xhost +'
 
 alias path='echo -e ${PATH//:/\\n}'
 
