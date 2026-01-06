@@ -48,7 +48,6 @@ if [ -f ~/.bash_pkg     ]; then . ~/.bash_pkg     ; fi
 if [ -f ~/.bash_sysD    ]; then . ~/.bash_sysD    ; fi
 
 if [ -f ~/.bash_git     ]; then . ~/.bash_git     ; fi
-if [ -f ~/.bash_nodejs  ]; then . ~/.bash_nodejs  ; fi
 if [ -f ~/.bash_py      ]; then . ~/.bash_py      ; fi
 
 #  /etc/lsb-release (Ubuntu)
