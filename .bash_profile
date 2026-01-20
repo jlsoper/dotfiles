@@ -28,6 +28,7 @@ then
   . ~/.bashrc
 fi
 
+#  FreeBSD  [ /usr/local/opt ]
 
 if [ -f ~/.bash_alias   ]; then . ~/.bash_alias   ; fi
 if [ -f ~/.bash_archive ]; then . ~/.bash_archive ; fi
