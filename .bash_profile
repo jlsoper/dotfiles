@@ -1,7 +1,7 @@
 #  $HOME/.bash_profile
 
-#  Correct PATH variable (Debian)
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+#  env -i bash -c 'echo $PATH'
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
 
 
 #  .NET telemetry setting
