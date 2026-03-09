@@ -1,7 +1,7 @@
 #  $HOME/.bash_profile
 
 #  env -i bash -c 'echo $PATH'
-PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
 
 #  .NET telemetry setting
@@ -46,8 +46,6 @@ if [ -f ~/.bash_pkg     ]; then . ~/.bash_pkg     ; fi
 
 if [ -f ~/.bash_git     ]; then . ~/.bash_git     ; fi
 if [ -f ~/.bash_golang  ]; then . ~/.bash_golang  ; fi
-if [ -f ~/.bash_java    ]; then . ~/.bash_java    ; fi
-if [ -f ~/.bash_nodejs  ]; then . ~/.bash_nodejs  ; fi
 if [ -f ~/.bash_py      ]; then . ~/.bash_py      ; fi
 
 #  /etc/lsb-release (Ubuntu)
@@ -63,7 +61,6 @@ then
 fi
 
 #  Wifi ssid
-if [ -f /sbin/iwgetid ]; then export WIFI=$(iwgetid -r) ; fi
 
 
 export PATH
