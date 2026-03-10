@@ -38,6 +38,9 @@ else
   alias pkg-remove='dnf remove'        # apt remove
   alias pkg-upgrade='dnf update'       # apt upgrade
 
+  pkg-upgrade1() { if [ -n "$1" ]; then dnf update "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+
+
 fi
 
 
