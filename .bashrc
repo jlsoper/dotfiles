@@ -33,19 +33,10 @@ else
   alias view='nano -v'
 
 
-  alias pkg-update='nala update'    # apt update
-  alias pkg-install='nala install'  # apt install
-  alias pkg-remove='nala  remove'   # apt remove
-  alias pkg-upgrade='nala upgrade'  # apt upgrade
-
-  pkg-upgrade1() { if [ -n "$1" ]; then apt --only-upgrade install "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
-
-
-  ##########  /etc/extrepo ( config.yaml )
-
-  repoD-enable()  { if [ -n "$1" ]; then extrepo enable  "$1" ; else echo "usage: $FUNCNAME <repository>" ; fi }
-  repoD-disable() { if [ -n "$1" ]; then extrepo disable "$1" ; else echo "usage: $FUNCNAME <repository>" ; fi }
-  repoD-update()  { if [ -n "$1" ]; then extrepo update  "$1" ; else echo "usage: $FUNCNAME <repository>" ; fi }
+  alias pkg-update='dnf check-update'  # apt update
+  alias pkg-install='dnf install'      # apt install
+  alias pkg-remove='dnf remove'        # apt remove
+  alias pkg-upgrade='dnf update'       # apt upgrade
 
 fi
 
