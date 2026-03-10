@@ -10,6 +10,6 @@
  pkg-list-installed() { rpm -qa | sort ; }
  pkg-listfiles() { if [ -n "$1" ]; then dnf repoquery -l "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
  pkg-repolist() { dnf repolist ; }
- pkg-search() { if [ -n "$1" ]; then dnf search "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
+ pkg-search() { if [ -n "$1" ]; then dnf list "$1" ; else echo "usage: $FUNCNAME <package>" ; fi }
 
 
